@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ede51dc6-c3a3-4137-b807-ac75cce088a2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-2-ex-vertigo.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-2-ex-vertigo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-3-ex-video.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-3-ex-video.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-5.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-5.py" afterDir="false" />
-    </list>
+    <list default="true" id="ede51dc6-c3a3-4137-b807-ac75cce088a2" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +55,17 @@
     <SUITE FILE_PATH="coverage/Videowall_Development$gst_player_decodebin.coverage" NAME="gst_player_decodebin Coverage Results" MODIFIED="1529838944417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -93,7 +99,7 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -382,6 +388,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32948717" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.3" />
@@ -416,7 +423,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/gstreamer/gtk_video_player/gst_video_overlay.py</url>
           <line>2</line>
         </line-breakpoint>
       </breakpoints>
@@ -759,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+        <state relative-caret-position="374">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
         </state>
       </provider>
     </entry>
