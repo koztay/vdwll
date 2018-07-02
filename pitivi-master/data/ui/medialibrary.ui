@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+  <requires lib="gtk+" version="3.10"/>
+  <object class="GtkToolbar" id="medialibrary_toolbar">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="show_arrow">False</property>
+    <property name="icon_size">1</property>
+    <child>
+      <object class="GtkToolButton" id="media_import_button">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_markup" translatable="yes">Add media files to your project</property>
+        <property name="is_important">True</property>
+        <property name="label" translatable="yes">Import</property>
+        <property name="use_underline">True</property>
+        <property name="icon_name">list-add-symbolic</property>
+        <signal name="clicked" handler="_importSourcesCb" swapped="no"/>
+        <child internal-child="accessible">
+          <object class="AtkObject" id="media_import_button-atkobject">
+            <property name="AtkObject::accessible-name">media_import_button</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="media_remove_button">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Remove selected clips from the project</property>
+        <property name="action_name">medialibrary.remove-assets</property>
+        <property name="label" translatable="yes">_Remove from Project</property>
+        <property name="use_underline">True</property>
+        <property name="icon_name">list-remove-symbolic</property>
+        <child internal-child="accessible">
+          <object class="AtkObject" id="media_remove_button-atkobject">
+            <property name="AtkObject::accessible-name">media_remove_button</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="media_props_button">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Clip properties...</property>
+        <property name="use_underline">True</property>
+        <property name="icon_name">document-properties-symbolic</property>
+        <signal name="clicked" handler="_clipPropertiesCb" swapped="no"/>
+        <child internal-child="accessible">
+          <object class="AtkObject" id="media_props_button-atkobject">
+            <property name="AtkObject::accessible-name">media_props_button</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolButton" id="media_insert_button">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_text" translatable="yes">Insert the selected clips at the end of the timeline</property>
+        <property name="action_name">medialibrary.insert-assets-at-end</property>
+        <property name="label" translatable="yes">Insert at _End of Timeline</property>
+        <property name="use_underline">True</property>
+        <property name="icon_name">insert-object-symbolic</property>
+        <child internal-child="accessible">
+          <object class="AtkObject" id="media_insert_button-atkobject">
+            <property name="AtkObject::accessible-name">media_insert_button</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToggleToolButton" id="media_listview_button">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="tooltip_markup" translatable="yes">Show clips as a detailed list</property>
+        <property name="use_underline">True</property>
+        <property name="icon_name">view-list-symbolic</property>
+        <signal name="toggled" handler="_toggleViewTypeCb" swapped="no"/>
+        <child internal-child="accessible">
+          <object class="AtkObject" id="media_listview_button-atkobject">
+            <property name="AtkObject::accessible-name">media_listview_button</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolItem" id="toolbutton7">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_start">5</property>
+        <child>
+          <object class="GtkEntry" id="media_search_entry">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="margin_start">3</property>
+            <property name="invisible_char">•</property>
+            <property name="primary_icon_name">starred-symbolic</property>
+            <property name="secondary_icon_name">edit-clear-symbolic</property>
+            <property name="primary_icon_tooltip_text" translatable="yes" comments="This is used as a toolbar button tooltip. Here, &quot;select&quot; means &quot;find&quot; rather than &quot;choose&quot;. It is not the user who selects, but rather the user requesting the application to select the relevant items.">Select clips that have not been used in the project</property>
+            <property name="secondary_icon_tooltip_text" translatable="yes">Show all clips</property>
+            <property name="placeholder_text" translatable="yes">Search...</property>
+            <signal name="changed" handler="_searchEntryChangedCb" swapped="no"/>
+            <signal name="icon-release" handler="_searchEntryIconClickedCb" swapped="no"/>
+            <child internal-child="accessible">
+              <object class="AtkObject" id="media_search_entry-atkobject">
+                <property name="AtkObject::accessible-name">media_search_entry</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="homogeneous">True</property>
+      </packing>
+    </child>
+    <child internal-child="accessible">
+      <object class="AtkObject" id="medialibrary_toolbar-atkobject">
+        <property name="AtkObject::accessible-name">medialibrary_toolbar</property>
+      </object>
+    </child>
+  </object>
+  <object class="GtkInfoBar" id="warning_infobar">
+    <property name="visible">True</property>
+    <property name="app_paintable">True</property>
+    <property name="can_focus">False</property>
+    <property name="message_type">warning</property>
+    <property name="show_close_button">True</property>
+    <child internal-child="action_area">
+      <object class="GtkButtonBox" id="infobar-action_area3">
+        <property name="can_focus">False</property>
+        <property name="border_width">5</property>
+        <property name="spacing">6</property>
+        <property name="layout_style">end</property>
+        <child>
+          <object class="GtkButton" id="view_error_button">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child internal-child="content_area">
+      <object class="GtkBox" id="infobar-content_area3">
+        <property name="can_focus">False</property>
+        <property name="border_width">8</property>
+        <property name="spacing">16</property>
+        <child>
+          <object class="GtkLabel" id="warning_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="wrap">True</property>
+            <property name="xalign">0</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <action-widgets>
+      <action-widget response="-5">view_error_button</action-widget>
+    </action-widgets>
+  </object>
+  <object class="GtkInfoBar" id="welcome_infobar">
+    <property name="visible">True</property>
+    <property name="app_paintable">True</property>
+    <property name="can_focus">False</property>
+    <property name="message_type">other</property>
+    <child internal-child="action_area">
+      <object class="GtkButtonBox" id="infobar-action_area1">
+        <property name="can_focus">False</property>
+        <property name="border_width">5</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">6</property>
+        <property name="layout_style">end</property>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child internal-child="content_area">
+      <object class="GtkBox" id="infobar-content_area1">
+        <property name="can_focus">False</property>
+        <property name="border_width">8</property>
+        <property name="spacing">16</property>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Add media to your project by dragging files and folders here or by using the "Import" button.</property>
+            <property name="wrap">True</property>
+            <property name="xalign">0</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+  </object>
+</interface>

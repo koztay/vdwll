@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  gui-app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+     - "/home/kemal/.Xauthority:/root/.Xauthority:rw"
+    environment:
+      - DISPLAY=:0
+    network_mode: "host"
+    

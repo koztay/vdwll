@@ -1,0 +1,185 @@
+# lint Python modules using external checkers.
+#
+# This is the main checker controlling the other ones and the reports
+# generation. It is itself both a raw checker and an astng checker in order
+# to:
+# * handle message activation / deactivation at the module level
+# * handle some basic but necessary stats'data (number of classes, methods...)
+#
+[MASTER]
+
+# Python code to execute, usually for sys.path manipulation such as
+init-hook='import gi; gi.require_version("Gtk", "3.0"); gi.require_version("Gst", "1.0"); from gi.repository import Gst; Gst.init(None); gi.require_version("GES", "1.0"); from gi.repository import GES; GES.init()'
+
+[MESSAGES CONTROL]
+
+# Disable the message(s) with the given id(s).
+disable=E1101,W0142,locally-disabled,fixme,superfluous-parens,too-many-lines
+
+[VARIABLES]
+
+# A regular expression matching names used for dummy variables (i.e. not used).
+dummy-variables-rgx=_|dummy|unused_.*
+
+
+[BASIC]
+
+# Regular expression which should only match functions or classes name which do
+# not require a docstring
+no-docstring-rgx=((_.*)|(do_.*))
+
+# Regular expression which should only match correct module names
+module-rgx=(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
+
+# Regular expression which should only match correct module level names
+const-rgx=(([A-Z_][A-Z1-9_]*)|(__.*__))$
+
+# Regular expression which should only match correct class names
+class-rgx=[A-Z_][a-zA-Z0-9]+$
+
+# Regular expression which should only match correct function names
+function-rgx=[a-z_][a-z0-9_]{2,30}$
+
+# Regular expression which should only match correct method names
+method-rgx=[a-z_][a-zA-Z0-9_]{2,30}$
+
+# Naming hint for method names
+method-name-hint=[a-z_][a-zA-Z0-9_]{2,30}$
+
+# Regular expression which should only match correct instance attribute names
+attr-rgx=[a-z_][a-z0-9_]{2,30}$
+
+# Regular expression which should only match correct argument names
+argument-rgx=[a-z_][a-z0-9_]{1,30}$
+
+# Regular expression which should only match correct variable names
+variable-rgx=[a-z_][a-z0-9_]{1,30}$
+
+# Regular expression which should only match correct list comprehension /
+# generator expression variable names
+inlinevar-rgx=[A-Za-z_][A-Za-z0-9_]*$
+
+# Good variable names which should always be accepted, separated by a comma
+good-names=x,y,z,i,j,k,ex,Run,_
+
+# Bad variable names which should always be refused, separated by a comma
+bad-names=foo,bar,baz,toto,tutu,tata
+
+# List of builtins function names that should not be used, separated by a comma
+bad-functions=map,filter,apply,input
+
+
+# checks for sign of poor/misdesign:
+# * number of methods, attributes, local variables...
+# * size, complexity of functions, methods
+#
+[DESIGN]
+
+# Maximum number of arguments for function / method
+max-args=5
+
+# Maximum number of locals for function / method body
+max-locals=15
+
+# Maximum number of return / yield for function / method body
+max-returns=6
+
+# Maximum number of branch for function / method body
+max-branchs=12
+
+# Maximum number of statements in function / method body
+max-statements=50
+
+# Maximum number of parents for a class (see R0901).
+max-parents=7
+
+# Maximum number of attributes for a class (see R0902).
+max-attributes=7
+
+# Minimum number of public methods for a class (see R0903).
+min-public-methods=2
+
+# Maximum number of public methods for a class (see R0904).
+max-public-methods=20
+
+
+# checks for
+# * external modules dependencies
+# * relative / wildcard imports
+# * cyclic imports
+# * uses of deprecated modules
+#
+[IMPORTS]
+
+# Deprecated modules which should not be used, separated by a comma
+deprecated-modules=regsub,string,TERMIOS,Bastion,rexec
+
+# Create a graph of every (i.e. internal and external) dependencies in the
+# given file (report R0402 must not be disabled)
+import-graph=
+
+# Create a graph of external dependencies in the given file (report R0402 must
+# not be disabled)
+ext-import-graph=
+
+# Create a graph of internal dependencies in the given file (report R0402 must
+# not be disabled)
+int-import-graph=
+
+
+# checks for :
+# * methods without self as first argument
+# * overridden methods signature
+# * access only to existent members via self
+# * attributes not defined in the __init__ method
+# * supported interfaces implementation
+# * unreachable code
+#
+[CLASSES]
+
+# List of method names used to declare (i.e. assign) instance attributes.
+defining-attr-methods=__init__,__new__,setUp,_reset,_createUi,_addSource
+
+# checks for similarities and duplicated code. This computation may be
+# memory / CPU intensive, so you should disable it if you experiments some
+# problems.
+#
+[SIMILARITIES]
+
+# Minimum lines number of a similarity.
+min-similarity-lines=4
+
+# Ignore comments when computing similarities.
+ignore-comments=yes
+
+# Ignore docstrings when computing similarities.
+ignore-docstrings=yes
+
+
+# checks for:
+# * warning notes in the code like FIXME, XXX
+# * PEP 263: source code with non ascii character but no encoding declaration
+#
+[MISCELLANEOUS]
+
+# List of note tags to take in consideration, separated by a comma.
+notes=FIXME,XXX,TODO
+
+
+# checks for :
+# * unauthorized constructions
+# * strict indentation
+# * line length
+# * use of <> instead of !=
+#
+[FORMAT]
+
+# Maximum number of characters on a single line.
+max-line-length=120
+
+# Maximum number of lines in a module
+max-module-lines=1000
+
+# String used as indentation unit. This is usually " " (4 spaces) or "\t" (1
+# tab).
+indent-string='    '

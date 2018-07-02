@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+_Name=Pitivi
+_GenericName=Video Editor
+_Comment=Create and edit your own movies
+Exec=pitivi %f
+Terminal=false
+Type=Application
+Icon=pitivi
+Categories=GNOME;GTK;AudioVideo;Video;AudioVideoEditing;
+MimeType=text/x-xges;text/x-xptv;
+StartupNotify=true
+_Keywords=video;film;movie;editor;

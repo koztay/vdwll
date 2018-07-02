@@ -1,0 +1,62 @@
+Pitivi GES version
+Now with half the codebase and twice the power
+
+2012 - ...
+
+Maintained by Thibault Saunier, Jeff Fortin, Mathieu Duponchelle and Alex Băluț
+with the help of many contributors.
+
+A handwritten list here would be too long, be frequently outdated,
+and would not give their relative merit. Out of respect for our contributors,
+we point you instead to: http://ohloh.net/p/pitivi/contributors
+
+Or you can run: git shortlog -s -n
+
+===================================================
+
+PiTiVi Python Version
+Redone from scratch in Python (pygtk/gst-python)
+
+March 2005 - 2011
+
+Edward     HERVEY    <bilboed@bilboed.com>
+Alessandro Decina <alessandro.decina@collabora.co.uk>
+Brandon Lewis <brandon_lewis@berkeley.edu> (UI)
+Jeff Fortin <nekohayo@gmail.com> (UI)
+Thibault Saunier <tsaunier@gnome.org>
+Alex Băluț <alexandru.balut@gmail.com>
+
+Contributors:
+Christophe Sauthier <christophe.sauthier@gmail.com> (i18n)
+Laszlo Pandy <laszlok2@gmail.com> (UI)
+Ernst Persson  <ernstp@gmail.com> (UI)
+Richard Boulton <richard@tartarus.org>
+Thibaut Girka <thibaut.girka@free.fr> (UI)
+Johan Dahlin <jdahlin@async.com.br> (UI)
+Luca Della Santina <dellasantina@farm.unipi.it>
+Thijs Vermeir <thijsvermeir@gmail.com>
+Stephen Griffiths <scgmk5@gmail.com>
+
+==================================================
+
+PiTiVi C/GObject Version
+
+/!\ DISCONTINUED /!\
+
+available in PITIVI_C_IS_DEAD branch on cvs
+
+December 2003 - February 2005
+
+2003-2005
+Edward	   HERVEY    <hervey_e@epitech.net>
+Stephan    BLOCH     <bloch_s@epitech.net>
+Guillaume  CASANOVA  <casano_g@epitech.net>
+Marc	   DELETTREZ <delett_m@epitech.net>
+Raphael    PRALAT    <pralat_r@epitech.net>   
+
+2003-2004
+Julien     CARBONNIER <carbon_j@epitech.net>
+Loic       DUBART     <dubart_l@epitech.net>
+Heidy      HERY       <hery_h@epitech.net>
+
+==================================================

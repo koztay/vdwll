@@ -1,0 +1,156 @@
+# -*- coding: utf-8 -*-
+# Pitivi video editor
+# Copyright (c) 2010, Brandon Lewis <brandon.lewis@collabora.co.uk>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this program; if not, write to the
+# Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+# Boston, MA 02110-1301, USA.
+
+
+class RippleUpdateGroup(object):
+    """Allows for event-driven spreadsheet-like ripple updates.
+
+    Detects infinite loops.
+
+    This class allows you to express an event-driven sequence of operations in
+    terms of a directed graph. It is not a constraint solver: The goal is to
+    allow the programmer to reduce complex logic to a set of simple functions
+    and predicates combined declaratively.
+
+    Events propagate through the graph in breadth first order. During an
+    update cycle, each vertex is visited only once, so cycles can exist in the
+    graph without creating infinite loops.
+
+    Each vertex represents a unique object. The following may also be
+    associated with a vertex:
+
+        - the name of a signal on the object. when this signal fires, it
+          triggers an update cycle beginning at this object. during an update
+          cycle, further signal emissions from this or any other vertex will
+          be ignored to prevent infinite loops.
+
+        - an update function, which will be called when the vertex is visited
+          as part of an update cycle. It will not be called when the object
+          emits a signal.
+
+        - zero or more user-specified arguments, passed to the
+          update_function.
+
+    An edge between two vertices represents a sequence of operations. If an
+    edge exists from object A to object B, then whenever A is perfomred, B
+    should be performed too -- unless it has already been visited as part of
+    this update cycle.
+
+    In addition to a a pair of objects, each edge also has the following
+    associated with it:
+
+        - a predicate function. called during an update cycle when this edge
+          is reached, and before any other processing is done. If this
+          function returns false, it will be as if this edge otherwise did not
+          exist.
+
+        - a function to be called whenever the edge is visited during an update
+          cycle. this function will not be called if the condition function
+          returns False.
+
+    Attributes:
+        arcs (dict): A map from widget to a list of edges originating in
+            the widget.
+        update_funcs (dict): A map from widget to a (callable, args) tuple.
+    """
+
+    def __init__(self):
+        self.arcs = {}
+        self.update_funcs = {}
+        self.ignore_new_signals = False
+
+    def addVertex(self, widget, signal=None, update_func=None,
+                  update_func_args=()):
+        """Adds a widget to the list of vertices.
+
+        Args:
+            widget (Gtk.Widget): The vertex to be added.
+            signal (Optional[str]): A signal of the widget to be monitored.
+            update_func (Optional[function]): A callable object called when the
+                vertex is visited.
+            update_func_args (Optional[List]): The arguments for calling
+                update_func.
+        """
+        if signal:
+            widget.connect(signal, self._widgetValueChanged)
+        self.update_funcs[widget] = (update_func, update_func_args)
+        self.arcs[widget] = []
+
+    def addEdge(self, widget_a, widget_b, predicate=None, edge_func=None):
+        """Adds a directional edge from widget_a to widget_b.
+
+        Args:
+            widget_a (Gtk.Widget): The source vertex.
+            widget_b (Gtk.Widget): The target vertex.
+            predicate (Optional[function]): A callable object returning whether
+                the edge may be traversed.
+            edge_func (Optional[function]): A callable object called when the
+                edge is traversed.
+        """
+        self.arcs[widget_a].append((widget_b, predicate, edge_func))
+
+    def addBiEdge(self, widget_a, widget_b, predicate=None, edge_func=None):
+        """Adds a bidirectional edge between the specified vertices.
+
+        See `addEdge`.
+        """
+        self.addEdge(widget_a, widget_b, predicate, edge_func)
+        self.addEdge(widget_b, widget_a, predicate, edge_func)
+
+    def _widgetValueChanged(self, widget, *unused):
+        """Handles an event generated by the specified widget."""
+        if self.ignore_new_signals:
+            return
+
+        self.ignore_new_signals = True
+        try:
+            self._updateValues(widget)
+        finally:
+            self.ignore_new_signals = False
+
+    def _updateValues(self, widget):
+        """Traverses the graph starting from the specified vertex."""
+        # Initialize the list of (source_widget, arc) to be traversed.
+        queue = [(widget, arc) for arc in self.arcs[widget]]
+        visited = set([widget])
+        while queue:
+            source_widget, arc = queue.pop(0)
+            target_widget, predicate, edge_func = arc
+
+            # ignore nodes we've seen
+            if target_widget in visited:
+                continue
+
+            # check whether conditions permit this edge to be followed
+            if predicate and not predicate():
+                continue
+
+            # traverse the edge
+            if edge_func:
+                edge_func()
+
+            # visit the target node
+            update_func, update_func_args = self.update_funcs[target_widget]
+            if update_func:
+                update_func(source_widget, target_widget, *update_func_args)
+            visited.add(target_widget)
+
+            # enqueue children
+            for arc in self.arcs[target_widget]:
+                queue.append((target_widget, arc))

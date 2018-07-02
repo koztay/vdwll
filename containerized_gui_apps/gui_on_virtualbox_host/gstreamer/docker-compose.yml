@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  gstreamer:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+     - "/home/kemal/.Xauthority:/root/.Xauthority:rw"
+    environment:
+      - DISPLAY=:0
+    network_mode: "host"
+
+    stdin_open: true
+    tty: true
+    command: gst-launch-1.0 playbin uri=https://thepaciellogroup.github.io/AT-browser-tests//video/ElephantsDream.mp4
+
+#    command: /opt/play.sh
+    
