@@ -10,7 +10,7 @@ class PlaybackInterface:
         self.playing = False
 
         # A free example sound track
-        self.uri = "file:////Users/kemal/WorkSpace/Videowall Development/media/pixar.mp4"
+        self.uri = "file:///home/kemal/Videos/jason_statham.mp4"
 
         # GTK window and widgets
         self.window = Gtk.Window()

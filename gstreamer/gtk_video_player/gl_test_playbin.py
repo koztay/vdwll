@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
     pipeline = Gst.Pipeline()
     src = Gst.ElementFactory.make("playbin", "MediaPlayer")
-    src.set_property("uri", "file:///home/karnas-probook/Developer/media/webos.mp4")
+    src.set_property("uri", "file:///home/kemal/Videos/jason_statham.mp4")
     videosink = Gst.ElementFactory.make("glcontrol", None)
     src.set_property("video-sink", videosink)
     sink = Gst.ElementFactory.make("glimagesink", None)
@@ -40,7 +40,8 @@ if __name__ == "__main__":
         print("GL elements not available.")
         exit()
 
-    pipeline.add(src, sink)
+    pipeline.add(src)
+    pipeline.add(sink)
 
     src.link(sink)
 

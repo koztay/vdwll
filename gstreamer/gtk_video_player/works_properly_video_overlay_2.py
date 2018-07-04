@@ -62,7 +62,7 @@ class Video:
         fixed.show()
 
         pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(
-            "/Users/kemal/WorkSpace/Videowall Development/media/download.png", 250, 50)
+            "/home/kemal/Videos/saka.jpg", 250, 250)
         imgMPL = Gtk.Image()
         imgMPL.set_from_pixbuf(pixbuf)
         eb_imgMPL = Gtk.EventBox()
@@ -87,7 +87,7 @@ class Video:
         # used for connecting video to your application
         bus.connect("sync-message::element", on_sync_message)
         player.set_property(
-            "uri", "file:///Users/kemal/WorkSpace/Videowall Development/media/pixar.mp4")
+            "uri", "file:///home/kemal/Videos/jason_statham.mp4")
         player.set_state(gst.State.PLAYING)
 
 

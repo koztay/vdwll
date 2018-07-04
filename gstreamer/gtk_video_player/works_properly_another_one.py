@@ -5,7 +5,7 @@ gi.require_version('GstVideo', '1.0')
 gi.require_version('Gst', '1.0')
 gi.require_version('Gtk', '3.0')
 
-from gi.repository import GObject, Gtk, GdkX11, Gst, GstVideo
+from gi.repository import GObject, Gtk, GdkX11, Gst, GstVideo, Gdk
 
 GObject.threads_init()
 Gst.init(None)
@@ -20,6 +20,7 @@ win = Gtk.Window()
 fixed = Gtk.Fixed()
 fixed.set_halign(Gtk.Align.START)
 fixed.set_valign(Gtk.Align.START)
+
 
 win.add(fixed)
 fixed.show()
@@ -42,8 +43,17 @@ win.realize()
 win_id = win.get_window().get_xid()
 player.set_window_handle(win_id)
 
-win.show()
+# hide title bar
+win.get_window().set_decorations(Gdk.WMDecoration.BORDER)
 
+# show window
+win.show()
 player.set_state(Gst.State.PLAYING)
+
+# moves the window
+win.get_window().move(800, 800)
+
+# resizes the window
+win.get_window().resize(1280, 720)
 
 Gtk.main()

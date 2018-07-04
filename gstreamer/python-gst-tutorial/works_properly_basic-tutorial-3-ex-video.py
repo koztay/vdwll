@@ -33,8 +33,12 @@ class Player(object):
 
         # build the pipeline. we are NOT linking the source at this point.
         # will do it later
-        self.pipeline.add(self.source, self.audio_convert, self.audio_sink,
-                          self.video_convert, self.video_sink)
+        self.pipeline.add(self.source)
+        self.pipeline.add(self.audio_convert)
+        self.pipeline.add(self.audio_sink)
+        self.pipeline.add(self.video_convert)
+        self.pipeline.add(self.video_sink)
+
         if not self.audio_convert.link(self.audio_sink):
             print("ERROR: Could not link 'audioconvert' to 'audiosink'")
             sys.exit(1)
@@ -45,7 +49,7 @@ class Player(object):
 
         # set the URI to play
         self.source.set_property(
-            "uri", "file:///Users/kemal/WorkSpace/Videowall Development/media/pixar.mp4")
+            "uri", "file:///home/kemal/Videos/jason_statham.mp4")
 
         # connect to the pad-added signal
         self.source.connect("pad-added", self.on_pad_added)
@@ -129,6 +133,7 @@ class Player(object):
             print("Link succeeded (type '{0:s}')".format(new_pad_type))
 
         return
+
 
 if __name__ == '__main__':
     p = Player()

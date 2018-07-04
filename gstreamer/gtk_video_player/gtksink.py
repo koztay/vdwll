@@ -16,7 +16,7 @@ class GstWidget(Gtk.Box):
         self.connect('realize', self._on_realize)
         # self._bin = Gst.parse_bin_from_description('videotestsrc', True)
         self._bin = Gst.ElementFactory.make('playbin', 'MultimediaPlayer')
-        self._bin.set_property('uri', 'file:///home/karnas-probook/Developer/media/pixar.mp4')
+        self._bin.set_property('uri', 'file:///home/kemal/Videos/jason_statham.mp4')
 
     def _on_realize(self, widget):
         pipeline = Gst.Pipeline()

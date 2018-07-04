@@ -29,7 +29,7 @@ class Player(object):
 
         # set up URI
         self.playbin.set_property(
-            "uri", "file:///home/karnas-probook/Developer/media/pixar.mp4")
+            "uri", "file:///home/kemal/Videos/jason_statham.mp4")
 
         # connect to interesting signals in playbin
         self.playbin.connect("video-tags-changed", self.on_tags_changed)
@@ -127,8 +127,8 @@ class Player(object):
 
         # pass it to playbin, which implements XOverlay and will forward
         # it to the video sink
-        # self.playbin.set_window_handle(window_handle)
-        self.playbin.set_xwindow_id(window_handle)
+        self.playbin.set_window_handle(window_handle)
+        # self.playbin.set_xwindow_id(window_handle)
 
     # this function is called when the PLAY button is clicked
     def on_play(self, button):

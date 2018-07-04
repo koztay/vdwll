@@ -47,7 +47,11 @@ class GTK_Main:
         for ele in (source, demuxer, self.video_decoder, png_decoder, png_source, mixer,
                     self.audio_decoder, audioconv, audiosink, videosink, self.queuea, 
                     self.queuev, ffmpeg1, ffmpeg2, ffmpeg3, videobox, alphacolor):
-            self.player.add(ele)
+            try:
+                print(ele)
+                self.player.add(ele)
+            except:
+                pass
 
         source.link(demuxer)
 
@@ -96,7 +100,7 @@ class GTK_Main:
             self.button.set_label("Start")
         elif t == Gst.MessageType.ERROR:
             err, debug = message.parse_error()
-            print "Error: %s" % err, debug
+            print("Error: %s" % err, debug)
             self.player.set_state(Gst.State.NULL)
             self.button.set_label("Start")
 
@@ -112,13 +116,14 @@ class GTK_Main:
     def demuxer_callback(self, demuxer, pad):
         tpl_property = pad.get_property("template")
         tpl_name = tpl_property.name_template
-        print 'demuxer_callback: template name template: "%s"' % tpl_name
+        print('demuxer_callback: template name template: "%s"' % tpl_name)
         if tpl_name == "video_%02d":
             queuev_pad = self.queuev.get_pad("sink")
             pad.link(queuev_pad)
         elif tpl_name == "audio_%02d":
             queuea_pad = self.queuea.get_pad("sink")
             pad.link(queuea_pad)
+
 
 GObject.threads_init()
 Gst.init(None)        
