@@ -26,7 +26,9 @@
     <SUITE FILE_PATH="coverage/vdwll$another_one.coverage" NAME="another_one Coverage Results" MODIFIED="1530733700011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$h264_streamer.coverage" NAME="h264_streamer Coverage Results" MODIFIED="1529833157424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
     <SUITE FILE_PATH="coverage/Videowall_Development$01_playback_control_example.coverage" NAME="01_playback_control_example Coverage Results" MODIFIED="1529871517486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_06_Code_working" />
+    <SUITE FILE_PATH="coverage/vdwll$clutter_sink.coverage" NAME="clutter_sink Coverage Results" MODIFIED="1530735115832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$capabilities_example.coverage" NAME="capabilities-example Coverage Results" MODIFIED="1529916910881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/vdwll$embedded_on_window.coverage" NAME="embedded_on_window Coverage Results" MODIFIED="1530735346100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$gtk_player_example_1.coverage" NAME="gtk_player_example_1 Coverage Results" MODIFIED="1529957544934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$01_sample_window.coverage" NAME="01_sample_window Coverage Results" MODIFIED="1529692850935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
     <SUITE FILE_PATH="coverage/Videowall_Development$04_boxes.coverage" NAME="04_boxes Coverage Results" MODIFIED="1529746551575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
@@ -56,27 +58,40 @@
     <SUITE FILE_PATH="coverage/Videowall_Development$gst_video_overlay.coverage" NAME="gst_video_overlay Coverage Results" MODIFIED="1529832233485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$03_properties.coverage" NAME="03_properties Coverage Results" MODIFIED="1529695213626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="vdwll" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="embedded_on_window.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/embedded_on_window.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state relative-caret-position="611">
+              <caret line="102" column="10" lean-forward="true" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="10" />
+              <folding>
+                <element signature="e#23#37#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="another_one_works_properly.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/another_one_works_properly.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+      <file leaf-file-name="çalışma notlarım.ipynb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/çalışma notlarım.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="1" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -115,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
         <option value="$PROJECT_DIR$/gtk_tutorials/02_button.py" />
         <option value="$PROJECT_DIR$/gtk_tutorials/03_properties.py" />
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/video_overlay_2.py" />
@@ -124,7 +138,6 @@
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/gtk_player_example_1.py" />
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/gtk_player_example_2.py" />
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/gst_video_overlay.py" />
-        <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/embedded_on_window.py" />
         <option value="$PROJECT_DIR$/python_multimedia_book_codes/9781849510165_code/0165_07_Code/PlayingVideo.py" />
         <option value="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-2-ex-vertigo.py" />
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/pipeline_branch.py" />
@@ -166,6 +179,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/gtk2_video_player_1.py" />
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/another_one.py" />
+        <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/embedded_on_window.py" />
+        <option value="$PROJECT_DIR$/çalışma notlarım.ipynb" />
       </list>
     </option>
   </component>
@@ -225,17 +240,6 @@
               <item name="vdwll" type="b2602c69:ProjectViewProjectNode" />
               <item name="vdwll" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="vdwll" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vdwll" type="462c0819:PsiDirectoryNode" />
-              <item name="gstreamer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vdwll" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vdwll" type="462c0819:PsiDirectoryNode" />
-              <item name="gstreamer" type="462c0819:PsiDirectoryNode" />
-              <item name="gtk_video_player" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -275,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.another_one">
+  <component name="RunManager" selected="Python.embedded_on_window">
     <configuration name="copy_to_remote.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <module name="Videowall Development" />
       <option name="INTERPRETER_OPTIONS" value="bash" />
@@ -304,7 +308,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="gl_test_playbin" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="clutter_sink" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Videowall Development" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -317,7 +321,26 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/gtk_video_player/gl_test_playbin.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/gtk_video_player/clutter_sink.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="embedded_on_window" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Videowall Development" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/gtk_video_player/embedded_on_window.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -342,39 +365,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="gtk_player_example_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Videowall Development" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/gtk_video_player/gtk_player_example_1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list>
       <item itemvalue="Bash.copy_to_remote.sh" />
-      <item itemvalue="Python.gl_test_playbin" />
-      <item itemvalue="Python.gtk_player_example_1" />
       <item itemvalue="Python.gtk2_video_player_1" />
       <item itemvalue="Python.another_one" />
+      <item itemvalue="Python.clutter_sink" />
+      <item itemvalue="Python.embedded_on_window" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.embedded_on_window" />
+        <item itemvalue="Python.clutter_sink" />
         <item itemvalue="Python.another_one" />
         <item itemvalue="Python.gtk2_video_player_1" />
         <item itemvalue="Bash.copy_to_remote.sh" />
-        <item itemvalue="Python.gtk_player_example_1" />
-        <item itemvalue="Python.gl_test_playbin" />
       </list>
     </recent_temporary>
   </component>
@@ -402,21 +406,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="35" width="2746" height="1765" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32948717" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32948717" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32948717" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.352443" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49928468" visible="true" weight="0.27199462" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27012792" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35191405" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49928468" weight="0.27199462" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990775" visible="true" weight="0.27012792" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5009225" side_tool="true" weight="0.27012792" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -444,13 +449,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-3-ex-video.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -652,20 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/embedded_on_window.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="72" column="69" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/clutter_sink.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="27" column="55" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/copy_to_remote.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -777,8 +761,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/another_one_works_properly.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="297">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/clutter_sink.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/embedded_on_window.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="102" column="10" lean-forward="true" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="10" />
+          <folding>
+            <element signature="e#23#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/çalışma notlarım.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
         </state>
       </provider>
     </entry>
