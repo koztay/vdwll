@@ -19,17 +19,17 @@ class GstWidget(Gtk.Box):
 
     def _on_realize(self, widget):
         pipeline = Gst.Pipeline()
-        # factory = pipeline.get_factory()
-        # gtksink = factory.make('gtksink')
-        gtksink = Gst.ElementFactory.make('gtksink', 'gtksink')
-        # pipeline.add(gtksink)
+        factory = pipeline.get_factory()
+        gtksink = factory.make('gtksink')
+        # gtksink = Gst.ElementFactory.make('gtksink', 'gtksink')
+        pipeline.add(gtksink)
         self.player = Gst.ElementFactory.make('playbin', 'player')
         fakesink = Gst.ElementFactory.make("fakesink", "fakesink")
         print("player ney amk :", self.player)
         self.player.set_property("video-sink", fakesink)
 
 
-        self.uri = "file:///home/karnas-probook/Developer/media/pixar.mp4"
+        self.uri = "file:///home/kemal/Videos/jason_statham.mp4"
 
         pipeline.add(self.player)
         self.player.link(gtksink)

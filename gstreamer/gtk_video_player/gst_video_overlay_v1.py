@@ -25,12 +25,12 @@ if __name__ == "__main__":
     pipeline = Gst.Pipeline()
     # src = Gst.ElementFactory.make("gltestsrc", None)
     src = Gst.ElementFactory.make("playbin", "player")
-    src.set_property("uri", "file:///home/karnas-probook/Developer/media/pixar.mp4")
+    src.set_property("uri", "file:///home/kemal/Videoa/jason_statham.mp4")
     src.set_state(Gst.State.PLAYING)
     sink = Gst.ElementFactory.make("ximagesink", None)
 
     if not sink or not src:
-        print ("GL elements not available.")
+        print("GL elements not available.")
         exit()
 
     pipeline.add(src)

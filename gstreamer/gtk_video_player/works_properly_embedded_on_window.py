@@ -4,6 +4,9 @@ import sys, os
 import gi
 
 gi.require_version('Gst', '1.0')
+gi.require_version('Gtk', '3.0')
+gi.require_version('GstVideo', '1.0')
+
 from gi.repository import Gst, GObject, Gtk
 
 # Needed for window.get_xid(), xvimagesink.set_window_handle(), respectively:
@@ -90,7 +93,7 @@ class GTK_Main(object):
     def on_sync_message(self, bus, message):
         if message.get_structure().get_name() == 'prepare-window-handle':
             imagesink = message.src
-            imagesink.set_property("force-aspect-ratio", True)
+            imagesink.set_property("force-aspect-ratio", False)
             imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
 
 
