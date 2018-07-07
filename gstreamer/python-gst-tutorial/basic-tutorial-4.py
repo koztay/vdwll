@@ -35,7 +35,8 @@ class Player(object):
 
         # set the uri to play
         self.playbin.set_property(
-            "uri", "http://docs.gstreamer.com/media/sintel_trailer-480p.webm")
+            "uri", 'file:///Users/kemal/WorkSpace/Videowall\ Development/media/webos.mp4')
+        # player.set_property('uri', 'file:///Users/kemal/WorkSpace/Videowall\ Development/media/webos.mp4')
 
     def play(self):
         # dont start again if we are already playing
