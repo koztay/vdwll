@@ -18,7 +18,11 @@ import os
 import sys
 import traceback
 
-import Xlib.rdb, Xlib.X, Xlib.XK
+
+import Xlib.rdb  # pip install python3_xlib
+import Xlib.X  # pip install python3_xlib
+import Xlib.XK  # pip install python3_xlib
+
 
 REQUIRED_XLIB_VERSION = (0, 14)
 MAX_EXCEPTIONS = 25
@@ -26,8 +30,10 @@ XTERM_COMMAND = ['/usr/bin/xterm']
 
 RELEASE_MODIFIER = Xlib.X.AnyModifier << 1
 
+
 class NoUnmanagedScreens(Exception):
     pass
+
 
 class WM(object):
     def __init__(self, display):
@@ -40,7 +46,7 @@ class WM(object):
         self.enter_codes = set(code for code, index in self.display.keysym_to_keycodes(Xlib.XK.XK_Return))
 
         self.screens = []
-        for screen_id in xrange(0, display.screen_count()):
+        for screen_id in range(0, display.screen_count()):
             if self.redirect_screen_events(screen_id):
                 self.screens.append(screen_id)
 
@@ -85,7 +91,7 @@ class WM(object):
 
         # Find all existing windows.
         for window in root_window.query_tree().children:
-            print 'Grabbing mouse motion events for window {0}'.format(window)
+            print('Grabbing mouse motion events for window {0}'.format(window))
             self.grab_window_events(window)
 
         return True
@@ -123,7 +129,7 @@ class WM(object):
             handler = self.event_dispatch_table[event.type]
             handler(event)
         else:
-            print 'unhandled event: {event}'.format(event=event)
+            print('unhandled event: {event}'.format(event=event))
 
     def handle_configure_request(self, event):
         window = event.window
@@ -213,7 +219,7 @@ class WM(object):
             maxfd = resource.getrlimit(resource.RLIMIT_NOFILE)[1]
             if maxfd == resource.RLIM_INFINITY:
                 maxfd = 1024
-            for fd in xrange(maxfd):
+            for fd in range(maxfd):
                 try:
                     os.close(fd)
                 except OSError:
@@ -228,15 +234,17 @@ class WM(object):
         except:
             try:
                 # Error in child process.
-                print >> sys.stderr, 'Error in child process:'
+                print(sys.stderr, 'Error in child process:')
                 traceback.print_exc()
             except:
                 pass
             sys.exit(1)
 
+
 def main():
     if Xlib.__version__ < REQUIRED_XLIB_VERSION:
-        print >> sys.stderr, 'Xlib version 0.14 is required, {ver} was found'.format(ver='.'.join(str(i) for i in Xlib.__version__))
+        print(sys.stderr,
+              'Xlib version 0.14 is required, {ver} was found'.format(ver='.'.join(str(i) for i in Xlib.__version__)))
         return 2
 
     display, appname, resource_database, args = Xlib.rdb.get_display_opts(Xlib.rdb.stdopts)
@@ -244,19 +252,20 @@ def main():
     try:
         wm = WM(display)
     except NoUnmanagedScreens:
-        print >> sys.stderr, 'No unmanaged screens found'
+        print(sys.stderr, 'No unmanaged screens found')
         return 2
 
     try:
         wm.main_loop()
     except KeyboardInterrupt:
-        print
+        print()
         return 0
     except SystemExit:
         raise
     except:
         traceback.print_exc()
         return 1
+
 
 if __name__ == '__main__':
     sys.exit(main())

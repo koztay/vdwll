@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import *  # sudo apt-get install python3-tk
 
 root = Tk()
 
