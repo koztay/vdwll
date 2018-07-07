@@ -35,7 +35,8 @@ player = Gst.ElementFactory.make('playbin', 'MultimediaPlayer')
 
 bus = player.get_bus()
 
-player.set_property('uri', 'file:////home/kemal/Videos/jason_statham.mp4')
+# player.set_property('uri', 'file:///home/kemal/Videos/jason_statham.mp4')
+player.set_property('uri', 'file:///Users/kemal/WorkSpace/Videowall\ Development/media/webos.mp4')
 
 # win.connect('realize', on_realize)
 win.realize()
@@ -52,6 +53,9 @@ player.set_state(Gst.State.PLAYING)
 
 # moves the window
 win.get_window().move(800, 800)
+
+# set position : https://www.youtube.com/watch?v=3z3NMkqBCZ8
+win.get_window().set_position(Gtk.WIN_POS_CENTER)
 
 # resizes the window
 win.get_window().resize(1280, 720)
