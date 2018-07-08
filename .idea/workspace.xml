@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ede51dc6-c3a3-4137-b807-ac75cce088a2" name="Default" comment="" />
+    <list default="true" id="ede51dc6-c3a3-4137-b807-ac75cce088a2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/helpers/command_line_examples.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,12 +46,13 @@
     <SUITE FILE_PATH="coverage/Videowall_Development$recording_audio.coverage" NAME="recording_audio Coverage Results" MODIFIED="1529868509729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code_working" />
     <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_3_ex_video.coverage" NAME="basic-tutorial-3-ex-video Coverage Results" MODIFIED="1529772784682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
     <SUITE FILE_PATH="coverage/Videowall_Development$pipeline_branch.coverage" NAME="pipeline_branch Coverage Results" MODIFIED="1529762164007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$videomixer_example.coverage" NAME="videomixer-example Coverage Results" MODIFIED="1530738922622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_7.coverage" NAME="basic-tutorial-7 Coverage Results" MODIFIED="1530738029447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/vdwll$videomixer_example.coverage" NAME="videomixer-example Coverage Results" MODIFIED="1531063996144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_7.coverage" NAME="basic-tutorial-7 Coverage Results" MODIFIED="1531064364817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
     <SUITE FILE_PATH="coverage/Videowall_Development$gtksink.coverage" NAME="gtksink Coverage Results" MODIFIED="1529930791441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$gst_player_decodebin.coverage" NAME="gst_player_decodebin Coverage Results" MODIFIED="1529838944417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_5.coverage" NAME="basic-tutorial-5 Coverage Results" MODIFIED="1529772646320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/vdwll$works_properly_another_one.coverage" NAME="works_properly_another_one Coverage Results" MODIFIED="1530740359216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$works_properly_gst_video_overlay.coverage" NAME="works_properly_gst_video_overlay Coverage Results" MODIFIED="1531071299089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$works_properly_another_one.coverage" NAME="works_properly_another_one Coverage Results" MODIFIED="1531071267213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$playbin_example_audio.coverage" NAME="playbin-example-audio Coverage Results" MODIFIED="1529832108365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
     <SUITE FILE_PATH="coverage/vdwll$pipeline_branch_example.coverage" NAME="pipeline-branch-example Coverage Results" MODIFIED="1530737977958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
     <SUITE FILE_PATH="coverage/vdwll$test_video_area_gtk3_python3.coverage" NAME="test-video-area-gtk3_python3 Coverage Results" MODIFIED="1530738525949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
@@ -73,6 +82,7 @@
     <SUITE FILE_PATH="coverage/vdwll$tkinter_window_position.coverage" NAME="tkinter_window_position Coverage Results" MODIFIED="1530996961993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
     <SUITE FILE_PATH="coverage/Videowall_Development$pipeline_branch_example.coverage" NAME="pipeline-branch-example Coverage Results" MODIFIED="1529772341140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
     <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_7.coverage" NAME="basic-tutorial-7 Coverage Results" MODIFIED="1529772601182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/vdwll$works_properly_video_overlay_2.coverage" NAME="works_properly_video_overlay_2 Coverage Results" MODIFIED="1531071815337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/vdwll$gst_video_overlay.coverage" NAME="gst_video_overlay Coverage Results" MODIFIED="1530737022404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$capabilities_playbin_example.coverage" NAME="capabilities-playbin-example Coverage Results" MODIFIED="1529771435844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
     <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_2.coverage" NAME="basic_tutorial_2 Coverage Results" MODIFIED="1529832041332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gstreamer_official_tuts" />
@@ -89,20 +99,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="simplewm.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/helpers/simplewm.py">
+      <file leaf-file-name="videomixer-example.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="22" column="38" lean-forward="true" selection-start-line="20" selection-end-line="23" selection-end-column="42" />
+            <state relative-caret-position="1584">
+              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xwindow_move.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/helpers/xwindow_move.py">
+      <file leaf-file-name="basic-tutorial-7.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="2838">
+              <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+              <folding>
+                <element signature="e#20#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basic-tutorial-6.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-6.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="858">
+              <caret line="134" column="28" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="28" />
+              <folding>
+                <element signature="e#24#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="command_line_examples.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/helpers/command_line_examples.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="works_properly_another_one.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="15" selection-start-line="15" selection-end-line="17" selection-end-column="36" />
+              <folding>
+                <element signature="e#23#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="works_properly_video_overlay_2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -153,9 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-2-ex-vertigo.py" />
-        <option value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/capabilities-resolution-example.py" />
-        <option value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/capabilities-playbin-example.py" />
         <option value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/dynamic-ghostpad-example.py" />
         <option value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/pipeline-branch-example.py" />
         <option value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/playbin-example-video.py" />
@@ -196,14 +260,17 @@
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/video_overlay_2.py" />
         <option value="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-5.py" />
         <option value="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-3-ex-video.py" />
-        <option value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py" />
         <option value="$PROJECT_DIR$/çalışma notlarım.ipynb" />
-        <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/helpers/tkinter_window_position.py" />
         <option value="$PROJECT_DIR$/helpers/tkinter_geometry.py" />
         <option value="$PROJECT_DIR$/helpers/simplewm.py" />
         <option value="$PROJECT_DIR$/helpers/xwindow_move.py" />
+        <option value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py" />
+        <option value="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py" />
+        <option value="$PROJECT_DIR$/helpers/command_line_examples.txt" />
+        <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py" />
+        <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py" />
       </list>
     </option>
   </component>
@@ -272,7 +339,12 @@
             <path>
               <item name="vdwll" type="b2602c69:ProjectViewProjectNode" />
               <item name="vdwll" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="gstreamer" type="462c0819:PsiDirectoryNode" />
+              <item name="gtk_video_player" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vdwll" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -313,66 +385,47 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.xwindow_move">
-    <configuration name="simplewm" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Videowall Development" />
+  <component name="RunManager" selected="Python.works_properly_video_overlay_2">
+    <configuration name="basic-tutorial-7" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vdwll" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/helpers" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpers/simplewm.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="tkinter_geometry" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Videowall Development" />
+    <configuration name="videomixer-example" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vdwll" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/helpers" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpers/tkinter_geometry.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="tkinter_window_position" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Videowall Development" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/helpers" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpers/tkinter_window_position.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="works_properly_another_one" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Videowall Development" />
+      <module name="vdwll" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -390,39 +443,58 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="xwindow_move" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Videowall Development" />
+    <configuration name="works_properly_gst_video_overlay" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vdwll" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/helpers" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gstreamer/gtk_video_player" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpers/xwindow_move.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_gst_video_overlay.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="works_properly_video_overlay_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vdwll" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
+      <item itemvalue="Python.videomixer-example" />
+      <item itemvalue="Python.basic-tutorial-7" />
       <item itemvalue="Python.works_properly_another_one" />
-      <item itemvalue="Python.tkinter_geometry" />
-      <item itemvalue="Python.tkinter_window_position" />
-      <item itemvalue="Python.simplewm" />
-      <item itemvalue="Python.xwindow_move" />
+      <item itemvalue="Python.works_properly_gst_video_overlay" />
+      <item itemvalue="Python.works_properly_video_overlay_2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.xwindow_move" />
-        <item itemvalue="Python.simplewm" />
-        <item itemvalue="Python.tkinter_window_position" />
-        <item itemvalue="Python.tkinter_geometry" />
+        <item itemvalue="Python.works_properly_video_overlay_2" />
+        <item itemvalue="Python.works_properly_gst_video_overlay" />
         <item itemvalue="Python.works_properly_another_one" />
+        <item itemvalue="Python.basic-tutorial-7" />
+        <item itemvalue="Python.videomixer-example" />
       </list>
     </recent_temporary>
   </component>
@@ -449,7 +521,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="134" y="35" width="2746" height="1765" extended-state="6" />
+    <frame x="110" y="35" width="2770" height="1765" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32948717" />
@@ -458,8 +530,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32948717" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32948717" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35191405" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49928468" weight="0.27199462" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990775" visible="true" weight="0.21896163" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49928468" weight="0.38482204" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990775" visible="true" weight="0.31394482" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -470,9 +542,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,10 +557,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_gst_video_overlay.py</url>
-          <line>2</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/gstreamer/gtk_video_player/gst_video_overlay_v1.py</url>
           <line>2</line>
           <option name="timeStamp" value="1" />
@@ -498,20 +566,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code_working/recording_audio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="225" lean-forward="true" selection-start-line="225" selection-end-line="225" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code_working/audio_converter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="350" column="26" selection-start-line="350" selection-start-column="26" selection-end-line="350" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_06_Code_working/01_playback_control_example.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -644,16 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_gst_video_overlay.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding>
-            <element signature="e#24#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/media_player.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4257">
@@ -689,36 +733,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/pipeline_branch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="107" column="27" selection-start-line="107" selection-start-column="27" selection-end-line="107" selection-end-column="27" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-6.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="134" column="28" lean-forward="true" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/helper.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/works_properly_basic-tutorial-5.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -773,24 +793,10 @@
     <entry file="file://$PROJECT_DIR$/gstreamer/pygst-tutorial-org/gst-inspect-playbin.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/çalışma notlarım.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
@@ -818,6 +824,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/xwindow_move.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/simplewm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
@@ -825,10 +838,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/xwindow_move.py">
+    <entry file="file://$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="1584">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2838">
+          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+          <folding>
+            <element signature="e#20#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="134" column="28" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="28" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/command_line_examples.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_gst_video_overlay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding>
+            <element signature="e#24#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-4.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="15" selection-start-line="15" selection-end-line="17" selection-end-column="36" />
+          <folding>
+            <element signature="e#23#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
         </state>
       </provider>
     </entry>
