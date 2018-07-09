@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ede51dc6-c3a3-4137-b807-ac75cce088a2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/douglas_bagnall_codes/talkative_pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/douglas_bagnall_codes/useless_pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +27,10 @@
     <SUITE FILE_PATH="coverage/vdwll$playbin_example_video.coverage" NAME="playbin-example-video Coverage Results" MODIFIED="1530738614620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
     <SUITE FILE_PATH="coverage/vdwll$tkinter_window_position.coverage" NAME="tkinter_window_position Coverage Results" MODIFIED="1530996961993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
     <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_3_ex_video.coverage" NAME="basic-tutorial-3-ex-video Coverage Results" MODIFIED="1530738417605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$simple_pipeline_2.coverage" NAME="simple_pipeline_2 Coverage Results" MODIFIED="1531142101522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/douglas_bagnall_codes" />
     <SUITE FILE_PATH="coverage/Videowall_Development$playing_audio_method_from_web.coverage" NAME="playing_audio_method_from_web Coverage Results" MODIFIED="1529860253801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code" />
     <SUITE FILE_PATH="coverage/Videowall_Development$gtksink.coverage" NAME="gtksink Coverage Results" MODIFIED="1529930791441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$talkative_pipeline__1_.coverage" NAME="talkative_pipeline (1) Coverage Results" MODIFIED="1531144015110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/douglas_bagnall_codes" />
     <SUITE FILE_PATH="coverage/Videowall_Development$dynamic_ghostpad_example.coverage" NAME="dynamic-ghostpad-example Coverage Results" MODIFIED="1529771988843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
     <SUITE FILE_PATH="coverage/Videowall_Development$gst_video_overlay_v1.coverage" NAME="gst_video_overlay_v1 Coverage Results" MODIFIED="1529832238035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/vdwll$test_video_area_gtk3_python3.coverage" NAME="test-video-area-gtk3_python3 Coverage Results" MODIFIED="1530738525949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
@@ -45,6 +52,7 @@
     <SUITE FILE_PATH="coverage/vdwll$embedded_on_window.coverage" NAME="embedded_on_window Coverage Results" MODIFIED="1530736283684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$pipeline_branch_example.coverage" NAME="pipeline-branch-example Coverage Results" MODIFIED="1529772341140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
     <SUITE FILE_PATH="coverage/Videowall_Development$capabilities_playbin_example.coverage" NAME="capabilities-playbin-example Coverage Results" MODIFIED="1529771435844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$talkative_pipeline.coverage" NAME="talkative_pipeline Coverage Results" MODIFIED="1531141598122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/douglas_bagnall_codes" />
     <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_3_ex_video.coverage" NAME="basic-tutorial-3-ex-video Coverage Results" MODIFIED="1529772784682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
     <SUITE FILE_PATH="coverage/vdwll$works_properly_another_one.coverage" NAME="works_properly_another_one Coverage Results" MODIFIED="1531071267213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/vdwll$gst_video_overlay_v1.coverage" NAME="gst_video_overlay_v1 Coverage Results" MODIFIED="1530737146335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
@@ -70,6 +78,7 @@
     <SUITE FILE_PATH="coverage/vdwll$gtk_player_example_1.coverage" NAME="gtk_player_example_1 Coverage Results" MODIFIED="1530737208714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$helloworld.coverage" NAME="helloworld Coverage Results" MODIFIED="1531127742093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gst-python-master/examples" />
     <SUITE FILE_PATH="coverage/Videowall_Development$PlayingVideo_1_0.coverage" NAME="PlayingVideo_1.0 Coverage Results" MODIFIED="1529874054102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_07_Code" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$useless_pipeline.coverage" NAME="useless_pipeline Coverage Results" MODIFIED="1531143376126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/douglas_bagnall_codes" />
     <SUITE FILE_PATH="coverage/Videowall_Development$recording_audio.coverage" NAME="recording_audio Coverage Results" MODIFIED="1529868509729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code_working" />
     <SUITE FILE_PATH="coverage/vdwll$gst_video_overlay.coverage" NAME="gst_video_overlay Coverage Results" MODIFIED="1530737022404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$gtk_player_example_1.coverage" NAME="gtk_player_example_1 Coverage Results" MODIFIED="1529957544934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
@@ -83,9 +92,11 @@
     <SUITE FILE_PATH="coverage/vdwll$video_overlay_2.coverage" NAME="video_overlay_2 Coverage Results" MODIFIED="1530737889797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/vdwll$tkinter_geometry.coverage" NAME="tkinter_geometry Coverage Results" MODIFIED="1530996732427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
     <SUITE FILE_PATH="coverage/vdwll$pipeline_branch_example.coverage" NAME="pipeline-branch-example Coverage Results" MODIFIED="1530737977958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$simple_pipeline_3.coverage" NAME="simple_pipeline_3 Coverage Results" MODIFIED="1531142587873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/douglas_bagnall_codes" />
     <SUITE FILE_PATH="coverage/Videowall_Development$04_boxes.coverage" NAME="04_boxes Coverage Results" MODIFIED="1529746551575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
     <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_6.coverage" NAME="basic-tutorial-6 Coverage Results" MODIFIED="1529772631664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
     <SUITE FILE_PATH="coverage/Videowall_Development$clutter_sink.coverage" NAME="clutter_sink Coverage Results" MODIFIED="1529937421367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$works_properly_another_one.coverage" NAME="works_properly_another_one Coverage Results" MODIFIED="1531140542876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_6.coverage" NAME="basic-tutorial-6 Coverage Results" MODIFIED="1530738035145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
     <SUITE FILE_PATH="coverage/Videowall_Development$test_video_area_gtk3.coverage" NAME="test-video-area-gtk3 Coverage Results" MODIFIED="1529929184904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
     <SUITE FILE_PATH="coverage/Videowall_Development$PlayingVideo.coverage" NAME="PlayingVideo Coverage Results" MODIFIED="1529757942612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/9781849510165_code/0165_07_Code" />
@@ -94,12 +105,74 @@
     <favorites_list name="vdwll" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="simple_pipeline.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simple_pipeline_2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="8" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simple_pipeline_3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="82">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="useless_pipeline.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/useless_pipeline.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="talkative_pipeline.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/talkative_pipeline.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -140,10 +213,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/pipeline-branch-example.py" />
-        <option value="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/playbin-example-video.py" />
-        <option value="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-4.py" />
-        <option value="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-3.py" />
         <option value="$PROJECT_DIR$/gstreamer/hello_world.py" />
         <option value="$PROJECT_DIR$/gstreamer-tutorial-with-docker/docker/gstreamer/Dockerfile" />
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/media_player.py" />
@@ -191,6 +260,10 @@
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py" />
         <option value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py" />
         <option value="$PROJECT_DIR$/helpers/clock.py" />
+        <option value="$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_2.py" />
+        <option value="$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_3.py" />
+        <option value="$PROJECT_DIR$/douglas_bagnall_codes/useless_pipeline.py" />
+        <option value="$PROJECT_DIR$/douglas_bagnall_codes/talkative_pipeline.py" />
       </list>
     </option>
   </component>
@@ -206,7 +279,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="height" value="570" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -253,6 +326,16 @@
             </path>
             <path>
               <item name="Videowall Development" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Videowall Development" type="462c0819:PsiDirectoryNode" />
+              <item name="douglas_bagnall_codes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Videowall Development" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Videowall Development" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Videowall Development" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -270,15 +353,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/media" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gstreamer/gtk_video_player" />
       <recent name="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_07_Code" />
       <recent name="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code" />
       <recent name="$PROJECT_DIR$/python_multimedia_book_codes" />
       <recent name="$PROJECT_DIR$/python_multimedia_book_codes/9781849510165_code/0165_07_Code" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pdfs" />
+      <recent name="$PROJECT_DIR$/media" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -293,8 +377,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.clock">
-    <configuration name="clock" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.talkative_pipeline (1)">
+    <configuration name="simple_pipeline_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Videowall Development" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -302,18 +386,18 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/helpers" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/douglas_bagnall_codes" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpers/clock.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="helloworld" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="simple_pipeline_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Videowall Development" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -321,88 +405,88 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gst-python-master/examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/douglas_bagnall_codes" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gst-python-master/examples/helloworld.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="works_properly_another_one" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="vdwll" />
+    <configuration name="talkative_pipeline (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Videowall Development" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/douglas_bagnall_codes" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/douglas_bagnall_codes/talkative_pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="works_properly_gst_video_overlay" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="vdwll" />
+    <configuration name="talkative_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Videowall Development" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/douglas_bagnall_codes" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_gst_video_overlay.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="works_properly_video_overlay_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="vdwll" />
+    <configuration name="useless_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Videowall Development" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/douglas_bagnall_codes" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/douglas_bagnall_codes/useless_pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.works_properly_another_one" />
-      <item itemvalue="Python.works_properly_gst_video_overlay" />
-      <item itemvalue="Python.works_properly_video_overlay_2" />
-      <item itemvalue="Python.helloworld" />
-      <item itemvalue="Python.clock" />
+      <item itemvalue="Python.talkative_pipeline" />
+      <item itemvalue="Python.simple_pipeline_2" />
+      <item itemvalue="Python.simple_pipeline_3" />
+      <item itemvalue="Python.useless_pipeline" />
+      <item itemvalue="Python.talkative_pipeline (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.clock" />
-        <item itemvalue="Python.helloworld" />
-        <item itemvalue="Python.works_properly_video_overlay_2" />
-        <item itemvalue="Python.works_properly_gst_video_overlay" />
-        <item itemvalue="Python.works_properly_another_one" />
+        <item itemvalue="Python.talkative_pipeline (1)" />
+        <item itemvalue="Python.useless_pipeline" />
+        <item itemvalue="Python.simple_pipeline_3" />
+        <item itemvalue="Python.simple_pipeline_2" />
+        <item itemvalue="Python.talkative_pipeline" />
       </list>
     </recent_temporary>
   </component>
@@ -430,15 +514,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32948717" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32948717" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32948717" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35128206" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49928468" visible="true" weight="0.3846154" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990775" visible="true" weight="0.28683835" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22692308" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49928468" weight="0.2991014" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990775" visible="true" weight="0.29971388" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -473,39 +558,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_07_Code/PlayingVideo_1.0.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="170" column="48" lean-forward="true" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_07_Code/PlayingVideo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/vlc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11748" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_07_Code/PlayingVideo_1.0_gtksink.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="226" column="19" selection-start-line="226" selection-start-column="19" selection-end-line="226" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/copy_to_remote.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/vlc_sample.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1768">
@@ -693,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="138" column="5" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/tkinter_window_position.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -776,13 +821,6 @@
     <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-4.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -806,6 +844,70 @@
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#23#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/useless_pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/simple_pipeline_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/douglas_bagnall_codes/talkative_pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
