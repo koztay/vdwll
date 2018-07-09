@@ -41,8 +41,16 @@ def main():
 
     # link all elements that can be automatically linked because they have
     # always pads
-    pipeline.add(audio_source, tee, audio_queue, audio_convert, audio_resample,
-                 audio_sink, video_queue, visual, video_convert, video_sink)
+    pipeline.add(audio_source)
+    pipeline.add(tee)
+    pipeline.add(audio_queue)
+    pipeline.add(audio_convert)
+    pipeline.add(audio_resample)
+    pipeline.add(audio_sink)
+    pipeline.add(video_queue)
+    pipeline.add(visual)
+    pipeline.add(video_convert)
+    pipeline.add(video_sink)
 
     ret = audio_source.link(tee)
     ret = ret and audio_queue.link(audio_convert)
@@ -100,6 +108,7 @@ def main():
             break
 
     pipeline.set_state(Gst.State.NULL)
+
 
 if __name__ == '__main__':
     main()

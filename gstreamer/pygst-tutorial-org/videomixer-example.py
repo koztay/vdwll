@@ -33,7 +33,7 @@ class GTK_Main:
         png_source = Gst.ElementFactory.make("filesrc", "png-source")
         png_source.set_property("location", os.path.realpath("tvlogo.png"))
         mixer = Gst.ElementFactory.make("videomixer", "mixer")
-        self.audio_decoder = Gst.ElementFactory.make("mad", "audio-decoder")
+        self.audio_decoder = Gst.ElementFactory.make("mpg123audiodec", "audio-decoder")
         audioconv = Gst.ElementFactory.make("audioconvert", "converter")
         audiosink = Gst.ElementFactory.make("autoaudiosink", "audio-output")
         videosink = Gst.ElementFactory.make("autovideosink", "video-output")
