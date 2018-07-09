@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ede51dc6-c3a3-4137-b807-ac75cce088a2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/helpers/command_line_examples.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py" beforeDir="false" afterPath="$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py" afterDir="false" />
-    </list>
+    <list default="true" id="ede51dc6-c3a3-4137-b807-ac75cce088a2" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,163 +10,87 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Videowall_Development$PlayingVideo_1_0.coverage" NAME="PlayingVideo_1.0 Coverage Results" MODIFIED="1529874054102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_07_Code" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$gl_test_playbin.coverage" NAME="gl_test_playbin Coverage Results" MODIFIED="1529955136764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$raspbian_glimage_sink.coverage" NAME="raspbian_glimage_sink Coverage Results" MODIFIED="1529953593300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_3.coverage" NAME="basic-tutorial-3 Coverage Results" MODIFIED="1529772836316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$05_grid.coverage" NAME="05_grid Coverage Results" MODIFIED="1529746563625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
-    <SUITE FILE_PATH="coverage/vdwll$simplewm.coverage" NAME="simplewm Coverage Results" MODIFIED="1530997574112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
-    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_5.coverage" NAME="basic-tutorial-5 Coverage Results" MODIFIED="1530738114527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/vdwll$pipeline_branch.coverage" NAME="pipeline_branch Coverage Results" MODIFIED="1530737617238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$h264_streamer.coverage" NAME="h264_streamer Coverage Results" MODIFIED="1529833157424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$01_playback_control_example.coverage" NAME="01_playback_control_example Coverage Results" MODIFIED="1529871517486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_06_Code_working" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$capabilities_example.coverage" NAME="capabilities-example Coverage Results" MODIFIED="1529916910881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/vdwll$embedded_on_window.coverage" NAME="embedded_on_window Coverage Results" MODIFIED="1530736283684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$gtk_player_example_1.coverage" NAME="gtk_player_example_1 Coverage Results" MODIFIED="1529957544934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$xwindow_move.coverage" NAME="xwindow_move Coverage Results" MODIFIED="1531001810532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_6.coverage" NAME="basic-tutorial-6 Coverage Results" MODIFIED="1529772631664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/vdwll$h264_streamer.coverage" NAME="h264_streamer Coverage Results" MODIFIED="1530738571233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$audio_converter.coverage" NAME="audio_converter Coverage Results" MODIFIED="1529861133786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code" />
-    <SUITE FILE_PATH="coverage/vdwll$tkinter_geometry.coverage" NAME="tkinter_geometry Coverage Results" MODIFIED="1530996732427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$video_overlay_2.coverage" NAME="video_overlay_2 Coverage Results" MODIFIED="1529747472751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$gtk_player_example_2.coverage" NAME="gtk_player_example_2 Coverage Results" MODIFIED="1530737356209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$dynamic_ghostpad_example.coverage" NAME="dynamic-ghostpad-example Coverage Results" MODIFIED="1529771988843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_6.coverage" NAME="basic-tutorial-6 Coverage Results" MODIFIED="1530738035145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$gst_video_overlay_v1.coverage" NAME="gst_video_overlay_v1 Coverage Results" MODIFIED="1529832238035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_4.coverage" NAME="basic-tutorial-4 Coverage Results" MODIFIED="1529772737788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/vdwll$media_player.coverage" NAME="media_player Coverage Results" MODIFIED="1530737471199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$recording_audio.coverage" NAME="recording_audio Coverage Results" MODIFIED="1529868509729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code_working" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_3_ex_video.coverage" NAME="basic-tutorial-3-ex-video Coverage Results" MODIFIED="1529772784682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$pipeline_branch.coverage" NAME="pipeline_branch Coverage Results" MODIFIED="1529762164007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$videomixer_example.coverage" NAME="videomixer-example Coverage Results" MODIFIED="1531063996144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_7.coverage" NAME="basic-tutorial-7 Coverage Results" MODIFIED="1531064364817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$gtksink.coverage" NAME="gtksink Coverage Results" MODIFIED="1529930791441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$gst_player_decodebin.coverage" NAME="gst_player_decodebin Coverage Results" MODIFIED="1529838944417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_5.coverage" NAME="basic-tutorial-5 Coverage Results" MODIFIED="1529772646320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/vdwll$works_properly_gst_video_overlay.coverage" NAME="works_properly_gst_video_overlay Coverage Results" MODIFIED="1531071299089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$works_properly_another_one.coverage" NAME="works_properly_another_one Coverage Results" MODIFIED="1531071267213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$playbin_example_audio.coverage" NAME="playbin-example-audio Coverage Results" MODIFIED="1529832108365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/vdwll$pipeline_branch_example.coverage" NAME="pipeline-branch-example Coverage Results" MODIFIED="1530737977958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/vdwll$test_video_area_gtk3_python3.coverage" NAME="test-video-area-gtk3_python3 Coverage Results" MODIFIED="1530738525949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$gtk_player_example_2.coverage" NAME="gtk_player_example_2 Coverage Results" MODIFIED="1529832002414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$03_properties.coverage" NAME="03_properties Coverage Results" MODIFIED="1529695213626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
-    <SUITE FILE_PATH="coverage/vdwll$gl_test_src.coverage" NAME="gl_test_src Coverage Results" MODIFIED="1530736958701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$embedded_on_window.coverage" NAME="embedded_on_window Coverage Results" MODIFIED="1529832217589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$playing_audio_method_from_web.coverage" NAME="playing_audio_method_from_web Coverage Results" MODIFIED="1529860253801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code" />
-    <SUITE FILE_PATH="coverage/vdwll$gst_player_decodebin.coverage" NAME="gst_player_decodebin Coverage Results" MODIFIED="1530736987851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$capabilities_resolution_example.coverage" NAME="capabilities-resolution-example Coverage Results" MODIFIED="1529771036611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$02_button.coverage" NAME="02_button Coverage Results" MODIFIED="1529694490594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
-    <SUITE FILE_PATH="coverage/vdwll$playbin_example_video.coverage" NAME="playbin-example-video Coverage Results" MODIFIED="1530738614620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$playbin_example_video.coverage" NAME="playbin-example-video Coverage Results" MODIFIED="1529832114873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/vdwll$gst_video_overlay_v1.coverage" NAME="gst_video_overlay_v1 Coverage Results" MODIFIED="1530737146335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_3_ex_video.coverage" NAME="basic-tutorial-3-ex-video Coverage Results" MODIFIED="1530738417605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$PlayingVideo.coverage" NAME="PlayingVideo Coverage Results" MODIFIED="1529757942612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/9781849510165_code/0165_07_Code" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$clutter_sink.coverage" NAME="clutter_sink Coverage Results" MODIFIED="1529937421367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
     <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_2_ex_vertigo.coverage" NAME="basic-tutorial-2-ex-vertigo Coverage Results" MODIFIED="1529832180028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/vdwll$another_one.coverage" NAME="another_one Coverage Results" MODIFIED="1530733700011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$clutter_sink.coverage" NAME="clutter_sink Coverage Results" MODIFIED="1530735115832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$video_overlay_2.coverage" NAME="video_overlay_2 Coverage Results" MODIFIED="1530737889797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$gtksink.coverage" NAME="gtksink Coverage Results" MODIFIED="1530737420599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$01_sample_window.coverage" NAME="01_sample_window Coverage Results" MODIFIED="1529692850935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$04_boxes.coverage" NAME="04_boxes Coverage Results" MODIFIED="1529746551575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$hello_world.coverage" NAME="hello_world Coverage Results" MODIFIED="1529787969157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$playing_audio_method_1.coverage" NAME="playing_audio_method_1 Coverage Results" MODIFIED="1529859798769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code" />
-    <SUITE FILE_PATH="coverage/vdwll$tkinter_window_position.coverage" NAME="tkinter_window_position Coverage Results" MODIFIED="1530996961993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$pipeline_branch_example.coverage" NAME="pipeline-branch-example Coverage Results" MODIFIED="1529772341140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_7.coverage" NAME="basic-tutorial-7 Coverage Results" MODIFIED="1529772601182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
-    <SUITE FILE_PATH="coverage/vdwll$works_properly_video_overlay_2.coverage" NAME="works_properly_video_overlay_2 Coverage Results" MODIFIED="1531071815337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$gst_video_overlay.coverage" NAME="gst_video_overlay Coverage Results" MODIFIED="1530737022404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$capabilities_playbin_example.coverage" NAME="capabilities-playbin-example Coverage Results" MODIFIED="1529771435844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$embedded_on_window.coverage" NAME="embedded_on_window Coverage Results" MODIFIED="1529832217589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_5.coverage" NAME="basic-tutorial-5 Coverage Results" MODIFIED="1530738114527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/vdwll$gst_player_decodebin.coverage" NAME="gst_player_decodebin Coverage Results" MODIFIED="1530736987851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$02_button.coverage" NAME="02_button Coverage Results" MODIFIED="1529694490594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_5.coverage" NAME="basic-tutorial-5 Coverage Results" MODIFIED="1529772646320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
     <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_2.coverage" NAME="basic_tutorial_2 Coverage Results" MODIFIED="1529832041332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gstreamer_official_tuts" />
-    <SUITE FILE_PATH="coverage/vdwll$gtk_player_example_1.coverage" NAME="gtk_player_example_1 Coverage Results" MODIFIED="1530737208714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$gtk2_video_player_1.coverage" NAME="gtk2_video_player_1 Coverage Results" MODIFIED="1530733273288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$test_video_area_gtk3.coverage" NAME="test-video-area-gtk3 Coverage Results" MODIFIED="1529929184904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$media_player.coverage" NAME="media_player Coverage Results" MODIFIED="1529831992955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/Videowall_Development$gst_video_overlay.coverage" NAME="gst_video_overlay Coverage Results" MODIFIED="1529832233485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
-    <SUITE FILE_PATH="coverage/vdwll$gl_test_playbin.coverage" NAME="gl_test_playbin Coverage Results" MODIFIED="1530736538558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$playbin_example_video.coverage" NAME="playbin-example-video Coverage Results" MODIFIED="1530738614620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/vdwll$tkinter_window_position.coverage" NAME="tkinter_window_position Coverage Results" MODIFIED="1530996961993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
+    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_3_ex_video.coverage" NAME="basic-tutorial-3-ex-video Coverage Results" MODIFIED="1530738417605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$playing_audio_method_from_web.coverage" NAME="playing_audio_method_from_web Coverage Results" MODIFIED="1529860253801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$gtksink.coverage" NAME="gtksink Coverage Results" MODIFIED="1529930791441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$dynamic_ghostpad_example.coverage" NAME="dynamic-ghostpad-example Coverage Results" MODIFIED="1529771988843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$gst_video_overlay_v1.coverage" NAME="gst_video_overlay_v1 Coverage Results" MODIFIED="1529832238035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$test_video_area_gtk3_python3.coverage" NAME="test-video-area-gtk3_python3 Coverage Results" MODIFIED="1530738525949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$capabilities_resolution_example.coverage" NAME="capabilities-resolution-example Coverage Results" MODIFIED="1529771036611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/vdwll$gl_test_src.coverage" NAME="gl_test_src Coverage Results" MODIFIED="1530736958701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$playbin_example_audio.coverage" NAME="playbin-example-audio Coverage Results" MODIFIED="1529832108365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$01_playback_control_example.coverage" NAME="01_playback_control_example Coverage Results" MODIFIED="1529871517486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_06_Code_working" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$playbin_example_video.coverage" NAME="playbin-example-video Coverage Results" MODIFIED="1529832114873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$05_grid.coverage" NAME="05_grid Coverage Results" MODIFIED="1529746563625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
+    <SUITE FILE_PATH="coverage/vdwll$media_player.coverage" NAME="media_player Coverage Results" MODIFIED="1530737471199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$works_properly_gst_video_overlay.coverage" NAME="works_properly_gst_video_overlay Coverage Results" MODIFIED="1531071299089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$another_one.coverage" NAME="another_one Coverage Results" MODIFIED="1530733700011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$hello_world.coverage" NAME="hello_world Coverage Results" MODIFIED="1529787969157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
+    <SUITE FILE_PATH="coverage/vdwll$gtksink.coverage" NAME="gtksink Coverage Results" MODIFIED="1530737420599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$capabilities_example.coverage" NAME="capabilities-example Coverage Results" MODIFIED="1529916910881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_4.coverage" NAME="basic-tutorial-4 Coverage Results" MODIFIED="1529772737788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
     <SUITE FILE_PATH="coverage/vdwll$dynamic_ghostpad_example.coverage" NAME="dynamic-ghostpad-example Coverage Results" MODIFIED="1530738641563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$raspbian_glimage_sink.coverage" NAME="raspbian_glimage_sink Coverage Results" MODIFIED="1529953593300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$embedded_on_window.coverage" NAME="embedded_on_window Coverage Results" MODIFIED="1530736283684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$pipeline_branch_example.coverage" NAME="pipeline-branch-example Coverage Results" MODIFIED="1529772341140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$capabilities_playbin_example.coverage" NAME="capabilities-playbin-example Coverage Results" MODIFIED="1529771435844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_3_ex_video.coverage" NAME="basic-tutorial-3-ex-video Coverage Results" MODIFIED="1529772784682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/vdwll$works_properly_another_one.coverage" NAME="works_properly_another_one Coverage Results" MODIFIED="1531071267213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$gst_video_overlay_v1.coverage" NAME="gst_video_overlay_v1 Coverage Results" MODIFIED="1530737146335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$video_overlay_2.coverage" NAME="video_overlay_2 Coverage Results" MODIFIED="1529747472751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$pipeline_branch.coverage" NAME="pipeline_branch Coverage Results" MODIFIED="1529762164007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$gtk_player_example_2.coverage" NAME="gtk_player_example_2 Coverage Results" MODIFIED="1529832002414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$01_sample_window.coverage" NAME="01_sample_window Coverage Results" MODIFIED="1529692850935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
+    <SUITE FILE_PATH="coverage/vdwll$works_properly_video_overlay_2.coverage" NAME="works_properly_video_overlay_2 Coverage Results" MODIFIED="1531071815337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$gtk2_video_player_1.coverage" NAME="gtk2_video_player_1 Coverage Results" MODIFIED="1530733273288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_3.coverage" NAME="basic-tutorial-3 Coverage Results" MODIFIED="1529772836316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/vdwll$gtk_player_example_2.coverage" NAME="gtk_player_example_2 Coverage Results" MODIFIED="1530737356209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$xwindow_move.coverage" NAME="xwindow_move Coverage Results" MODIFIED="1531001810532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$gst_player_decodebin.coverage" NAME="gst_player_decodebin Coverage Results" MODIFIED="1529838944417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$gst_video_overlay.coverage" NAME="gst_video_overlay Coverage Results" MODIFIED="1529832233485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$media_player.coverage" NAME="media_player Coverage Results" MODIFIED="1529831992955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$h264_streamer.coverage" NAME="h264_streamer Coverage Results" MODIFIED="1529833157424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$gl_test_playbin.coverage" NAME="gl_test_playbin Coverage Results" MODIFIED="1529955136764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$clutter_sink.coverage" NAME="clutter_sink Coverage Results" MODIFIED="1530735115832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$simplewm.coverage" NAME="simplewm Coverage Results" MODIFIED="1530997574112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$audio_converter.coverage" NAME="audio_converter Coverage Results" MODIFIED="1529861133786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$03_properties.coverage" NAME="03_properties Coverage Results" MODIFIED="1529695213626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
+    <SUITE FILE_PATH="coverage/vdwll$gl_test_playbin.coverage" NAME="gl_test_playbin Coverage Results" MODIFIED="1530736538558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$gtk_player_example_1.coverage" NAME="gtk_player_example_1 Coverage Results" MODIFIED="1530737208714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$PlayingVideo_1_0.coverage" NAME="PlayingVideo_1.0 Coverage Results" MODIFIED="1529874054102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_07_Code" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$recording_audio.coverage" NAME="recording_audio Coverage Results" MODIFIED="1529868509729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code_working" />
+    <SUITE FILE_PATH="coverage/vdwll$gst_video_overlay.coverage" NAME="gst_video_overlay Coverage Results" MODIFIED="1530737022404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$gtk_player_example_1.coverage" NAME="gtk_player_example_1 Coverage Results" MODIFIED="1529957544934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$videomixer_example.coverage" NAME="videomixer-example Coverage Results" MODIFIED="1531063996144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_7.coverage" NAME="basic-tutorial-7 Coverage Results" MODIFIED="1529772601182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/vdwll$h264_streamer.coverage" NAME="h264_streamer Coverage Results" MODIFIED="1530738571233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$playing_audio_method_1.coverage" NAME="playing_audio_method_1 Coverage Results" MODIFIED="1529859798769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/code_for_GST1.0/0165_05_Code" />
+    <SUITE FILE_PATH="coverage/vdwll$pipeline_branch.coverage" NAME="pipeline_branch Coverage Results" MODIFIED="1530737617238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_7.coverage" NAME="basic-tutorial-7 Coverage Results" MODIFIED="1531064364817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/vdwll$video_overlay_2.coverage" NAME="video_overlay_2 Coverage Results" MODIFIED="1530737889797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$tkinter_geometry.coverage" NAME="tkinter_geometry Coverage Results" MODIFIED="1530996732427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
+    <SUITE FILE_PATH="coverage/vdwll$pipeline_branch_example.coverage" NAME="pipeline-branch-example Coverage Results" MODIFIED="1530737977958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/pygst-tutorial-org" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$04_boxes.coverage" NAME="04_boxes Coverage Results" MODIFIED="1529746551575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gtk_tutorials" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$basic_tutorial_6.coverage" NAME="basic-tutorial-6 Coverage Results" MODIFIED="1529772631664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$clutter_sink.coverage" NAME="clutter_sink Coverage Results" MODIFIED="1529937421367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/gtk_video_player" />
+    <SUITE FILE_PATH="coverage/vdwll$basic_tutorial_6.coverage" NAME="basic-tutorial-6 Coverage Results" MODIFIED="1530738035145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer/python-gst-tutorial" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$test_video_area_gtk3.coverage" NAME="test-video-area-gtk3 Coverage Results" MODIFIED="1529929184904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gstreamer" />
+    <SUITE FILE_PATH="coverage/Videowall_Development$PlayingVideo.coverage" NAME="PlayingVideo Coverage Results" MODIFIED="1529757942612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_multimedia_book_codes/9781849510165_code/0165_07_Code" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="vdwll" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="videomixer-example.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1584">
-              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-              <folding>
-                <element signature="e#24#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basic-tutorial-7.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2838">
-              <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
-              <folding>
-                <element signature="e#20#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="helper.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basic-tutorial-6.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-6.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="134" column="28" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="28" />
-              <folding>
-                <element signature="e#24#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="command_line_examples.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/helpers/command_line_examples.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="works_properly_another_one.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="15" selection-start-line="15" selection-end-line="17" selection-end-column="36" />
-              <folding>
-                <element signature="e#23#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="works_properly_video_overlay_2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -284,10 +200,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="845" />
-    <option name="y" value="312" />
-    <option name="width" value="1877" />
-    <option name="height" value="1426" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -521,17 +436,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="110" y="35" width="2770" height="1765" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32948717" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32948717" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32948717" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35191405" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35191405" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49928468" weight="0.38482204" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990775" visible="true" weight="0.31394482" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990775" visible="true" weight="0.31831187" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -557,7 +471,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/gstreamer/gtk_video_player/gst_video_overlay_v1.py</url>
+          <url />
           <line>2</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -840,7 +754,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/pygst-tutorial-org/videomixer-example.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
+        <state relative-caret-position="816">
           <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
@@ -850,7 +764,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2838">
+        <state relative-caret-position="1462">
           <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
@@ -860,14 +774,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="102">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/python-gst-tutorial/basic-tutorial-6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
+        <state relative-caret-position="2261">
           <caret line="134" column="28" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="28" />
           <folding>
             <element signature="e#24#34#0" expanded="true" />
@@ -877,7 +791,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers/command_line_examples.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
+        <state relative-caret-position="1938">
           <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
         </state>
       </provider>
@@ -886,9 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding>
-            <element signature="e#24#53#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -897,18 +808,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_another_one.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="15" selection-start-line="15" selection-end-line="17" selection-end-column="36" />
-          <folding>
-            <element signature="e#23#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gstreamer/gtk_video_player/works_properly_video_overlay_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+        <state relative-caret-position="219">
+          <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
         </state>
       </provider>
     </entry>
