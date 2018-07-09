@@ -31,6 +31,6 @@ class SimplePipeLine:
 
 loop = GObject.MainLoop()
 p = SimplePipeLine()
-p.filesrc.set_property('location', 'video.ogv')
+p.filesrc.set_property('location', '/home/kemal/Developer/vdwll/douglas_bagnall_codes/video.ogv')
 p.pipeline.set_state(Gst.State.PLAYING)
 loop.run()
