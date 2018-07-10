@@ -18,8 +18,8 @@ class UselessPipeline:
 
     def __init__(self, n_channels):
         self.pipeline = Gst.Pipeline()
-        # self.sink = self.make_add_link('autoaudiosink', None)  # auto yapınca da çalmıyor
-        self.sink = self.make_add_link('fakesink', None)
+        self.sink = self.make_add_link('autoaudiosink', None)  # auto yapınca da çalmıyor
+        # self.sink = self.make_add_link('fakesink', None)
         self.sources = []
         self.interleave = self.make_add_link('interleave', self.sink)
 
@@ -32,7 +32,7 @@ class UselessPipeline:
             source = self.make_add_link('filesrc', parser)
             source.set_property(
                 'location',
-                '/Users/kemal/Workspace/Videowall Development/media/si_se_the_truth.mp3')
+                'truth.mp3')
             # bu olsa da olmasa da fark etmiyor
             self.sources.append(source)
 
