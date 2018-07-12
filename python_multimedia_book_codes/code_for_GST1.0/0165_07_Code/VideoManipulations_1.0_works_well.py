@@ -1,4 +1,4 @@
-#-------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # @author: Ninad Sathaye
 # @copyright: 2010, Ninad Sathaye email:ninad.consult@gmail.com.
 # @license: This program is free software: you can redistribute it and/or modify
@@ -21,9 +21,9 @@
 #       of the book: "Python Multimedia Applications Beginners Guide"
 #       Publisher: Packt Publishing.
 #       ISBN: [978-1-847190-16-5]
-#-------------
+# -------------
 # Details
-#-------------
+# -------------
 #    -  A simple Video player utility that illustrates basic video
 #       manipulations such as cropping and resizing
 #    - The program also illustrates how to setup video processing pipeline
@@ -32,7 +32,7 @@
 #      autovideosink to accomplish this task.
 #
 # Dependencies
-#---------------
+# ---------------
 #  In order to run the program the following packages need to be installed and
 #  appropriate environment variables need to be set (if it is not done by the
 #  installer automatically.)
@@ -60,33 +60,40 @@
 #
 #  $python VideoManipulations.py
 #
-#-------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 
 import time
-import thread
-import gobject
-import pygst
-pygst.require("0.10")
-import gst
+import threading
 import os
 from optparse import OptionParser
+
+import gi
+
+gi.require_version('Gst', '1.0')
+gi.require_version('Gtk', '3.0')
+gi.require_version('GstVideo', '1.0')
+
+from gi.repository import Gst, GObject, Gtk
+
 
 class VideoPlayer:
     """
     Simple Video player that just 'plays' a valid input Video file.
     """
+
     def __init__(self):
         self.use_parse_launch = False
         self.decodebin = None
 
-        self.video_width = 800
-        self.video_height= 600
-        self.crop_left   = 20
-        self.crop_right  = 20
+        self.video_width = 1200
+        self.video_height = 600
+        self.crop_left = 20
+        self.crop_right = 20
         self.crop_bottom = 20
-        self.crop_top    = 20
+        self.crop_top = 20
 
-        self.inFileLocation="C:/VideoFiles/my_music.mp4"
+        self.inFileLocation = "/home/kemal/Developer/vdwll/media/brbad.mp4"
+        # /home/kemal/Developer/vdwll/media
 
         self.constructPipeline()
         self.is_playing = False
@@ -97,24 +104,23 @@ class VideoPlayer:
         Add and link elements in a GStreamer pipeline.
         """
         # Create the pipeline instance
-        self.player = gst.Pipeline()
+        self.player = Gst.Pipeline()
 
         # Define pipeline elements
-        self.filesrc = gst.element_factory_make("filesrc")
+        self.filesrc = Gst.ElementFactory.make("filesrc")
         self.filesrc.set_property("location",
                                   self.inFileLocation)
-        self.decodebin = gst.element_factory_make("decodebin")
+        self.decodebin = Gst.ElementFactory.make("decodebin")
 
         # Add elements to the pipeline
-        self.player.add(self.filesrc, self.decodebin)
+        self.player.add(self.filesrc)
+        self.player.add(self.decodebin)
 
         # Link elements in the pipeline.
-        gst.element_link_many(self.filesrc, self.decodebin)
+        self.filesrc.link(self.decodebin)
 
         self.constructAudioPipeline()
         self.constructVideoPipeline()
-
-
 
     def constructAudioPipeline(self):
         """
@@ -122,19 +128,17 @@ class VideoPlayer:
         of the main pipeline.
         @see: self.construct_pipeline()
         """
-         # audioconvert for audio processing pipeline
-        self.audioconvert = gst.element_factory_make("audioconvert")
-        self.queue2 = gst.element_factory_make("queue")
-        self.audiosink = gst.element_factory_make("autoaudiosink")
+        # audioconvert for audio processing pipeline
+        self.audioconvert = Gst.ElementFactory.make("audioconvert")
+        self.queue2 = Gst.ElementFactory.make("queue")
+        self.audiosink = Gst.ElementFactory.make("autoaudiosink")
 
-        self.player.add(self.queue2,
-                        self.audioconvert,
-                        self.audiosink)
+        self.player.add(self.queue2)
+        self.player.add(self.audioconvert)
+        self.player.add(self.audiosink)
 
-        gst.element_link_many(self.queue2,
-                              self.audioconvert,
-                              self.audiosink)
-
+        self.queue2.link(self.audioconvert)
+        self.audioconvert.link(self.audiosink)
 
     def constructVideoPipeline(self):
         """
@@ -143,44 +147,47 @@ class VideoPlayer:
         @see: self.construct_pipeline()
         """
         # Autoconvert element for video processing
-        self.autoconvert = gst.element_factory_make("autoconvert")
-        self.videosink = gst.element_factory_make("autovideosink")
+        self.autoconvert = Gst.ElementFactory.make("videoconvert", "convert")
+        print("self.autoconvert", self.autoconvert)
+        self.videosink = Gst.ElementFactory.make("autovideosink")
 
         # Set the capsfilter
         if self.video_width and self.video_height:
-            videocap = gst.Caps("video/x-raw-yuv," \
-            "width=%d, height=%d"%(self.video_width,
-                                self.video_height))
-        else:
-            videocap = gst.Caps("video/x-raw-yuv")
+            # videocap = Gst.Caps("video/x-raw-yuv," \
+            # "width=%d, height=%d"%(self.video_width,
+            #                     self.video_height))
+            videocap = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
+                self.video_width, self.video_height))
 
-        self.capsFilter = gst.element_factory_make("capsfilter")
+        else:
+            videocap = Gst.Caps.from_string("video/x-raw-yuv")
+
+        self.capsFilter = Gst.ElementFactory.make("capsfilter")
         self.capsFilter.set_property("caps", videocap)
 
         # Converts the video from one colorspace to another
-        self.colorSpace = gst.element_factory_make("ffmpegcolorspace")
+        self.colorSpace = Gst.ElementFactory.make("videoconvert")
 
-        self.queue1 = gst.element_factory_make("queue")
+        self.queue1 = Gst.ElementFactory.make("queue")
 
-        self.videobox = gst.element_factory_make("videobox")
-        self.videobox.set_property("bottom", self.crop_bottom )
-        self.videobox.set_property("top", self.crop_top )
-        self.videobox.set_property("left", self.crop_left )
-        self.videobox.set_property("right", self.crop_right )
+        self.videobox = Gst.ElementFactory.make("videobox")
+        self.videobox.set_property("bottom", self.crop_bottom)
+        self.videobox.set_property("top", self.crop_top)
+        self.videobox.set_property("left", self.crop_left)
+        self.videobox.set_property("right", self.crop_right)
 
-        self.player.add(self.queue1,
-                        self.autoconvert,
-                        self.videobox,
-                        self.capsFilter,
-                        self.colorSpace,
-                        self.videosink)
+        self.player.add(self.queue1)
+        self.player.add(self.autoconvert)
+        self.player.add(self.videobox)
+        self.player.add(self.capsFilter)
+        self.player.add(self.colorSpace)
+        self.player.add(self.videosink)
 
-        gst.element_link_many(self.queue1,
-                              self.autoconvert,
-                              self.videobox,
-                              self.capsFilter,
-                              self.colorSpace,
-                              self.videosink)
+        self.queue1.link(self.autoconvert)
+        self.autoconvert.link(self.videobox)
+        self.videobox.link(self.capsFilter)
+        self.capsFilter.link(self.colorSpace)
+        self.colorSpace.link(self.videosink)
 
     def connectSignals(self):
         """
@@ -203,23 +210,27 @@ class VideoPlayer:
         is generated.
         """
         compatible_pad = None
-        caps = pad.get_caps()
-        name = caps[0].get_name()
-        print "\n cap name is = ", name
-        if name[:5] == 'video':
-            compatible_pad = self.queue1.get_compatible_pad(pad, caps)
-        elif name[:5] == 'audio':
-            compatible_pad = self.queue2.get_compatible_pad(pad, caps)
+        caps = pad.query_caps()
+        print("caps ney ki?", caps)
+        for i in range(caps.get_size()):
+            structure = caps.get_structure(i)
+            name = structure.get_name()
+            print("{0:s}".format(name))
+            # print("\n cap name is = ", name)
+            if name[:5] == 'video':
+                compatible_pad = self.queue1.get_compatible_pad(pad, caps)
+            elif name[:5] == 'audio':
+                compatible_pad = self.queue2.get_compatible_pad(pad, caps)
 
-        if compatible_pad:
-            pad.link(compatible_pad)
+            if compatible_pad:
+                pad.link(compatible_pad)
 
     def play(self):
         """
         Play the media file
         """
         self.is_playing = True
-        self.player.set_state(gst.STATE_PLAYING)
+        self.player.set_state(Gst.State.PLAYING)
         while self.is_playing:
             time.sleep(1)
         evt_loop.quit()
@@ -230,24 +241,25 @@ class VideoPlayer:
         set the appropriate flag.
         """
         msgType = message.type
-        if msgType == gst.MESSAGE_ERROR:
-            self.player.set_state(gst.STATE_NULL)
+        if msgType == Gst.MessageType.ERROR:
+            self.player.set_state(Gst.State.NULL)
             self.is_playing = False
-            print "\n Unable to play Video. Error: ", \
-            message.parse_error()
-        elif msgType == gst.MESSAGE_EOS:
-            self.player.set_state(gst.STATE_NULL)
+            print("\n Unable to play Video. Error: ", message.parse_error())
+        elif msgType == Gst.MessageType.EOS:
+            self.player.set_state(Gst.State.NULL)
             self.is_playing = False
+
 
 # Run the program
+
+Gst.init(None)
 player = VideoPlayer()
-thread.start_new_thread(player.play, ())
-gobject.threads_init()
-evt_loop = gobject.MainLoop()
+thread = threading.Thread(target=player.play)
+thread.start()
+GObject.threads_init()
+evt_loop = GObject.MainLoop()
 evt_loop.run()
 
-
-
-
-
-
+# GObject.threads_init()
+# Gst.init(None)
+# Gtk.main()  # bu satır olmalı mı acaba?
