@@ -18,29 +18,26 @@ class MainWindow(Gtk.ApplicationWindow):
         # self.overlay.add(self.background)
 
         # Add GtkFixed to the main window
-        self.container = Gtk.Fixed()
-        self.add(self.container)
+        container = Gtk.Fixed()
+        self.add(container)
 
-        self.button = Gtk.Button("Test Button")
+        button = Gtk.Button("Test Button")
         # Add the button in the (x=20,y=100) position
-        self.container.put(self.button, 1400, 100)  # ekranın dışına taşıramadığı için butonun yarısını gösteriyor.
+        container.put(button, 1400, 100)  # ekranın dışına taşıramadığı için butonun yarısını gösteriyor.
         # İstediğimiz şey bu işte !!!!!
-        self.container.move(self.button, 1400, 840)  # bu da benzer şekilde move ediyor...
+        container.move(button, 1400, 840)  # bu da benzer şekilde move ediyor...
 
-        self.another_button = Gtk.Button("Test Button 22")
+
+        another_button = Gtk.Button("Test Button 22")
         # Add the button in the (x=20,y=100) position
-        self.container.put(self.another_button, 400, 100)  # ekranın dışına taşıramadığı için butonun yarısını gösteriyor.
+        container.put(another_button, 400, 100)  # ekranın dışına taşıramadığı için butonun yarısını gösteriyor.
 
-    def add_background_image(self, path=None, x=0, y=0):
         # create an image
-        image = Gtk.manage(Gtk.Image())
+        image = Gtk.Image()
         # set the content of the image as the file filename.png
-        image.set_from_file(path)
+        image.set_from_file("/Users/kemal/WorkSpace/Videowall Development/media/tvlogo_full.png")
         # add the image to the window
-        self.container.put(image, x, y)
-
-    def move(self, widget, x=0, y=0):
-        self.container.move(widget, x, y)
+        container.put(image, 1050, 50)
 
 
 class Application(Gtk.Application):
