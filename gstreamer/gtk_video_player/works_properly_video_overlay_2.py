@@ -2,7 +2,11 @@ from gi.repository import Gtk, Gdk, GdkPixbuf
 from gi.repository import Gst as gst
 
 import os
+import environ
 
+
+ROOT_DIR = environ.Path(__file__) - 2
+print(ROOT_DIR)
 
 class Video:
 
