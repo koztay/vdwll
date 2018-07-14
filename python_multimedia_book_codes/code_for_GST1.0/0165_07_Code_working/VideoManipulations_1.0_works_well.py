@@ -92,8 +92,9 @@ class VideoPlayer:
         self.crop_bottom = 20
         self.crop_top = 20
 
-        self.inFileLocation = "/home/kemal/Developer/vdwll/media/brbad.mp4"
-        # /home/kemal/Developer/vdwll/media
+        self.inFileLocation = "../../../media/webos.mp4"
+        # self.inFileLocation = "/home/kemal/Developer/vdwll/media/brbad.mp4"
+        # "/../../../media/pixar.mp4"
 
         self.constructPipeline()
         self.is_playing = False
