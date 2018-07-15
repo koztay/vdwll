@@ -3,6 +3,18 @@ from random import randint
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GObject
 import sys
+import time
+import select
+import Pyro4
+
+
+# Set the Pyro servertype to the multiplexing select-based server that doesn't
+# use a threadpool to service method calls. This way the method calls are
+# handled inside the main thread as well.
+Pyro4.config.SERVERTYPE = "multiplex"
+
+# The frequency with which the GUI loop calls the Pyro event handler.
+PYRO_EVENTLOOP_HZ = 50
 
 
 class MainWindow(Gtk.ApplicationWindow):
@@ -42,7 +54,7 @@ class MainWindow(Gtk.ApplicationWindow):
         # container.put(image, 1050, 50)
 
     def add_image(self, widget_name="test resmi", path=None, pos_x=0, pos_y=0):
-        print("add_image_çalıştı")
+        print("add_image_çalıştı func içinden")
         container = self.get_child()
         image = Gtk.Image(name=widget_name)
         if path:
@@ -72,6 +84,27 @@ class Application(Gtk.Application):
     def __init__(self):
         Gtk.Application.__init__(self)
 
+
+    def install_pyro_event_callback(self, daemon):
+        """
+        Add a callback to the tkinter event loop that is invoked every so often.
+        The callback checks the Pyro sockets for activity and dispatches to the
+        daemon's event process method if needed.
+        """
+
+        def pyro_event():
+            while True:
+                # for as long as the pyro socket triggers, dispatch events
+                s, _, _ = select.select(daemon.sockets, [], [], 0.01)
+                if s:
+                    daemon.events(s)
+                else:
+                    # no more events, stop the loop, we'll get called again soon anyway
+                    break
+            GObject.timeout_add(1000 // PYRO_EVENTLOOP_HZ, pyro_event)
+
+        GObject.timeout_add(1000 // PYRO_EVENTLOOP_HZ, pyro_event)
+
     def do_activate(self):
         self.mainWindow = MainWindow(self)
         # get object of fixed widget
@@ -95,6 +128,7 @@ class Application(Gtk.Application):
     def add_image(self):
         fixed_widget = self.mainWindow.get_child()
         self.mainWindow.add_image(fixed_widget)
+        return "add image çalıştı return olarak"
 
     def remove_widget(self, name="test resmi"):
         fixed_widget = self.mainWindow.get_child()
@@ -106,7 +140,72 @@ class Application(Gtk.Application):
             if child.get_name() == name:
                 fixed_widget.remove(child)
 
+    def add_message(self, message):
+        message = "[{0}] {1}".format(time.strftime("%X"), message)
+        print(message)
+        # self.serveroutput.append(message)
+        # self.serveroutput = self.serveroutput[-27:]
+        # self.msg.config(text="\n".join(self.serveroutput))
 
-application = Application()
-exitStatus = application.run(sys.argv)
-sys.exit(exitStatus)
+
+@Pyro4.expose
+class MessagePrinter(object):
+    """
+    The Pyro object that interfaces with the GUI application.
+    """
+
+    def __init__(self, gui):
+        self.gui = gui
+
+    def message(self, messagetext):
+        # Add the message to the screen.
+        # Note that you can't do anything that requires gui interaction
+        # (such as popping a dialog box asking for user input),
+        # because the gui (tkinter) is busy processing this pyro call.
+        # It can't do two things at the same time when embedded this way.
+        # If you do something in this method call that takes a long time
+        # to process, the GUI is frozen during that time (because no GUI update
+        # events are handled while this callback is active).
+        self.gui.add_message("from Pyro: " + messagetext)
+
+    def sleep(self, duration):
+        # Note that you can't perform blocking stuff at all because the method
+        # call is running in the gui mainloop thread and will freeze the GUI.
+        # Try it - you will see the first message but everything locks up until
+        # the sleep returns and the method call ends
+        self.gui.add_message("from Pyro: sleeping {0} seconds...".format(duration))
+        time.sleep(duration)
+        self.gui.add_message("from Pyro: woke up!")
+
+
+# application = Application()
+#
+# exitStatus = application.run(sys.argv)
+#
+# sys.exit(exitStatus)
+
+def main():
+    gui = Application()
+
+    # create a pyro daemon with object
+    daemon = Pyro4.Daemon()
+    obj = MessagePrinter(gui)
+    uri = daemon.register(obj, "pyrogui.message")
+
+    gui.add_message("Pyro server started. Not using threads.")
+    gui.add_message("Use the command line client to send messages.")
+    urimsg = "Pyro object uri = {0}".format(uri)
+    gui.add_message(urimsg)
+    print(urimsg)
+
+    # add a Pyro event callback to the gui's mainloop
+    gui.install_pyro_event_callback(daemon)
+
+    exitStatus = gui.run(sys.argv)
+
+    sys.exit(exitStatus)
+
+
+if __name__ == "__main__":
+    main()
+
