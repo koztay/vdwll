@@ -115,12 +115,12 @@ class Application(Gtk.Application):
         self.mainWindow.show_all()
         #  this takes 2 args: (how often to update in millisec, the method to run)
         GObject.timeout_add(5000, self.remove_widget)
-        GObject.timeout_add(10000, self.add_image)
-        GObject.timeout_add(15000, self.add_image)
-        GObject.timeout_add(25000, self.add_image)
-        GObject.timeout_add(30000, self.add_image)
-        GObject.timeout_add(35000, self.add_image)
-        GObject.timeout_add(40000, self.add_image)
+        # GObject.timeout_add(10000, self.add_image)
+        # GObject.timeout_add(15000, self.add_image)
+        # GObject.timeout_add(25000, self.add_image)
+        # GObject.timeout_add(30000, self.add_image)
+        # GObject.timeout_add(35000, self.add_image)
+        # GObject.timeout_add(40000, self.add_image)
 
     def do_startup(self):
         Gtk.Application.do_startup(self)
@@ -176,6 +176,9 @@ class MessagePrinter(object):
         self.gui.add_message("from Pyro: sleeping {0} seconds...".format(duration))
         time.sleep(duration)
         self.gui.add_message("from Pyro: woke up!")
+
+    def add_image(self):
+        self.gui.add_image()
 
 
 # application = Application()

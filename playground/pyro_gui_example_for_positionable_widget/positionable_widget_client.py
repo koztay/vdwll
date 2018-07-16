@@ -14,14 +14,21 @@ else:
 uri = uri.strip()
 guiserver = Pyro4.Proxy(uri)
 
-guiserver.message("Hello there!")
-time.sleep(0.5)
-guiserver.message("How's it going?")
-time.sleep(2)
+# guiserver.message("Hello there!")
+# time.sleep(0.5)
+# guiserver.message("How's it going?")
+# time.sleep(2)
+#
+# for i in range(20):
+#     guiserver.message("Counting {0}".format(i))
+#
+# guiserver.message("now calling the sleep method with 5 seconds")
+# guiserver.sleep(5)
 
-for i in range(20):
-    guiserver.message("Counting {0}".format(i))
+for i in range(10):
+    guiserver.add_image()
+    time.sleep(3)
 
-guiserver.message("now calling the sleep method with 5 seconds")
-guiserver.sleep(5)
 print("done!")
+
+
