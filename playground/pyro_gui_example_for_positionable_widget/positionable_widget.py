@@ -1,7 +1,7 @@
 import gi
 from random import randint
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, GObject
+from gi.repository import Gtk, GObject, GdkPixbuf, Gdk
 import sys
 import time
 import select
@@ -46,12 +46,29 @@ class MainWindow(Gtk.ApplicationWindow):
         # Add the button in the (x=20,y=100) position
         container.put(another_button, 400, 100)  # ekranın dışına taşıramadığı için butonun yarısını gösteriyor.
 
-        # # create an image
-        # image = Gtk.Image()
-        # # set the content of the image as the file filename.png
-        # image.set_from_file("/Users/kemal/WorkSpace/Videowall Development/media/tvlogo_full.png")
-        # # add the image to the window
-        # container.put(image, 1050, 50)
+        # create scalable image for background
+        # create pixbuf
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file('/Users/kemal/WorkSpace/Videowall Development/media/tvlogo_full.png')
+        # resize it:
+        pixbuf = pixbuf.scale_simple(2500, 2000, GdkPixbuf.InterpType.BILINEAR)
+        # create an image
+        image = Gtk.Image()
+        image.set_from_pixbuf(pixbuf)
+        # add the image to the window
+        container.put(image, 0, 0)
+        container.move(image, 200, 200)  # move da çalışıyor işte...
+        """
+        Using scale_simple() does not preserve aspect ratio.
+        Using new_from_file_at_size() preserves aspect ratio
+        """
+        # bı da crop edip sonra resize etmek için
+        # GdkPixbuf.Pixbuf.new_subpixbuf(sourcepixbuf, startx, starty, width, height)
+        cropped_buffer = GdkPixbuf.Pixbuf.new_subpixbuf(pixbuf, 1000, 1200, 200, 200)  # öncesinde resize edildiği için
+        image2 = Gtk.Image()
+        image2.set_from_pixbuf(cropped_buffer)
+        # add the image to the window
+        container.put(image2, 0, 0)
+
 
     def add_image(self, widget_name="test resmi", path=None, pos_x=0, pos_y=0):
         print("add_image_çalıştı func içinden")
@@ -114,7 +131,7 @@ class Application(Gtk.Application):
         self.mainWindow.add_drawing_area()
         self.mainWindow.show_all()
         #  this takes 2 args: (how often to update in millisec, the method to run)
-        GObject.timeout_add(5000, self.remove_widget)
+        # GObject.timeout_add(5000, self.remove_widget)
         # GObject.timeout_add(10000, self.add_image)
         # GObject.timeout_add(15000, self.add_image)
         # GObject.timeout_add(25000, self.add_image)
