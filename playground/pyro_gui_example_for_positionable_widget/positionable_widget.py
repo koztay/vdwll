@@ -208,10 +208,14 @@ def main():
     gui = Application()
 
     # create a pyro daemon with object
-    daemon = Pyro4.Daemon()
-    obj = MessagePrinter(gui)
-    uri = daemon.register(obj, "pyrogui.message")
 
+    daemon = Pyro4.Daemon(host="10.0.0.15")
+    obj = MessagePrinter(gui)
+    ns = Pyro4.locateNS()
+    uri = daemon.register(obj)
+    ns.register("videowall_agent", uri)
+
+    gui.install_pyro_event_callback(daemon)
     gui.add_message("Pyro server started. Not using threads.")
     gui.add_message("Use the command line client to send messages.")
     urimsg = "Pyro object uri = {0}".format(uri)
@@ -219,8 +223,6 @@ def main():
     print(urimsg)
 
     # add a Pyro event callback to the gui's mainloop
-    gui.install_pyro_event_callback(daemon)
-
     exitStatus = gui.run(sys.argv)
 
     sys.exit(exitStatus)
@@ -229,3 +231,15 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+"""
+if __name__ == "__main__":
+    with Pyro4.Daemon() as d:
+        uri_1 = d.register(Mandelbrot)
+        uri_2 = d.register(MandelbrotColorPixels)
+        with Pyro4.locateNS() as ns:
+            ns.register(Mandelbrot._pyroId, uri_1, safe=True, metadata={"class:mandelbrot_calc"})
+            ns.register(MandelbrotColorPixels._pyroId, uri_2, safe=True, metadata={"class:mandelbrot_calc_color"})
+        print("Mandelbrot calculation server ready.")
+        d.requestLoop()
+"""
