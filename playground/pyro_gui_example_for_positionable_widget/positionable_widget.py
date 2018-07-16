@@ -32,7 +32,7 @@ class MainWindow(Gtk.ApplicationWindow):
     # bunun addwidget vb. bir metodu olması lazım task olarak tabii...
 
     def __init__(self, app):
-        Gtk.Window.__init__(self, title="GtkFixed", application=app)
+        Gtk.Window.__init__(self, title=None, application=app)
 
         # Set the window size
         self.set_size_request(1440, 200)  # bunu settings vb. bir yerden almalı.
@@ -40,6 +40,8 @@ class MainWindow(Gtk.ApplicationWindow):
         # self.add(self.overlay)
         # self.background = Gtk.Image.new_from_file('/Users/kemal/WorkSpace/Videowall Development/media/tvlogo_full.png')
         # self.overlay.add(self.background)
+
+        # self.get_window().set_decorations(Gdk.WMDecoration.BORDER)
 
         # Add GtkFixed to the main window
         container = Gtk.Fixed()
@@ -78,7 +80,7 @@ class MainWindow(Gtk.ApplicationWindow):
         image2 = Gtk.Image()
         image2.set_from_pixbuf(cropped_buffer)
         # add the image to the window
-        container.put(image2, 0, 0)
+        container.put(image2, -100, -100)
 
 
     def add_image(self, widget_name="test resmi", path=None, pos_x=0, pos_y=0):
@@ -135,6 +137,13 @@ class Application(Gtk.Application):
 
     def do_activate(self):
         self.mainWindow = MainWindow(self)
+
+        # titlebar 'ı gizlemek için (hide title bar maximize değilken)
+        self.mainWindow.set_decorated(False)
+
+        self.mainWindow.set_hide_titlebar_when_maximized(True)  # bu da miximize edersen gizle diyor.
+        self.mainWindow.fullscreen()  # Full screen yapmak için
+
         # get object of fixed widget
         fixed_widget = self.mainWindow.get_child()
         # run function to add image
