@@ -8,6 +8,17 @@ import select
 import Pyro4
 
 
+"""
+Not: 
+$ pyro4-ns -n 0.0.0.0 -p 9999
+vb. bir komut ile nameserver başlatmak lazım. 
+Aksi taktirde eğer nameserver yoksa iletişim de yok...
+Ya da nameserver olmadan uri 'ye IP adresi yazmak lazım.
+Bu şekilde oluyor mu denemedim...
+
+"""
+
+
 # Set the Pyro servertype to the multiplexing select-based server that doesn't
 # use a threadpool to service method calls. This way the method calls are
 # handled inside the main thread as well.
@@ -231,15 +242,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-"""
-if __name__ == "__main__":
-    with Pyro4.Daemon() as d:
-        uri_1 = d.register(Mandelbrot)
-        uri_2 = d.register(MandelbrotColorPixels)
-        with Pyro4.locateNS() as ns:
-            ns.register(Mandelbrot._pyroId, uri_1, safe=True, metadata={"class:mandelbrot_calc"})
-            ns.register(MandelbrotColorPixels._pyroId, uri_2, safe=True, metadata={"class:mandelbrot_calc_color"})
-        print("Mandelbrot calculation server ready.")
-        d.requestLoop()
-"""
