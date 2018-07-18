@@ -7,8 +7,6 @@ from gi.repository import Gst, GObject, Gtk
 from gi.repository import GObject, Gst, GstVideo
 
 
-from .video_player import VideoPlayer
-
 class GTK_Main:
     def __init__(self):
         window = Gtk.Window(Gtk.WindowType.TOPLEVEL)

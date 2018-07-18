@@ -1,6 +1,6 @@
 import gi
 gi.require_version('Gst', '1.0')
-from gi.repository import Gst
+from gi.repository import GObject, Gst, GstVideo
 
 
 class VideoPlayer:
@@ -19,8 +19,8 @@ class VideoPlayer:
         self.location = location
         self.movie_window = moviewindow
 
-        self.player = Gst.parse_launch(
-            "rtspsrc location={} latency=10 ! decodebin ! autovideosink".format(self.location))
+        self.player = Gst.parse_launch("rtspsrc location=rtsp://10.0.0.143/media/video1 latency=10 ! decodebin ! autovideosink")
+        # self.player = Gst.parse_launch("rtspsrc location={} latency=10 ! decodebin ! autovideosink".format(self.location))
         bus = self.player.get_bus()
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
