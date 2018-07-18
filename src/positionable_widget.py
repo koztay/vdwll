@@ -63,7 +63,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         # create scalable image for background
         # create pixbuf
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file('/Users/kemal/WorkSpace/Videowall Development/media/tvlogo_full.png')
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file('../media/tvlogo_full.png')
         # resize it:
         pixbuf = pixbuf.scale_simple(2500, 2000, GdkPixbuf.InterpType.BILINEAR)
         # create an image
@@ -93,7 +93,7 @@ class MainWindow(Gtk.ApplicationWindow):
             # set the content of the image as the file filename.png
             image.set_from_file(path)
         else:
-            image.set_from_file("/Users/kemal/WorkSpace/Videowall Development/media/tvlogo_full.png")
+            image.set_from_file("../media/tvlogo_full.png")
 
         if pos_x > 0 and pos_y > 0:
             # add the image to the window
@@ -232,7 +232,7 @@ def main():
 
     # create a pyro daemon with object
 
-    daemon = Pyro4.Daemon(host="10.0.0.15")
+    daemon = Pyro4.Daemon(host="10.0.0.30")
     obj = MessagePrinter(gui)
     ns = Pyro4.locateNS()
     uri = daemon.register(obj)
