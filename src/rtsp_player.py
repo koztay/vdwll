@@ -3,8 +3,8 @@
 import sys, os
 import gi
 gi.require_version('Gst', '1.0')
-from gi.repository import Gst, GObject, Gtk
-from gi.repository import GObject, Gst, GstVideo
+from gi.repository import Gtk
+# from gi.repository import GObject, Gst, GstVideo
 
 from video_player import VideoPlayer
 
@@ -73,7 +73,7 @@ class GTK_Main:
             imagesink.set_property("force-aspect-ratio", True)
             imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
 """
-Gst.init(None)
+# Gst.init(None)
 GTK_Main()
 GObject.threads_init()
 Gtk.main()
