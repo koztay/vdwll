@@ -19,13 +19,14 @@ class VideoPlayer:
         self.location = location
         self.movie_window = moviewindow
 
-        self.player = Gst.parse_launch("rtspsrc location=rtsp://10.0.0.143/media/video1 latency=10 ! decodebin ! autovideosink")
-        # self.player = Gst.parse_launch("rtspsrc location={} latency=10 ! decodebin ! autovideosink".format(self.location))
+        # self.player = Gst.parse_launch("rtspsrc location=rtsp://10.0.0.143/media/video1 latency=10 ! decodebin ! autovideosink")
+        self.player = Gst.parse_launch("rtspsrc location={} latency=10 ! decodebin ! autovideosink".format(self.location))
         bus = self.player.get_bus()
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
         bus.connect("message", self.on_message)
         bus.connect("sync-message::element", self.on_sync_message)
+        Gst.init(None)
 
     def on_message(self, bus, message):
         t = message.type
@@ -54,3 +55,7 @@ class VideoPlayer:
 
     def stop(self):
         self.player.set_state(Gst.State.NULL)
+
+
+if __name__ == "__main__":
+    Gst.init(None)
