@@ -8,7 +8,7 @@ import time
 import select
 import Pyro4
 
-from .video_player import VideoPlayer
+from video_player import VideoPlayer
 
 """
 Not: 

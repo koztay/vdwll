@@ -33,12 +33,13 @@ class GTK_Main:
         window.show_all()
 
         # Set up the gstreamer pipeline
-        self.player = Gst.parse_launch("rtspsrc location=rtsp://10.0.0.143/media/video1 latency=10 ! decodebin ! autovideosink")
-        bus = self.player.get_bus()
-        bus.add_signal_watch()
-        bus.enable_sync_message_emission()
-        bus.connect("message", self.on_message)
-        bus.connect("sync-message::element", self.on_sync_message)
+        # self.player = Gst.parse_launch("rtspsrc location=rtsp://10.0.0.143/media/video1 latency=10 ! decodebin ! autovideosink")
+        # bus = self.player.get_bus()
+        # bus.add_signal_watch()
+        # bus.enable_sync_message_emission()
+        # bus.connect("message", self.on_message)
+        # bus.connect("sync-message::element", self.on_sync_message)
+        self.player = VideoPlayer(location="rtsp://10.0.0.143/media/video1")
 
     def start_stop(self, w):
         if self.button.get_label() == "Start":
