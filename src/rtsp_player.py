@@ -6,6 +6,7 @@ gi.require_version('Gst', '1.0')
 from gi.repository import Gst, GObject, Gtk
 from gi.repository import GObject, Gst, GstVideo
 
+from video_player import VideoPlayer
 
 class GTK_Main:
     def __init__(self):
