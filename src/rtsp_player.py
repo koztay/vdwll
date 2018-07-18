@@ -38,19 +38,19 @@ class GTK_Main:
         # bus.enable_sync_message_emission()
         # bus.connect("message", self.on_message)
         # bus.connect("sync-message::element", self.on_sync_message)
-        self.player = VideoPlayer(location="rtsp://10.0.0.143/media/video1")
+        self.player = VideoPlayer(location="rtsp://10.0.0.143/media/video1", moviewindow=window)
 
     def start_stop(self, w):
         if self.button.get_label() == "Start":
             self.button.set_label("Stop")
-            self.player.set_state(Gst.State.PLAYING)
+            self.player.play()
         else:
-            self.player.set_state(Gst.State.NULL)
+            self.player.stop()
             self.button.set_label("Start")
 
     def exit(self, widget, data=None):
         Gtk.main_quit()
-
+"""
     def on_message(self, bus, message):
         t = message.type
         if t == Gst.MessageType.EOS:
@@ -72,7 +72,7 @@ class GTK_Main:
             imagesink = message.src
             imagesink.set_property("force-aspect-ratio", True)
             imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
-
+"""
 Gst.init(None)
 GTK_Main()
 GObject.threads_init()

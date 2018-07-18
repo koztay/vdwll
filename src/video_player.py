@@ -34,7 +34,7 @@ class VideoPlayer:
 
         elif t == Gst.MessageType.ERROR:
             err, debug = message.parse_error()
-            print ("Error: %s" % err, debug)
+            print("Error: %s" % err, debug)
             self.player.set_state(Gst.State.NULL)
 
     def on_sync_message(self, bus, message):
@@ -48,3 +48,9 @@ class VideoPlayer:
             self.imagesink.set_property("force-aspect-ratio", False)
             self.imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
             self.player.set_state(Gst.State.PLAYING)
+
+    def play(self):
+        self.player.set_state(Gst.State.PLAYING)
+
+    def stop(self):
+        self.player.set_state(Gst.State.NULL)
