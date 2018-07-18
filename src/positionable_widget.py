@@ -8,6 +8,7 @@ import time
 import select
 import Pyro4
 
+from .video_player import VideoPlayer
 
 """
 Not: 
@@ -108,13 +109,7 @@ class MainWindow(Gtk.ApplicationWindow):
         container = self.get_child()
         videowidget = Gtk.DrawingArea()
         container.put(videowidget, 500, 400)
-        player = Gst.parse_launch(
-            "rtspsrc location=rtsp://10.0.0.143/media/video1 latency=10 ! decodebin ! autovideosink")
-        bus = player.get_bus()
-        bus.add_signal_watch()
-        bus.enable_sync_message_emission()
-        bus.connect("message", self.on_message)
-        bus.connect("sync-message::element", self.on_sync_message)
+        player = VideoPlayer(location="rtsp://10.0.0.143/media/video1", moviewindow=videowidget)
 
 
 class Application(Gtk.Application):
