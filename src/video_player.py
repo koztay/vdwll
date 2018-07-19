@@ -9,6 +9,7 @@ class VideoPlayer:
     """
 
     def __init__(self, location, moviewindow):
+        Gst.init(None)
         self.video_width = 1200
         self.video_height = 600
         self.crop_left = 20
@@ -26,7 +27,7 @@ class VideoPlayer:
         bus.enable_sync_message_emission()
         bus.connect("message", self.on_message)
         bus.connect("sync-message::element", self.on_sync_message)
-        Gst.init(None)
+
 
     def on_message(self, bus, message):
         t = message.type

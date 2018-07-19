@@ -3,7 +3,7 @@
 import sys, os
 import gi
 gi.require_version('Gst', '1.0')
-from gi.repository import Gtk
+from gi.repository import Gtk, GObject
 # from gi.repository import GObject, Gst, GstVideo
 
 from video_player import VideoPlayer
@@ -39,6 +39,7 @@ class GTK_Main:
         # bus.connect("message", self.on_message)
         # bus.connect("sync-message::element", self.on_sync_message)
         self.player = VideoPlayer(location="rtsp://10.0.0.143/media/video1", moviewindow=window)
+        self.player.play()
 
     def start_stop(self, w):
         if self.button.get_label() == "Start":

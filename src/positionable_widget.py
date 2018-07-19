@@ -63,6 +63,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         # create scalable image for background
         # create pixbuf
+        """
         pixbuf = GdkPixbuf.Pixbuf.new_from_file('../media/tvlogo_full.png')
         # resize it:
         pixbuf = pixbuf.scale_simple(2500, 2000, GdkPixbuf.InterpType.BILINEAR)
@@ -73,9 +74,14 @@ class MainWindow(Gtk.ApplicationWindow):
         container.put(image, 0, 0)
         container.move(image, 200, 200)  # move da çalışıyor işte...
         """
+
+        """
         Using scale_simple() does not preserve aspect ratio.
         Using new_from_file_at_size() preserves aspect ratio
         """
+
+        """       
+       
         # bı da crop edip sonra resize etmek için
         # GdkPixbuf.Pixbuf.new_subpixbuf(sourcepixbuf, startx, starty, width, height)
         cropped_buffer = GdkPixbuf.Pixbuf.new_subpixbuf(pixbuf, 1000, 1200, 200, 200)  # öncesinde resize edildiği için
@@ -83,6 +89,7 @@ class MainWindow(Gtk.ApplicationWindow):
         image2.set_from_pixbuf(cropped_buffer)
         # add the image to the window
         container.put(image2, -100, -100)
+        """
 
 
     def add_image(self, widget_name="test resmi", path=None, pos_x=0, pos_y=0):
@@ -103,19 +110,29 @@ class MainWindow(Gtk.ApplicationWindow):
             pos_y = randint(-200, 850)
             container.put(image, pos_x, pos_y)
 
-        self.show_all()
 
     def add_rtsp_source(self):
         container = self.get_child()
+
+
         videowidget = Gtk.DrawingArea()
-        container.put(videowidget, 500, 400)
+
+        videowidget.set_halign(Gtk.Align.START)
+        videowidget.set_valign(Gtk.Align.START)
+        videowidget.set_size_request(640, 480)
+        videowidget.show()
+
         player = VideoPlayer(location="rtsp://10.0.0.143/media/video1", moviewindow=videowidget)
+        player.play()
+        container.put(videowidget, 500, 400)
+        self.show_all()
 
 
 class Application(Gtk.Application):
 
     def __init__(self):
         Gtk.Application.__init__(self)
+        GObject.threads_init()
 
 
     def install_pyro_event_callback(self, daemon):
@@ -163,7 +180,9 @@ class Application(Gtk.Application):
         # GObject.timeout_add(40000, self.add_image)
 
     def do_startup(self):
+        Gst.init(None)
         Gtk.Application.do_startup(self)
+
 
     def add_image(self):
         fixed_widget = self.mainWindow.get_child()
@@ -231,7 +250,7 @@ def main():
     gui = Application()
 
     # create a pyro daemon with object
-
+    """
     daemon = Pyro4.Daemon(host="10.0.0.30")
     obj = MessagePrinter(gui)
     ns = Pyro4.locateNS()
@@ -244,7 +263,7 @@ def main():
     urimsg = "Pyro object uri = {0}".format(uri)
     gui.add_message(urimsg)
     print(urimsg)
-
+    """
     # add a Pyro event callback to the gui's mainloop
     exitStatus = gui.run(sys.argv)
 
