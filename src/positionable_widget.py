@@ -203,6 +203,17 @@ class Application(Gtk.Application):
             if child.get_name() == name:
                 fixed_widget.remove(child)
 
+    def move_widget(self, xpos=100, ypos=100, name="video src"):
+        fixed_widget = self.mainWindow.get_child()
+        children = fixed_widget.get_children()
+        print(children)
+        for child in children:
+            print("name :", child.get_name())
+            pos_x = randint(-200, 1500)
+            pos_y = randint(-200, 850)
+            if child.get_name() == name:
+                fixed_widget.move(child, pos_x, pos_y)
+
     def resize_widget(self, width=800, height=450, name="video src"):
         fixed_widget = self.mainWindow.get_child()
         children = fixed_widget.get_children()
