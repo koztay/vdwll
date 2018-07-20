@@ -171,11 +171,11 @@ class Application(Gtk.Application):
         self.mainWindow.add_rtsp_source()
         self.mainWindow.show_all()
         #  this takes 2 args: (how often to update in millisec, the method to run)
-        GObject.timeout_add(5000, self.resize_widget(300, 240))
-        GObject.timeout_add(10000, self.resize_widget(500, 240))
-        GObject.timeout_add(15000, self.resize_widget(800, 240))
-        GObject.timeout_add(20000, self.resize_widget(900, 450))
-        GObject.timeout_add(25000, self.resize_widget(1200, 900))
+        GObject.timeout_add(5000, self.resize_widget)
+        GObject.timeout_add(10000, self.resize_widget)
+        GObject.timeout_add(15000, self.resize_widget)
+        GObject.timeout_add(20000, self.resize_widget)
+        GObject.timeout_add(25000, self.resize_widget)
         # GObject.timeout_add(10000, self.add_image)
         # GObject.timeout_add(15000, self.add_image)
         # GObject.timeout_add(25000, self.add_image)
@@ -211,9 +211,9 @@ class Application(Gtk.Application):
             print("name :", child.get_name())
 
             if child.get_name() == name:
+                width = randint(100, 1500)
+                height = randint(100, 850)
                 child.set_size_request(width, height)
-
-
 
     def add_message(self, message):
         message = "[{0}] {1}".format(time.strftime("%X"), message)
