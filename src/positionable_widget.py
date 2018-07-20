@@ -115,7 +115,7 @@ class MainWindow(Gtk.ApplicationWindow):
     def add_rtsp_source(self):
         container = self.get_child()
 
-        videowidget = Gtk.DrawingArea()
+        videowidget = Gtk.DrawingArea(name="video src")
 
         videowidget.set_halign(Gtk.Align.START)
         videowidget.set_valign(Gtk.Align.START)
@@ -197,7 +197,20 @@ class Application(Gtk.Application):
             print("name :", child.get_name())
 
             if child.get_name() == name:
-                fixed_widget.remove(child)
+                child.set_size_request(300, 240)
+
+    def resize_widget(self, name="video src", width, height):
+        fixed_widget = self.mainWindow.get_child()
+        children = fixed_widget.get_children()
+        print(children)
+        for child in children:
+            print("name :", child.get_name())
+
+            if child.get_name() == name:
+                child.set_size_request(width, height)
+                child.show()
+
+
 
     def add_message(self, message):
         message = "[{0}] {1}".format(time.strftime("%X"), message)
