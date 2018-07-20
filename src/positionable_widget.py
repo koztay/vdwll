@@ -114,7 +114,6 @@ class MainWindow(Gtk.ApplicationWindow):
     def add_rtsp_source(self):
         container = self.get_child()
 
-
         videowidget = Gtk.DrawingArea()
 
         videowidget.set_halign(Gtk.Align.START)
