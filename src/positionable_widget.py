@@ -203,7 +203,7 @@ class Application(Gtk.Application):
             if child.get_name() == name:
                 fixed_widget.remove(child)
 
-    def resize_widget(self, width, height, name="video src"):
+    def resize_widget(self, width=800, height=450, name="video src"):
         fixed_widget = self.mainWindow.get_child()
         children = fixed_widget.get_children()
         print(children)
