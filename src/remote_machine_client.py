@@ -10,7 +10,7 @@ ap.add_argument("-n", "--name", type=str, required=True, help="the name of the w
 ap.add_argument("-x", "--xpos", type=int, help="x coordinate of the new position")
 ap.add_argument("-y", "--ypos", type=int, help="y coordinate of the new position")
 ap.add_argument("-w", "--width", type=int, help="new width of the widget")
-ap.add_argument("-h", "--height", type=int, help="new height of the widget")
+ap.add_argument("-ht", "--height", type=int, help="new height of the widget")
 
 
 args = vars(ap.parse_args())
