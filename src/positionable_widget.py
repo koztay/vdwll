@@ -8,7 +8,6 @@ import time
 import select
 import Pyro4
 
-from video_player import VideoPlayer as video_player
 from playbin_player import VideoPlayer as playbin_player
 
 
