@@ -93,7 +93,6 @@ class MainWindow(Gtk.ApplicationWindow):
         container.put(image2, -100, -100)
         """
 
-
     def add_image(self, widget_name="test resmi", path=None, pos_x=0, pos_y=0):
         print("add_image_çalıştı func içinden")
         container = self.get_child()
