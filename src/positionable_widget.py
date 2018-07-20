@@ -264,7 +264,7 @@ class MessagePrinter(object):
         self.gui.add_image()
 
     def move_widget(self, xpos, ypos, name):
-        self.move_widget(xpos, ypos, name)
+        self.gui.move_widget(xpos, ypos, name)
 
 
 # application = Application()
