@@ -201,7 +201,7 @@ class Application(Gtk.Application):
             print("name :", child.get_name())
 
             if child.get_name() == name:
-                child.set_size_request(300, 240)
+                fixed_widget.remove(child)
 
     def resize_widget(self, width, height, name="video src"):
         fixed_widget = self.mainWindow.get_child()
@@ -212,7 +212,6 @@ class Application(Gtk.Application):
 
             if child.get_name() == name:
                 child.set_size_request(width, height)
-                child.show()
 
 
 
