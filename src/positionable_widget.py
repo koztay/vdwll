@@ -281,12 +281,12 @@ def main():
     gui = Application()
 
     # create a pyro daemon with object
-    """
+
     daemon = Pyro4.Daemon(host="10.0.0.30")
     obj = MessagePrinter(gui)
     ns = Pyro4.locateNS()
     uri = daemon.register(obj)
-    ns.register("videowall_agent", uri)
+    ns.register("videowall_agent_1", uri)
 
     gui.install_pyro_event_callback(daemon)
     gui.add_message("Pyro server started. Not using threads.")
@@ -294,7 +294,7 @@ def main():
     urimsg = "Pyro object uri = {0}".format(uri)
     gui.add_message(urimsg)
     print(urimsg)
-    """
+
     # add a Pyro event callback to the gui's mainloop
     exitStatus = gui.run(sys.argv)
 

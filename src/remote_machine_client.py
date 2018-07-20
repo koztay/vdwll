@@ -13,14 +13,14 @@ args = vars(ap.parse_args())
 
 
 function_name = args["func_name"]
-wall = Pyro4.Proxy("PYRONAME:videowall_agent")
+screen = Pyro4.Proxy("PYRONAME:videowall_agent_1")  # bu ekranı temsil ediyor.
 
 
 def move_to(args):
     name = args["name"]
     xpos = args["xpos"]
     ypos = args["ypos"]
-    wall.move_widget(name=name, xpos=xpos, ypos=ypos)
+    screen.move_widget(name=name, xpos=xpos, ypos=ypos)
 
 
 locals()["function_name"](args)
