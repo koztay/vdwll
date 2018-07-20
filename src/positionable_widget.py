@@ -175,11 +175,6 @@ class Application(Gtk.Application):
         GObject.timeout_add(15000, self.resize_widget)
         GObject.timeout_add(20000, self.resize_widget)
         GObject.timeout_add(25000, self.resize_widget)
-        GObject.timeout_add(5000, self.move_widget)
-        GObject.timeout_add(10000, self.move_widget)
-        GObject.timeout_add(15000, self.move_widget)
-        GObject.timeout_add(20000, self.move_widget)
-        GObject.timeout_add(25000, self.move_widget)
         # GObject.timeout_add(10000, self.add_image)
         # GObject.timeout_add(15000, self.add_image)
         # GObject.timeout_add(25000, self.add_image)
@@ -207,16 +202,14 @@ class Application(Gtk.Application):
             if child.get_name() == name:
                 fixed_widget.remove(child)
 
-    def move_widget(self, xpos=100, ypos=100, name="video src"):
+    def move_widget(self, xpos, ypos, name):
         fixed_widget = self.mainWindow.get_child()
         children = fixed_widget.get_children()
         print(children)
         for child in children:
             print("name :", child.get_name())
-            pos_x = randint(-200, 1500)
-            pos_y = randint(-200, 850)
             if child.get_name() == name:
-                fixed_widget.move(child, pos_x, pos_y)
+                fixed_widget.move(child, xpos, ypos)
 
     def resize_widget(self, width=800, height=450, name="video src"):
         fixed_widget = self.mainWindow.get_child()
@@ -269,6 +262,9 @@ class MessagePrinter(object):
 
     def add_image(self):
         self.gui.add_image()
+
+    def move_widget(self, xpos, ypos, name):
+        self.gui.add_image(xpos, ypos, name)
 
 
 # application = Application()
