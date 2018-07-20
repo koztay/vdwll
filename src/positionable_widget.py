@@ -123,7 +123,7 @@ class MainWindow(Gtk.ApplicationWindow):
         videowidget.set_size_request(640, 480)
         videowidget.show()
 
-        player = playbin_player(location="rtsp://10.0.0.143/media/video1", moviewindow=videowidget)
+        player = playbin_player(uri="rtsp://10.0.0.143/media/video1", moviewindow=videowidget)
         player.play()
         container.put(videowidget, 500, 400)
         self.show_all()
