@@ -23,7 +23,7 @@ def move_to(args):
     screen.move_widget(name=name, xpos=xpos, ypos=ypos)
 
 
-locals()["function_name"](args)
+locals()[function_name](args)
 
 # wall.message("Hello there!")
 # wall.message("How is it going?!")
