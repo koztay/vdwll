@@ -160,10 +160,10 @@ class Application(Gtk.Application):
         self.mainWindow = MainWindow(self)
 
         # titlebar 'ı gizlemek için (hide title bar maximize değilken)
-        self.mainWindow.set_decorated(False)
-
-        self.mainWindow.set_hide_titlebar_when_maximized(True)  # bu da miximize edersen gizle diyor.
-        self.mainWindow.fullscreen()  # Full screen yapmak için
+        # self.mainWindow.set_decorated(False)
+        #
+        # self.mainWindow.set_hide_titlebar_when_maximized(True)  # bu da miximize edersen gizle diyor.
+        # self.mainWindow.fullscreen()  # Full screen yapmak için
 
         # get object of fixed widget
         fixed_widget = self.mainWindow.get_child()
