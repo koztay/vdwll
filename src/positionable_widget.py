@@ -260,8 +260,8 @@ class MessagePrinter(object):
         time.sleep(duration)
         self.gui.add_message("from Pyro: woke up!")
 
-    def add_image(self):
-        self.gui.add_image()
+    # def add_image(self):
+    #     self.gui.add_image()
 
     def move_widget(self, xpos, ypos, name):
         self.gui.add_image(xpos, ypos, name)
