@@ -31,7 +31,7 @@ def resize(args):
     name = args["name"]
     width = args["width"]
     height = args["height"]
-    screen.move_widget(name=name, width=width, height=height)
+    screen.resize(name=name, width=width, height=height)
 
 
 locals()[function_name](args)
