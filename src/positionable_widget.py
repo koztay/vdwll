@@ -211,7 +211,7 @@ class Application(Gtk.Application):
             if child.get_name() == name:
                 fixed_widget.move(child, xpos, ypos)
 
-    def resize_widget(self, width=800, height=450, name="video src"):
+    def resize_widget(self, width, height, name):
         fixed_widget = self.mainWindow.get_child()
         children = fixed_widget.get_children()
         print(children)
@@ -219,8 +219,6 @@ class Application(Gtk.Application):
             print("name :", child.get_name())
 
             if child.get_name() == name:
-                width = randint(100, 1500)
-                height = randint(100, 850)
                 child.set_size_request(width, height)
 
     def add_message(self, message):
@@ -265,6 +263,9 @@ class MessagePrinter(object):
 
     def move_widget(self, xpos, ypos, name):
         self.gui.move_widget(xpos, ypos, name)
+
+    def resize(self, width, height, name):
+        self.gui.resize_widget(width, height, name)
 
 
 # application = Application()
