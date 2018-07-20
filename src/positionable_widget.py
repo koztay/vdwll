@@ -171,7 +171,11 @@ class Application(Gtk.Application):
         self.mainWindow.add_rtsp_source()
         self.mainWindow.show_all()
         #  this takes 2 args: (how often to update in millisec, the method to run)
-        # GObject.timeout_add(5000, self.remove_widget)
+        GObject.timeout_add(5000, self.resize_widget(300, 240))
+        GObject.timeout_add(10000, self.resize_widget(500, 240))
+        GObject.timeout_add(15000, self.resize_widget(800, 240))
+        GObject.timeout_add(20000, self.resize_widget(900, 450))
+        GObject.timeout_add(25000, self.resize_widget(1200, 900))
         # GObject.timeout_add(10000, self.add_image)
         # GObject.timeout_add(15000, self.add_image)
         # GObject.timeout_add(25000, self.add_image)
@@ -199,7 +203,7 @@ class Application(Gtk.Application):
             if child.get_name() == name:
                 child.set_size_request(300, 240)
 
-    def resize_widget(self, name="video src", width, height):
+    def resize_widget(self, width, height, name="video src"):
         fixed_widget = self.mainWindow.get_child()
         children = fixed_widget.get_children()
         print(children)
