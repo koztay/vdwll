@@ -192,7 +192,7 @@ class Application(Gtk.Application):
         self.mainWindow.add_image(fixed_widget)
         return "add image çalıştı return olarak"
 
-    def remove_widget(self, name="test resmi"):
+    def remove_widget(self, name):
         fixed_widget = self.mainWindow.get_child()
         children = fixed_widget.get_children()
         print(children)
@@ -266,6 +266,9 @@ class MessagePrinter(object):
 
     def resize(self, width, height, name):
         self.gui.resize_widget(width, height, name)
+
+    def remove_widget(self, name):
+        self.gui.remove_widget(name)
 
 
 # application = Application()
