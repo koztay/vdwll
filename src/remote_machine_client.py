@@ -46,8 +46,8 @@ def add_source(args):
     xpos = args["xpos"]
     ypos = args["ypos"]
     width = args["width"]
-    heigth = args["heigth"]
-    screen.add_source(name=name, uri=uri, xpos=xpos, ypos=ypos, width=width, heigth=heigth)
+    height = args["height"]
+    screen.add_source(name=name, uri=uri, xpos=xpos, ypos=ypos, width=width, heigth=height)
 
 
 locals()[function_name](args)
