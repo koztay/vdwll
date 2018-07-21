@@ -41,6 +41,11 @@ def remove(args):
 
 
 def add_source(args):
+    """
+    sapmle usage = python remote_machine_client.py -f="add_source" -n="rtsp source" -u=rtsp://10.0.0.143/media/video1 -x=100 -y=100 -w=600 -ht=400
+    :param args:
+    :return:
+    """
     name = args["name"]
     uri = args["uri"]
     xpos = args["xpos"]
