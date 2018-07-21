@@ -280,7 +280,7 @@ class MessagePrinter(object):
         self.gui.remove_widget(name)
 
     def add_source(self, uri, xpos, ypos, width, heigth, name):
-        self.gui.add_source(self, uri, xpos, ypos, width, heigth, name)
+        self.gui.add_source(uri, xpos, ypos, width, heigth, name)
 
 
 # application = Application()
