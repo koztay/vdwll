@@ -194,7 +194,6 @@ class Application(Gtk.Application):
         Gst.init(None)
         Gtk.Application.do_startup(self)
 
-
     def add_image(self):
         fixed_widget = self.mainWindow.get_child()
         self.mainWindow.add_image(fixed_widget)
@@ -279,6 +278,9 @@ class MessagePrinter(object):
 
     def remove_widget(self, name):
         self.gui.remove_widget(name)
+
+    def add_source(self, uri, xpos, ypos, width, heigth, name):
+        self.gui.add_source(self, uri, xpos, ypos, width, heigth, name)
 
 
 # application = Application()
