@@ -34,6 +34,11 @@ def resize(args):
     screen.resize(name=name, width=width, height=height)
 
 
+def remove(args):
+    name = args["name"]
+    screen.remove_widget(name=name)
+
+
 locals()[function_name](args)
 
 # wall.message("Hello there!")
