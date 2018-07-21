@@ -11,6 +11,7 @@ ap.add_argument("-x", "--xpos", type=int, help="x coordinate of the new position
 ap.add_argument("-y", "--ypos", type=int, help="y coordinate of the new position")
 ap.add_argument("-w", "--width", type=int, help="new width of the widget")
 ap.add_argument("-ht", "--height", type=int, help="new height of the widget")
+ap.add_argument("-u", "--uri", type=str, help="uri of the source")
 
 
 args = vars(ap.parse_args())
@@ -37,6 +38,16 @@ def resize(args):
 def remove(args):
     name = args["name"]
     screen.remove_widget(name=name)
+
+
+def add_source(args):
+    name = args["name"]
+    uri = args["uri"]
+    xpos = args["xpos"]
+    ypos = args["ypos"]
+    width = args["width"]
+    heigth = args["heigth"]
+    screen.add_source(name=name, uri=uri, xpos=xpos, ypos=ypos, width=width, heigth=heigth)
 
 
 locals()[function_name](args)

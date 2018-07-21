@@ -110,17 +110,25 @@ class MainWindow(Gtk.ApplicationWindow):
             pos_y = randint(-200, 850)
             container.put(image, pos_x, pos_y)
 
+    def add_source(self, uri, xpos, ypos, width, heigth, name):
+        container = self.get_child()
+        videowidget = Gtk.DrawingArea(name=name)
+        videowidget.set_halign(Gtk.Align.START)
+        videowidget.set_valign(Gtk.Align.START)
+        videowidget.set_size_request(width, heigth)
+        videowidget.show()
+        player = playbin_player(uri=uri, moviewindow=videowidget)
+        player.play()
+        container.put(videowidget, xpos, ypos)
+        self.show_all()
 
     def add_rtsp_source(self):
         container = self.get_child()
-
         videowidget = Gtk.DrawingArea(name="video src")
-
         videowidget.set_halign(Gtk.Align.START)
         videowidget.set_valign(Gtk.Align.START)
         videowidget.set_size_request(640, 480)
         videowidget.show()
-
         player = playbin_player(uri="rtsp://10.0.0.143/media/video1", moviewindow=videowidget)
         player.play()
         container.put(videowidget, 500, 400)
@@ -170,11 +178,11 @@ class Application(Gtk.Application):
         self.mainWindow.add_rtsp_source()
         self.mainWindow.show_all()
         #  this takes 2 args: (how often to update in millisec, the method to run)
-        GObject.timeout_add(5000, self.resize_widget)
-        GObject.timeout_add(10000, self.resize_widget)
-        GObject.timeout_add(15000, self.resize_widget)
-        GObject.timeout_add(20000, self.resize_widget)
-        GObject.timeout_add(25000, self.resize_widget)
+        # GObject.timeout_add(5000, self.resize_widget)
+        # GObject.timeout_add(10000, self.resize_widget)
+        # GObject.timeout_add(15000, self.resize_widget)
+        # GObject.timeout_add(20000, self.resize_widget)
+        # GObject.timeout_add(25000, self.resize_widget)
         # GObject.timeout_add(10000, self.add_image)
         # GObject.timeout_add(15000, self.add_image)
         # GObject.timeout_add(25000, self.add_image)
@@ -192,13 +200,15 @@ class Application(Gtk.Application):
         self.mainWindow.add_image(fixed_widget)
         return "add image çalıştı return olarak"
 
+    def add_source(self, uri, xpos, ypos, width, heigth, name):
+        self.mainWindow.add_source(uri, xpos, ypos, width, heigth, name)
+
     def remove_widget(self, name):
         fixed_widget = self.mainWindow.get_child()
         children = fixed_widget.get_children()
         print(children)
         for child in children:
             print("name :", child.get_name())
-
             if child.get_name() == name:
                 fixed_widget.remove(child)
 
