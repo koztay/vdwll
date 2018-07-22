@@ -302,7 +302,7 @@ def main():
     obj = MessagePrinter(gui)
     ns = Pyro4.locateNS()
     uri = daemon.register(obj)
-    ns.register("videowall_agent_1", uri)
+    ns.register(IP, uri)
 
     gui.install_pyro_event_callback(daemon)
     gui.add_message("Pyro server started. Not using threads.")

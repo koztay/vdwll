@@ -12,13 +12,15 @@ ap.add_argument("-y", "--ypos", type=int, help="y coordinate of the new position
 ap.add_argument("-w", "--width", type=int, help="new width of the widget")
 ap.add_argument("-ht", "--height", type=int, help="new height of the widget")
 ap.add_argument("-u", "--uri", type=str, help="uri of the source")
+ap.add_argument("-s", "--screen", type=str, required=True, help="IP address of the screen")
 
 
 args = vars(ap.parse_args())
 
 
 function_name = args["func_name"]
-screen = Pyro4.Proxy("PYRONAME:videowall_agent_1")  # bu ekranı temsil ediyor.
+screen_ip = args["screen"]
+screen = Pyro4.Proxy("PYRONAME:{}".format(screen_ip))  # bu komutun çalışacağı ekranı temsil ediyor.
 
 
 def move_to(args):
@@ -42,7 +44,18 @@ def remove(args):
 
 def add_source(args):
     """
-    sapmle usage = python remote_machine_client.py -f="add_source" -n="rtsp source" -u=rtsp://10.0.0.143/media/video1 -x=100 -y=100 -w=600 -ht=400
+    sample usages:
+
+    python remote_machine_client.py -f="add_source" \
+    -n="rtsp source" -u=rtsp://10.0.0.143/media/video1 \
+    -x=100 -y=100 -w=600 -ht=400 -s=192.168.1.35
+
+
+    python remote_machine_client.py -n"local video" \
+    -u="file:///home/kemal/Developer/vdwll/media/brbad.mp4" \
+    -x=100 -y=100 -w=1000 -ht=400 -f="add_source" \
+    -s=192.168.1.35
+
     :param args:
     :return:
     """
@@ -56,9 +69,5 @@ def add_source(args):
 
 
 locals()[function_name](args)
-
-# wall.message("Hello there!")
-# wall.message("How is it going?!")
-# wall.add_image()
 
 print("done!")
