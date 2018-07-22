@@ -8,8 +8,12 @@ import time
 import select
 import Pyro4
 
-from playbin_player import VideoPlayer as playbin_player
 
+from src.playbin_player import VideoPlayer as playbin_player
+from src.ip_checker import get_ip
+
+
+IP = get_ip()
 
 """
 Not: 
@@ -294,7 +298,7 @@ def main():
 
     # create a pyro daemon with object
 
-    daemon = Pyro4.Daemon(host="10.0.0.30")
+    daemon = Pyro4.Daemon(host=IP)
     obj = MessagePrinter(gui)
     ns = Pyro4.locateNS()
     uri = daemon.register(obj)
