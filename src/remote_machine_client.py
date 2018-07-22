@@ -24,6 +24,11 @@ screen = Pyro4.Proxy("PYRONAME:{}".format(screen_ip))  # bu komutun çalışaca�
 
 
 def move_to(args):
+    """
+    python remote_machine_client.py -n"local video" -f="move_to" -s=192.168.1.35 -x=600 -y=400
+    :param args:
+    :return:
+    """
     name = args["name"]
     xpos = args["xpos"]
     ypos = args["ypos"]
@@ -31,6 +36,11 @@ def move_to(args):
 
 
 def resize(args):
+    """
+    python remote_machine_client.py -n"local video" -f="resize" -s=192.168.1.35 -w=600 -ht=400
+    :param args:
+    :return:
+    """
     name = args["name"]
     width = args["width"]
     height = args["height"]
@@ -38,6 +48,12 @@ def resize(args):
 
 
 def remove(args):
+    """
+    sample usage:
+    python remote_machine_client.py -n"local video" -f="remove" -s=192.168.1.35
+    :param args:
+    :return:
+    """
     name = args["name"]
     screen.remove_widget(name=name)
 
