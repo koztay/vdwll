@@ -19,10 +19,7 @@
 
 """
  https://github.com/superdump/pyrtsp
-
  sudo apt-get install gir1.2-gst-rtsp-server-1.0
-
-
 """
 
 
@@ -31,7 +28,6 @@ gi.require_version('Gst', '1.0')
 from gi.repository import GObject, Gst, GstVideo, GstRtspServer
 
 Gst.init(None)
-
 
 mainloop = GObject.MainLoop()
 
@@ -48,5 +44,4 @@ server.attach(None)
 
 print("stream ready at rtsp://127.0.0.1:8554/test")
 mainloop.run()
-
 
