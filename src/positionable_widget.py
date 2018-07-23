@@ -41,7 +41,7 @@ class MainWindow(Gtk.ApplicationWindow):
         Gtk.Window.__init__(self, title=None, application=app)
 
         # Set the window size
-        self.set_size_request(800, 450)  # bunu settings vb. bir yerden almalı.
+        self.set_size_request(1280, 720)  # bunu settings vb. bir yerden almalı.
         # self.overlay = Gtk.Overlay()
         # self.add(self.overlay)
         # self.background = Gtk.Image.new_from_file('/Users/kemal/WorkSpace/Videowall Development/media/tvlogo_full.png')
@@ -128,8 +128,8 @@ class Application(Gtk.Application):
         # titlebar 'ı gizlemek için (hide title bar maximize değilken)
         # self.mainWindow.set_decorated(False)
         #
-        # self.mainWindow.set_hide_titlebar_when_maximized(True)  # bu da miximize edersen gizle diyor.
-        # self.mainWindow.fullscreen()  # Full screen yapmak için
+        self.mainWindow.set_hide_titlebar_when_maximized(True)  # bu da miximize edersen gizle diyor.
+        self.mainWindow.fullscreen()  # Full screen yapmak için
 
         # run function to add image
         self.mainWindow.show_all()
