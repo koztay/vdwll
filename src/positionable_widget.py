@@ -10,8 +10,8 @@ import select
 import Pyro4
 
 # from src.playbin_player import VideoPlayer as playbin_player
-from src.ip_checker import get_ip
-from src.remote_command_executer import RemoteCommander
+from ip_checker import get_ip
+from remote_command_executer import RemoteCommander
 
 IP = get_ip()
 
