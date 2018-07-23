@@ -5,7 +5,7 @@ import time
 gi.require_version('Gtk', '3.0')
 
 from gi.repository import Gtk
-from src.playbin_player import VideoPlayer as playbin_player
+from playbin_player import VideoPlayer as playbin_player
 
 
 @Pyro4.expose
