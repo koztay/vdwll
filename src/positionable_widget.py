@@ -162,7 +162,7 @@ class Application(Gtk.Application):
         display = Gdk.Display.get_default()
         print(display)
         cursor = Gdk.Cursor.new_for_display(display, Gdk.CursorType.BLANK_CURSOR)
-        # widget.set_cursor(cursor)
+        widget.set_cursor(cursor)  # mac 'te çalışmıyor olbilir.
 
 
 # application = Application()
