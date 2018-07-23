@@ -124,6 +124,7 @@ class Application(Gtk.Application):
 
     def do_activate(self):
         self.mainWindow = MainWindow(self)
+        self.mainWindow.connect("realize", self.realize_cb)
 
         # titlebar 'ı gizlemek için (hide title bar maximize değilken)
         # self.mainWindow.set_decorated(False)
@@ -157,6 +158,11 @@ class Application(Gtk.Application):
         # self.serveroutput = self.serveroutput[-27:]
         # self.msg.config(text="\n".join(self.serveroutput))
 
+    def realize_cb(self, widget):
+        display = Gdk.Display.get_default()
+        print(display)
+        cursor = Gdk.Cursor.new_for_display(display, Gdk.CursorType.BLANK_CURSOR)
+        # widget.set_cursor(cursor)
 
 
 # application = Application()

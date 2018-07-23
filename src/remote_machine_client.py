@@ -63,8 +63,8 @@ def add_source(args):
     sample usages:
 
     python remote_machine_client.py -f="add_source" \
-    -n="rtsp source" -u=rtsp://10.0.0.143/media/video1 \
-    -x=100 -y=100 -w=600 -ht=400 -s=192.168.1.35
+    -n="rtsp source" -u=rtsp://10.0.0.143/media/video2 \
+    -x=640 -y=0 -w=1280 -ht=720 -s=10.0.0.30
 
 
     python remote_machine_client.py -n"local video" \
