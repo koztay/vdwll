@@ -1,3 +1,18 @@
 Pyro4
 environ
 pgi
+
+
+# On OS X, this is:
+# pip3 install pyobjc-core
+# pip3 install pyobjc
+# pip3 install pyautogui
+
+# On Linux, this is:
+# pip3 install python3-xlib
+# sudo apt-get install scrot
+# sudo apt-get install python3-tk
+# sudo apt-get install python3-dev
+# pip3 install pyautogui
+
+pyautogui
