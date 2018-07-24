@@ -4,9 +4,9 @@ pgi
 
 
 # On OS X, this is:
-# pip3 install pyobjc-core
-# pip3 install pyobjc
-# pip3 install pyautogui
+pyobjc-core
+pyobjc
+pyautogui
 
 # On Linux, this is:
 # pip3 install python3-xlib
@@ -15,4 +15,3 @@ pgi
 # sudo apt-get install python3-dev
 # pip3 install pyautogui
 
-pyautogui
