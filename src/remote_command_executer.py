@@ -77,6 +77,5 @@ class RemoteCommander(object):
         videowidget.set_valign(Gtk.Align.START)
         videowidget.set_size_request(width, heigth)
         videowidget.show()
-        player = playbin_player(uri=uri, moviewindow=videowidget)
-        player.play()
+        playbin_player(uri=uri, moviewindow=videowidget)
         container.put(videowidget, xpos, ypos)

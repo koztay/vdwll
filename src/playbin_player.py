@@ -120,11 +120,11 @@ class VideoPlayer:
             self.imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
             # self.data.pipeline.set_state(Gst.State.PLAYING)
 
-    def play(self):
-        self.data.pipeline.set_state(Gst.State.PLAYING)
-
-    def stop(self):
-        self.data.pipeline.set_state(Gst.State.NULL)
+    # def play(self):
+    #     self.data.pipeline.set_state(Gst.State.PLAYING)
+    #
+    # def stop(self):
+    #     self.data.pipeline.set_state(Gst.State.NULL)
 
 
 if __name__ == "__main__":
