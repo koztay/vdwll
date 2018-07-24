@@ -4,7 +4,7 @@ import sys
 
 gi.require_version('Gst', '1.0')
 gi.require_version('GstVideo', '1.0')
-from gi.repository import GObject, Gst, GstVideo, GLib
+from gi.repository import GObject, Gst, GstVideo
 
 
 class CustomData:
@@ -31,16 +31,7 @@ class VideoPlayer:
         self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
         self.data.pipeline.set_property("uri", self.uri)
 
-        # self.player = Gst.ElementFactory.make("playbin", "playbin")
-        # self.player.set_property("uri", self.uri)
-
         self.streams_list = []
-
-        # bus = self.player.get_bus()
-        #         # bus.add_signal_watch()
-        #         # bus.enable_sync_message_emission()
-        #         # bus.connect("message", self.on_message)
-        #         # bus.connect("sync-message::element", self.on_sync_message)
 
         bus = self.data.pipeline.get_bus()
 
@@ -51,14 +42,10 @@ class VideoPlayer:
         elif ret == Gst.StateChangeReturn.NO_PREROLL:
             self.data.is_live = True
 
-        # self.data.main_loop = GLib.MainLoop.new(None, False)
-
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
-
-        # self.data.main_loop.run()
 
     def cb_message(self, bus, msg, data):
         t = msg.type
@@ -97,16 +84,6 @@ class VideoPlayer:
             self.data.pipeline.set_state(Gst.State.PLAYING)
             return
 
-    # def on_message(self, bus, message):
-    #     t = message.type
-    #     if t == Gst.MessageType.EOS:
-    #         self.data.pipeline.set_state(Gst.State.NULL)
-    #
-    #     elif t == Gst.MessageType.ERROR:
-    #         err, debug = message.parse_error()
-    #         print("Error: %s" % err, debug)
-    #         self.data.pipeline.set_state(Gst.State.NULL)
-
     def on_sync_message(self, bus, message):
         struct = message.get_structure()
         if not struct:
@@ -118,13 +95,6 @@ class VideoPlayer:
             print("self.imagesink neymiş", self.imagesink)
             self.imagesink.set_property("force-aspect-ratio", False)
             self.imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
-            # self.data.pipeline.set_state(Gst.State.PLAYING)
-
-    # def play(self):
-    #     self.data.pipeline.set_state(Gst.State.PLAYING)
-    #
-    # def stop(self):
-    #     self.data.pipeline.set_state(Gst.State.NULL)
 
 
 if __name__ == "__main__":
