@@ -51,14 +51,14 @@ class VideoPlayer:
         elif ret == Gst.StateChangeReturn.NO_PREROLL:
             self.data.is_live = True
 
-        self.data.main_loop = GLib.MainLoop.new(None, False)
+        # self.data.main_loop = GLib.MainLoop.new(None, False)
 
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
 
-        self.data.main_loop.run()
+        # self.data.main_loop.run()
 
     def cb_message(self, bus, msg, data):
         t = msg.type
