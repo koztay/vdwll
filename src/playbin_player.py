@@ -54,7 +54,9 @@ class VideoPlayer:
         self.data.main_loop = GLib.MainLoop.new(None, False)
 
         bus.add_signal_watch()
+        bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
+        bus.connect("sync-message::element", self.on_sync_message)
 
         self.data.main_loop.run()
 
@@ -95,15 +97,15 @@ class VideoPlayer:
             self.data.pipeline.set_state(Gst.State.PLAYING)
             return
 
-    def on_message(self, bus, message):
-        t = message.type
-        if t == Gst.MessageType.EOS:
-            self.data.pipeline.set_state(Gst.State.NULL)
-
-        elif t == Gst.MessageType.ERROR:
-            err, debug = message.parse_error()
-            print("Error: %s" % err, debug)
-            self.data.pipeline.set_state(Gst.State.NULL)
+    # def on_message(self, bus, message):
+    #     t = message.type
+    #     if t == Gst.MessageType.EOS:
+    #         self.data.pipeline.set_state(Gst.State.NULL)
+    #
+    #     elif t == Gst.MessageType.ERROR:
+    #         err, debug = message.parse_error()
+    #         print("Error: %s" % err, debug)
+    #         self.data.pipeline.set_state(Gst.State.NULL)
 
     def on_sync_message(self, bus, message):
         struct = message.get_structure()
