@@ -115,6 +115,7 @@ class VideoPlayer:
         if message_name == "prepare-window-handle":
             # Assign the viewport
             self.imagesink = message.src
+            print("self.imagesink neymiş", self.imagesink)
             self.imagesink.set_property("force-aspect-ratio", False)
             self.imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
             # self.data.pipeline.set_state(Gst.State.PLAYING)
