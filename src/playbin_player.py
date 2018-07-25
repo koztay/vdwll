@@ -28,9 +28,11 @@ class VideoPlayer:
         self.uri = uri
         self.movie_window = moviewindow
 
-        self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
-        self.data.pipeline.set_property("uri", self.uri)
-        self.data.pipeline.set_property("latency", 200)
+        # self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
+        # self.data.pipeline.set_property("uri", self.uri)
+        self.data.pipeline = Gst.parse_launch(
+            "rtspsrc {} latency=200 ! decodebin ! autovideosink".format(self.uri))
+        # self.data.pipeline.set_property("latency", 200) çalışmıyor bu decodebin 'e eklemek lazım...
 
         self.streams_list = []
 
