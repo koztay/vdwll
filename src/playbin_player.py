@@ -55,7 +55,10 @@ class VideoPlayer:
 
         if t == Gst.MessageType.ERROR:
             err, debug = msg.parse_error()
-            logging.error('{}\n{}'.format(*err))
+            try:
+                logging.error('{}\n{}'.format(*err))
+            except:
+                print('{}\n{}'.format(*err))
             self.data.pipeline.set_state(Gst.State.READY)
             self.data.main_loop.quit()
             return
