@@ -25,7 +25,7 @@
 
 import gi
 gi.require_version('Gst', '1.0')
-from gi.repository import GObject, Gst, GstVideo, GstRtspServer
+from gi.repository import GObject, Gst, GstVideo, GstRtspServer, GstRtsp
 
 Gst.init(None)
 
@@ -44,7 +44,7 @@ factory.set_shared(True)
 pool = GstRtspServer.RTSPAddressPool()
 pool.add_range("224.3.0.0", "224.3.0.10", 5000, 5010, 16)
 factory.set_address_pool(pool)
-factory.set_protocols("GST_RTSP_LOWER_TRANS_UDP_MCAST")
+factory.set_protocols(GstRtsp.RTSPLowerTrans.UDP_MCAST)
 # ###########################################################
 
 mounts.add_factory("/test", factory)
