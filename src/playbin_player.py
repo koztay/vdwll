@@ -58,7 +58,7 @@ class VideoPlayer:
             try:
                 logging.error('{}\n{}'.format(*err))
             except:
-                print('{}\n{}'.format(*err))
+                print('{}'.format(err))
             self.data.pipeline.set_state(Gst.State.READY)
             # self.data.main_loop.quit()
             return
