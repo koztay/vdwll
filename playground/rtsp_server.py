@@ -38,6 +38,15 @@ mounts = server.get_mount_points()
 factory = GstRtspServer.RTSPMediaFactory()
 factory.set_launch('(videotestsrc is-live=1 ! x264enc speed-preset=ultrafast tune=zerolatency ! rtph264pay name=pay0 pt=96)')
 
+# multicast için aşağıdakini yazdım
+# ###########################################################
+factory.set_shared(True)
+pool = GstRtspServer.AddressPool()
+pool.add_range("224.3.0.0", "224.3.0.10", 5000, 5010, 16)
+factory.set_address_pool(pool)
+factory.set_protocols("GST_RTSP_LOWER_TRANS_UDP_MCAST")
+# ###########################################################
+
 mounts.add_factory("/test", factory)
 
 server.attach(None)
@@ -45,3 +54,30 @@ server.attach(None)
 print("stream ready at rtsp://127.0.0.1:8554/test")
 mainloop.run()
 
+
+
+"""
+factory = gst_rtsp_media_factory_new ();
+  gst_rtsp_media_factory_set_launch (factory, "( "
+      "videotestsrc ! video/x-raw,width=352,height=288,framerate=15/1 ! "
+      "x264enc ! rtph264pay name=pay0 pt=96 "
+      "audiotestsrc ! audio/x-raw,rate=8000 ! "
+      "alawenc ! rtppcmapay name=pay1 pt=97 " ")");
+
+  gst_rtsp_media_factory_set_shared (factory, TRUE);
+
+  /* make a new address pool */
+  pool = gst_rtsp_address_pool_new ();
+  gst_rtsp_address_pool_add_range (pool,
+      "224.3.0.0", "224.3.0.10", 5000, 5010, 16);
+  gst_rtsp_media_factory_set_address_pool (factory, pool);
+  /* only allow multicast */
+  gst_rtsp_media_factory_set_protocols (factory,
+      GST_RTSP_LOWER_TRANS_UDP_MCAST);
+  g_object_unref (pool);
+
+  /* attach the test factory to the /test url */
+  gst_rtsp_mount_points_add_factory (mounts, "/test", factory);
+
+
+"""
