@@ -55,7 +55,7 @@ print("stream ready at rtsp://127.0.0.1:8554/test")
 mainloop.run()
 
 
-
+# aşağıdaki factory scriptini de deneyebilirsin...
 """
 factory = gst_rtsp_media_factory_new ();
   gst_rtsp_media_factory_set_launch (factory, "( "
