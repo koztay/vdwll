@@ -10,7 +10,7 @@ from gi.repository import GObject, Gst, GstVideo
 class CustomData:
     is_live = None
     pipeline = None
-    main_loop = None
+    # main_loop = None  # belki bunu application 'da set ederiz.
 
 
 class VideoPlayer:
@@ -60,13 +60,13 @@ class VideoPlayer:
             except:
                 print('{}\n{}'.format(*err))
             self.data.pipeline.set_state(Gst.State.READY)
-            self.data.main_loop.quit()
+            # self.data.main_loop.quit()
             return
 
         if t == Gst.MessageType.EOS:
             # end-of-stream
             self.data.pipeline.set_state(Gst.State.READY)
-            self.data.main_loop.quit()
+            # self.data.main_loop.quit()
             return
 
         if t == Gst.MessageType.BUFFERING:
