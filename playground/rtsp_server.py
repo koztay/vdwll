@@ -36,7 +36,7 @@ server = GstRtspServer.RTSPServer()
 mounts = server.get_mount_points()
 
 factory = GstRtspServer.RTSPMediaFactory()
-factory.set_launch('(videotestsrc is-live=1 ! x264enc speed-preset=ultrafast tune=zerolatency ! rtph264pay name=pay0 pt=96)')
+factory.set_launch('videotestsrc is-live=1 ! x264enc speed-preset=ultrafast tune=zerolatency ! rtph264pay name=pay0 pt=96')
 
 # multicast için aşağıdakini yazdım
 # ###########################################################
