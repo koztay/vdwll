@@ -41,7 +41,7 @@ factory.set_launch('(videotestsrc is-live=1 ! x264enc speed-preset=ultrafast tun
 # multicast için aşağıdakini yazdım
 # ###########################################################
 factory.set_shared(True)
-pool = GstRtspServer.AddressPool()
+pool = GstRtspServer.RTSPAddressPool()
 pool.add_range("224.3.0.0", "224.3.0.10", 5000, 5010, 16)
 factory.set_address_pool(pool)
 factory.set_protocols("GST_RTSP_LOWER_TRANS_UDP_MCAST")
