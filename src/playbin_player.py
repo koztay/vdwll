@@ -30,6 +30,7 @@ class VideoPlayer:
 
         self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
         self.data.pipeline.set_property("uri", self.uri)
+        self.data.pipeline.set_property("latency", 200)
 
         self.streams_list = []
 
