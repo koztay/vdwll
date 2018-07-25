@@ -28,10 +28,12 @@ class VideoPlayer:
         self.uri = uri
         self.movie_window = moviewindow
 
-        # self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
-        # self.data.pipeline.set_property("uri", self.uri)
-        self.data.pipeline = Gst.parse_launch(
-            "rtspsrc location={} latency=500 ! decodebin ! autovideosink".format(self.uri))
+        self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
+        self.data.pipeline.set_property("uri", self.uri)
+
+        # rtspsrc kullanırsan aşağıdaki gibi :
+        # self.data.pipeline = Gst.parse_launch(
+        #     "rtspsrc location={} latency=500 ! decodebin ! autovideosink".format(self.uri))
 
         self.streams_list = []
 
