@@ -53,7 +53,7 @@ class VideoPlayer:
 
     def cb_message(self, bus, msg, data):
 
-        print("STATE cb_message begin:", self.data.pipeline.get_state())
+        print("STATE cb_message begin:", self.data.pipeline.get_state(None))
         t = msg.type
 
         if t == Gst.MessageType.ERROR:
@@ -91,7 +91,7 @@ class VideoPlayer:
         if t == Gst.MessageType.CLOCK_LOST:
             self.data.pipeline.set_state(Gst.State.PAUSED)
             self.data.pipeline.set_state(Gst.State.PLAYING)
-            print("STATE clock_lost:", self.data.pipeline.get_state())
+            print("STATE clock_lost:", self.data.pipeline.get_state(None))
 
             return
 
