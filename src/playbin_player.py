@@ -1,3 +1,4 @@
+import datetime
 import gi
 import logging
 import sys
@@ -5,6 +6,8 @@ import sys
 gi.require_version('Gst', '1.0')
 gi.require_version('GstVideo', '1.0')
 from gi.repository import GObject, Gst, GstVideo
+
+logging.basicConfig(filename='network_lost.log', level=logging.DEBUG)
 
 
 class CustomData:
@@ -54,8 +57,11 @@ class VideoPlayer:
     def cb_message(self, bus, msg, data):
 
         gst_state = self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE)
-        if gst_state.state.value_name == "GST_STATE_PLAYING":
-            print("I am playing")
+
+        logging.debug("{} : {}".format(datetime.datetime.now(), gst_state.state.value_name))
+
+        # if gst_state.state.value_name == "GST_STATE_PLAYING":
+        #     print("I am playing")
 
         t = msg.type
 
@@ -94,12 +100,11 @@ class VideoPlayer:
         if t == Gst.MessageType.CLOCK_LOST:
             self.data.pipeline.set_state(Gst.State.PAUSED)
             self.data.pipeline.set_state(Gst.State.PLAYING)
-
             return
 
-        while gst_state.state.value_name != "GST_STATE_PLAYING":
-            print("I am not playing, trying to set playing")
-            self.data.pipeline.set_state(Gst.State.PLAYING)
+        # while gst_state.state.value_name != "GST_STATE_PLAYING":
+        #     # print("I am not playing, trying to set playing")
+        #     self.data.pipeline.set_state(Gst.State.PLAYING)  # bu yine olmadı
 
     def on_sync_message(self, bus, message):
         struct = message.get_structure()
