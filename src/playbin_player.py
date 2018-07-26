@@ -89,6 +89,8 @@ class VideoPlayer:
         if t == Gst.MessageType.CLOCK_LOST:
             self.data.pipeline.set_state(Gst.State.PAUSED)
             self.data.pipeline.set_state(Gst.State.PLAYING)
+            print("STATE :", self.data.pipeline.get_state())
+
             return
 
     def on_sync_message(self, bus, message):
