@@ -37,7 +37,7 @@ class VideoPlayer:
 
         # rtspsrc kullanırsan aşağıdaki gibi :
         self.data.pipeline = Gst.parse_launch(
-            "rtspsrc location={} latency=500 tcp-timeout=18446744073709551 ! decodebin ! autovideosink".format(self.uri))
+            "rtspsrc location={} latency=500 timeout=18446744073709551 tcp-timeout=18446744073709551 ! decodebin ! autovideosink".format(self.uri))
 
         self.streams_list = []
 
