@@ -58,6 +58,7 @@ class VideoPlayer:
             print("I am playing")
 
         while gst_state.state.value_name != "GST_STATE_PLAYING":
+            print("I am not playing, trying to set playing")
             self.data.pipeline.set_state(Gst.State.PLAYING)
 
         t = msg.type
