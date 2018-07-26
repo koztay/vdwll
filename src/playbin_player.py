@@ -54,8 +54,12 @@ class VideoPlayer:
     def cb_message(self, bus, msg, data):
 
         print("STATE cb_message begin:", self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE))
-        if self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE) == Gst.State.PLAYING:
-            print("I am playing now oldu mu????!!!!")
+        if self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE) == Gst.State.GST_STATE_PLAYING:
+            print("I am playing now oldu mu????!!!! : GST_STATE_PLAYING")
+        elif self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE) == Gst.State.PLAYING:
+            print("I am playing now oldu mu????!!!! : PLAYING")
+        else:
+            print("Bilmiyorum amk!!!!")
 
         t = msg.type
 
