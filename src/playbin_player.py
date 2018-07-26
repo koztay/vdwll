@@ -22,6 +22,7 @@ class VideoPlayer:
     """
 
     def __init__(self, uri, moviewindow):
+
         Gst.init(None)
         Gst.debug_set_active(True)
         Gst.debug_set_default_threshold(2)
@@ -98,6 +99,7 @@ class VideoPlayer:
             return
 
         if t == Gst.MessageType.CLOCK_LOST:
+
             logging.debug("{} message : Gst.MessageType.CLOCK_LOST".format(datetime.datetime.now()))
             if gst_state.state.value_name != "GST_STATE_PLAYING":
                 self.data.pipeline.set_state(Gst.State.PAUSED)
