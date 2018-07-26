@@ -64,7 +64,7 @@ class VideoPlayer:
         #     print("I am playing")
 
         t = msg.type
-        print(dir(msg.type))
+        print(t.get_name)
 
         logging.debug("{} message : {}".format(datetime.datetime.now(), t))
 
