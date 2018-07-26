@@ -98,7 +98,7 @@ class VideoPlayer:
             return
 
         if t == Gst.MessageType.CLOCK_LOST:
-            logging.debug("{} message : Gst.MessageType.CLOCK_LOST".format(datetime.datetime.now(), t))
+            logging.debug("{} message : Gst.MessageType.CLOCK_LOST".format(datetime.datetime.now()))
             self.data.pipeline.set_state(Gst.State.PAUSED)
             self.data.pipeline.set_state(Gst.State.PLAYING)
 
