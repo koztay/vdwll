@@ -48,8 +48,8 @@ class VideoPlayer:
             print('ERROR: Unable to set the pipeline to the playing state.')
             sys.exit(-1)
         elif ret == Gst.StateChangeReturn.NO_PREROLL:
-            pass
-            # self.data.is_live = True
+            print("Buffer oluşturmayacağız data live data...")
+            self.data.is_live = True
 
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
