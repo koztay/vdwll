@@ -57,10 +57,6 @@ class VideoPlayer:
         if gst_state.state.value_name == "GST_STATE_PLAYING":
             print("I am playing")
 
-        while gst_state.state.value_name != "GST_STATE_PLAYING":
-            print("I am not playing, trying to set playing")
-            self.data.pipeline.set_state(Gst.State.PLAYING)
-
         t = msg.type
 
         if t == Gst.MessageType.ERROR:
@@ -100,6 +96,10 @@ class VideoPlayer:
             self.data.pipeline.set_state(Gst.State.PLAYING)
 
             return
+
+        while gst_state.state.value_name != "GST_STATE_PLAYING":
+            print("I am not playing, trying to set playing")
+            self.data.pipeline.set_state(Gst.State.PLAYING)
 
     def on_sync_message(self, bus, message):
         struct = message.get_structure()
