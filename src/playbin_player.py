@@ -32,12 +32,12 @@ class VideoPlayer:
         self.uri = uri
         self.movie_window = moviewindow
 
-        # self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
-        # self.data.pipeline.set_property("uri", self.uri)
+        self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
+        self.data.pipeline.set_property("uri", self.uri)
 
         # rtspsrc kullanırsan aşağıdaki gibi :
-        self.data.pipeline = Gst.parse_launch(
-            "rtspsrc location={} latency=500 timeout=18446744073709551 tcp-timeout=18446744073709551 ! decodebin ! autovideosink".format(self.uri))
+        # self.data.pipeline = Gst.parse_launch(
+        #     "rtspsrc location={} latency=500 timeout=18446744073709551 tcp-timeout=18446744073709551 ! decodebin ! autovideosink".format(self.uri))
 
         self.streams_list = []
 
@@ -55,6 +55,7 @@ class VideoPlayer:
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
+        bus.connect("handoff", self.on_handoff)
 
     def cb_message(self, bus, msg, data):
 
@@ -126,6 +127,9 @@ class VideoPlayer:
             print("self.imagesink neymiş", self.imagesink)
             self.imagesink.set_property("force-aspect-ratio", False)
             self.imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
+
+    def on_handoff(self, bus, message):
+        print("Handoff oldu ya la!!")
 
 
 if __name__ == "__main__":
