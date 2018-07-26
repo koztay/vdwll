@@ -53,7 +53,7 @@ class VideoPlayer:
 
     def cb_message(self, bus, msg, data):
         gst_state = self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE)
-        print("STATE cb_message begin:", dir(gst_state.state))
+        print("STATE cb_message begin:", gst_state.state.value_name, gst_state.state.value_nick)
         if gst_state == Gst.State.PLAYING:
             print("I am playing")
 
