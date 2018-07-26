@@ -55,7 +55,7 @@ class VideoPlayer:
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
-        bus.connect("playbin::handoff", self.on_handoff)
+        self.data.pipeline.connect('handoff', self.on_handoff)
 
     def cb_message(self, bus, msg, data):
 
