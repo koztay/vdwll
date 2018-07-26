@@ -58,7 +58,7 @@ class VideoPlayer:
 
         gst_state = self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE)
 
-        logging.debug("{} state : {}".format(datetime.datetime.now(), gst_state.state.value_name))
+        # logging.debug("{} state : {}".format(datetime.datetime.now(), gst_state.state.value_name))
 
         # if gst_state.state.value_name == "GST_STATE_PLAYING":
         #     print("I am playing")
