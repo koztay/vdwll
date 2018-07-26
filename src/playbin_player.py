@@ -64,9 +64,6 @@ class VideoPlayer:
         #     print("I am playing")
 
         t = msg.type
-        print(t.first_value_name)
-
-        logging.debug("{} message : {}".format(datetime.datetime.now(), t))
 
         if t == Gst.MessageType.ERROR:
             err, debug = msg.parse_error()
@@ -101,6 +98,7 @@ class VideoPlayer:
             return
 
         if t == Gst.MessageType.CLOCK_LOST:
+            logging.debug("{} message : Gst.MessageType.CLOCK_LOST".format(datetime.datetime.now(), t))
             self.data.pipeline.set_state(Gst.State.PAUSED)
             self.data.pipeline.set_state(Gst.State.PLAYING)
 
