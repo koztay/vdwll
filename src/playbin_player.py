@@ -52,6 +52,7 @@ class VideoPlayer:
         bus.connect("sync-message::element", self.on_sync_message)
 
     def cb_message(self, bus, msg, data):
+
         gst_state = self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE)
         # print("STATE cb_message begin:", gst_state.state.value_name, gst_state.state.value_nick)
         if gst_state.state.value_name == "GST_STATE_PLAYING":
