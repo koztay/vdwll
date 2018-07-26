@@ -1,3 +1,7 @@
+/*
+gcc basic-tutorial-12.c -o basic-tutorial-12 `pkg-config --cflags --libs gstreamer-1.0`
+*/
+
 #include <gst/gst.h>
 #include <string.h>
 
@@ -44,6 +48,7 @@ static void cb_message (GstBus *bus, GstMessage *msg, CustomData *data) {
       break;
     }
     case GST_MESSAGE_CLOCK_LOST:
+      g_print ("GST_MESSAGE_CLOCK_LOST\r");
       /* Get a new clock */
       gst_element_set_state (data->pipeline, GST_STATE_PAUSED);
       gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
