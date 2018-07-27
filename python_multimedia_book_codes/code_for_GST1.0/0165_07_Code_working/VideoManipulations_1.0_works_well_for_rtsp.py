@@ -93,11 +93,11 @@ class VideoPlayer:
         self.use_parse_launch = False
         self.decodebin = None
 
-        self.video_width = 800
-        self.video_height = 450
-        self.crop_left = 300
+        self.video_width = 5000
+        self.video_height = 3000
+        self.crop_left = 2500
         self.crop_right = 20
-        self.crop_bottom = 20
+        self.crop_bottom = 1500
         self.crop_top = 20
 
         # self.inFileLocation = "../../../media/webos.mp4"
@@ -202,11 +202,21 @@ class VideoPlayer:
         self.player.add(self.colorSpace)
         self.player.add(self.videosink)
 
+        """
+        # aşağısı çalışıyor
         self.queue1.link(self.autoconvert)
         self.autoconvert.link(self.videobox)
         self.videobox.link(self.videoscale)
         self.videoscale.link(self.capsFilter)
         self.capsFilter.link(self.colorSpace)
+        self.colorSpace.link(self.videosink)
+        """
+
+        self.queue1.link(self.autoconvert)
+        self.autoconvert.link(self.videoscale)
+        self.videoscale.link(self.capsFilter)
+        self.capsFilter.link(self.videobox)
+        self.videobox.link(self.colorSpace)
         self.colorSpace.link(self.videosink)
 
     def connectSignals(self):
