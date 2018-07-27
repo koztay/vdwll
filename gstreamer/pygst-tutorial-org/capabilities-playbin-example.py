@@ -65,47 +65,31 @@ class GTK_Main:
     def start_stop(self, w):
         if self.button.get_label() == "Start":
             filepath = self.entry.get_text().strip()
-            if os.path.exists(filepath):
+            if os.path.isfile(filepath):
                 filepath = os.path.realpath(filepath)
                 self.button.set_label("Stop")
                 self.player.set_property("uri", "file://" + filepath)
                 self.player.set_state(Gst.State.PLAYING)
-        else:
-            self.player.set_state(Gst.State.NULL)
-            self.button.set_label("Start")
+            else:
+                self.player.set_state(Gst.State.NULL)
+                self.button.set_label("Start")
 
     def on_message(self, bus, message):
-        typ = message.type
-        if typ == Gst.MessageType.EOS:
+        t = message.type
+        if t == Gst.MessageType.EOS:
             self.player.set_state(Gst.State.NULL)
             self.button.set_label("Start")
-        elif typ == Gst.MessageType.ERROR:
+        elif t == Gst.MessageType.ERROR:
             self.player.set_state(Gst.State.NULL)
-            self.button.set_label("Start")
             err, debug = message.parse_error()
             print("Error: %s" % err, debug)
+            self.button.set_label("Start")
 
     def on_sync_message(self, bus, message):
-        # if message.type is None:
-        #     return
-        # message_name = message.type.get_name()
-        # if message_name == "prepare-xwindow-id":
-        #     imagesink = message.src
-        #     imagesink.set_property("force-aspect-ratio", True)
-        #     imagesink.set_xwindow_id(self.movie_window.window.xid)
-
-        struct = message.get_structure()
-        print("struct", struct)
-        if not struct:
-            return
-        message_name = struct.get_name()
-        print("message_name", message_name)
-        if message_name == "prepare-xwindow-id":
-            print("buaraya düştü mü bu lavuk?")
-            # Assign the viewport
+        if message.get_structure().get_name() == 'prepare-window-handle':
             imagesink = message.src
             imagesink.set_property("force-aspect-ratio", True)
-            imagesink.set_xwindow_id(self.movie_window.window.xid)
+            imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
 
 
 GObject.threads_init()
