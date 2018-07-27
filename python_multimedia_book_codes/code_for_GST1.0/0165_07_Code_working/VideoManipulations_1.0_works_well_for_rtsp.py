@@ -93,8 +93,8 @@ class VideoPlayer:
         self.use_parse_launch = False
         self.decodebin = None
 
-        self.video_width = 1200
-        self.video_height = 600
+        self.video_width = 800
+        self.video_height = 450
         self.crop_left = 300
         self.crop_right = 20
         self.crop_bottom = 20
@@ -165,7 +165,7 @@ class VideoPlayer:
         self.videosink = Gst.ElementFactory.make("autovideosink")
 
 
-        """
+
         # Set the capsfilter
         if self.video_width and self.video_height:
             # videocap = Gst.Caps("video/x-raw-yuv," \
@@ -179,7 +179,9 @@ class VideoPlayer:
 
         self.capsFilter = Gst.ElementFactory.make("capsfilter")
         self.capsFilter.set_property("caps", videocap)
-        """
+
+        self.videoscale = Gst.ElementFactory.make("videoscale")
+        self.videoscale.set_property("method", 1)
 
         # Converts the video from one colorspace to another
         self.colorSpace = Gst.ElementFactory.make("videoconvert")
@@ -195,14 +197,16 @@ class VideoPlayer:
         self.player.add(self.queue1)
         self.player.add(self.autoconvert)
         self.player.add(self.videobox)
-        # self.player.add(self.capsFilter)
+        self.player.add(self.videoscale)
+        self.player.add(self.capsFilter)
         self.player.add(self.colorSpace)
         self.player.add(self.videosink)
 
         self.queue1.link(self.autoconvert)
         self.autoconvert.link(self.videobox)
-        self.videobox.link(self.colorSpace)
-        # self.capsFilter.link(self.colorSpace)
+        self.videobox.link(self.videoscale)
+        self.videoscale.link(self.capsFilter)
+        self.capsFilter.link(self.colorSpace)
         self.colorSpace.link(self.videosink)
 
     def connectSignals(self):
