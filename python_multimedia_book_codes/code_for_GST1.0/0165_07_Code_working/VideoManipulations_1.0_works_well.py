@@ -65,6 +65,11 @@
 #
 # -------------------------------------------------------------------------------
 
+"""
+Bu dosya UBUNTU DELL 'de çalışıyor. "brbad.mp4" sorunsuz oynatılıyor...
+"""
+
+
 import time
 import threading
 import os
@@ -95,8 +100,8 @@ class VideoPlayer:
         self.crop_bottom = 20
         self.crop_top = 20
 
-        self.inFileLocation = "../../../media/webos.mp4"
-        # self.inFileLocation = "/home/kemal/Developer/vdwll/media/brbad.mp4"
+        # self.inFileLocation = "../../../media/webos.mp4"
+        self.inFileLocation = "/home/kemal/Developer/vdwll/media/brbad.mp4"
         # "/../../../media/pixar.mp4"
 
         self.constructPipeline()
