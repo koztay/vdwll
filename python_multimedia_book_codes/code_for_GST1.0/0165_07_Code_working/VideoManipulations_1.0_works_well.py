@@ -257,6 +257,9 @@ class VideoPlayer:
 # Run the program
 
 Gst.init(None)
+Gst.debug_set_colored(Gst.DebugColorMode.ON)
+Gst.debug_set_active(True)
+Gst.debug_set_default_threshold(4)
 player = VideoPlayer()
 thread = threading.Thread(target=player.play)
 thread.start()
