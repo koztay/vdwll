@@ -20,7 +20,7 @@ class GTK_Main:
         window.show_all()
         self.player = Gst.Pipeline.new("player")
         source = Gst.ElementFactory.make("videotestsrc", "video-source")
-        sink = Gst.ElementFactory.make("xvimagesink", "video-output")
+        sink = Gst.ElementFactory.make("autovideosink", "video-output")
         caps = Gst.Caps.from_string("video/x-raw, width=320, height=230")
         filter = Gst.ElementFactory.make("capsfilter", "filter")
         filter.set_property("caps", caps)

@@ -86,13 +86,24 @@ class GTK_Main:
             print("Error: %s" % err, debug)
 
     def on_sync_message(self, bus, message):
-        if message.structure is None:
+        # if message.type is None:
+        #     return
+        # message_name = message.type.get_name()
+        # if message_name == "prepare-xwindow-id":
+        #     imagesink = message.src
+        #     imagesink.set_property("force-aspect-ratio", True)
+        #     imagesink.set_xwindow_id(self.movie_window.window.xid)
+
+        struct = message.get_structure()
+        if not struct:
             return
-        message_name = message.structure.get_name()
-        if message_name == "prepare-xwindow-id":
+        message_name = struct.get_name()
+        if message_name == "prepare-window-handle":
+            # Assign the viewport
             imagesink = message.src
             imagesink.set_property("force-aspect-ratio", True)
             imagesink.set_xwindow_id(self.movie_window.window.xid)
+
 
 GObject.threads_init()
 Gst.init(None)        
