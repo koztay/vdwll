@@ -104,6 +104,8 @@ class VideoPlayer:
         self.inFileLocation = "/home/kemal/Developer/vdwll/media/brbad.mp4"
         # "/../../../media/pixar.mp4"
 
+        self.uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
+
         self.constructPipeline()
         self.is_playing = False
         self.connectSignals()
@@ -116,17 +118,19 @@ class VideoPlayer:
         self.player = Gst.Pipeline()
 
         # Define pipeline elements
-        self.filesrc = Gst.ElementFactory.make("filesrc")
-        self.filesrc.set_property("location",
-                                  self.inFileLocation)
-        self.decodebin = Gst.ElementFactory.make("decodebin")
+        # self.filesrc = Gst.ElementFactory.make("filesrc")
+        # self.filesrc.set_property("location", self.inFileLocation)
+
+        self.uridecodebin = Gst.ElementFactory.make("uridecodebin")
+        self.uridecodebin.set_property("uri", self.uri)
+        # self.decodebin = Gst.ElementFactory.make("decodebin")
 
         # Add elements to the pipeline
-        self.player.add(self.filesrc)
-        self.player.add(self.decodebin)
+        self.player.add(self.uridecodebin)
+        # self.player.add(self.decodebin)
 
         # Link elements in the pipeline.
-        self.filesrc.link(self.decodebin)
+        # self.uridecodebin.link(self.decodebin)
 
         self.constructAudioPipeline()
         self.constructVideoPipeline()
@@ -160,6 +164,8 @@ class VideoPlayer:
         print("self.autoconvert", self.autoconvert)
         self.videosink = Gst.ElementFactory.make("autovideosink")
 
+
+        """
         # Set the capsfilter
         if self.video_width and self.video_height:
             # videocap = Gst.Caps("video/x-raw-yuv," \
@@ -173,6 +179,7 @@ class VideoPlayer:
 
         self.capsFilter = Gst.ElementFactory.make("capsfilter")
         self.capsFilter.set_property("caps", videocap)
+        """
 
         # Converts the video from one colorspace to another
         self.colorSpace = Gst.ElementFactory.make("videoconvert")
@@ -188,28 +195,30 @@ class VideoPlayer:
         self.player.add(self.queue1)
         self.player.add(self.autoconvert)
         self.player.add(self.videobox)
-        self.player.add(self.capsFilter)
+        # self.player.add(self.capsFilter)
         self.player.add(self.colorSpace)
         self.player.add(self.videosink)
 
         self.queue1.link(self.autoconvert)
         self.autoconvert.link(self.videobox)
-        self.videobox.link(self.capsFilter)
-        self.capsFilter.link(self.colorSpace)
+        self.videobox.link(self.colorSpace)
+        # self.capsFilter.link(self.colorSpace)
         self.colorSpace.link(self.videosink)
 
     def connectSignals(self):
         """
         Connects signals with the methods.
         """
+
+
         # Capture the messages put on the bus.
         bus = self.player.get_bus()
         bus.add_signal_watch()
         bus.connect("message", self.message_handler)
 
         # Connect the decodebin signal
-        if not self.decodebin is None:
-            self.decodebin.connect("pad_added",
+        if not self.uridecodebin is None:
+            self.uridecodebin.connect("pad_added",
                                    self.decodebin_pad_added)
 
     def decodebin_pad_added(self, decodebin, pad):
@@ -218,6 +227,8 @@ class VideoPlayer:
         queue elements, when the decodebin "pad-added" signal
         is generated.
         """
+        print("decodebin pad added layyynn")
+
         compatible_pad = None
         caps = pad.query_caps()
         print("caps ney ki?", caps)
@@ -264,7 +275,7 @@ class VideoPlayer:
 Gst.init(None)
 Gst.debug_set_colored(Gst.DebugColorMode.ON)
 Gst.debug_set_active(True)
-Gst.debug_set_default_threshold(5)
+Gst.debug_set_default_threshold(3)
 player = VideoPlayer()
 thread = threading.Thread(target=player.play)
 thread.start()
