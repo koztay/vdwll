@@ -95,10 +95,13 @@ class GTK_Main:
         #     imagesink.set_xwindow_id(self.movie_window.window.xid)
 
         struct = message.get_structure()
+        print("struct", struct)
         if not struct:
             return
         message_name = struct.get_name()
-        if message_name == "prepare-window-handle":
+        print("message_name", message_name)
+        if message_name == "prepare-xwindow-id":
+            print("buaraya düştü mü bu lavuk?")
             # Assign the viewport
             imagesink = message.src
             imagesink.set_property("force-aspect-ratio", True)
