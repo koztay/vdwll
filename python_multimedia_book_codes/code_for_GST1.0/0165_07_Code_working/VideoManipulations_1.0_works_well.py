@@ -1,3 +1,6 @@
+#!/usr/local/bin/python
+# coding: utf-8
+
 # -------------------------------------------------------------------------------
 # @author: Ninad Sathaye
 # @copyright: 2010, Ninad Sathaye email:ninad.consult@gmail.com.
