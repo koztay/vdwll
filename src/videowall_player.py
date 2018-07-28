@@ -57,12 +57,12 @@ class VideoPlayer:
         self.player = Gst.Pipeline()
 
         # Define pipeline elements
-        # self.filesrc = Gst.ElementFactory.make("filesrc")
-        # self.filesrc.set_property("location", self.inFileLocation)
+        self.filesrc = Gst.ElementFactory.make("rtspsrc")
+        self.filesrc.set_property("location", self.uri)
 
-        self.uridecodebin = Gst.ElementFactory.make("uridecodebin")
-        self.uridecodebin.set_property("uri", self.uri)
-        # self.decodebin = Gst.ElementFactory.make("decodebin")
+        # self.uridecodebin = Gst.ElementFactory.make("uridecodebin")
+        # self.uridecodebin.set_property("uri", self.uri)
+        self.uridecodebin = Gst.ElementFactory.make("decodebin")
 
         # Add elements to the pipeline
         self.player.add(self.uridecodebin)
@@ -70,7 +70,8 @@ class VideoPlayer:
         self.depay = Gst.ElementFactory.make("rtph264depay")
         self.player.add(self.depay)
         # Link elements in the pipeline.
-        self.uridecodebin.link(self.depay)
+        self.filesrc.link(self.depay)
+        self.depay.link(self.uridecodebin)
 
         self.constructAudioPipeline()
         self.constructVideoPipeline()
