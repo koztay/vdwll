@@ -67,11 +67,11 @@ class VideoPlayer:
         # Add elements to the pipeline
         self.player.add(self.uridecodebin)
         # self.player.add(self.decodebin)
-        self.depay = Gst.ElementFactory.make("rtph264depay")
-        self.player.add(self.depay)
+        # self.depay = Gst.ElementFactory.make("rtph264depay")
+        # self.player.add(self.depay)
         # Link elements in the pipeline.
-        self.filesrc.link(self.depay)
-        self.depay.link(self.uridecodebin)
+        self.filesrc.link(self.uridecodebin)
+        # self.depay.link(self.uridecodebin)
 
         self.constructAudioPipeline()
         self.constructVideoPipeline()
@@ -165,17 +165,14 @@ class VideoPlayer:
         """
         Connects signals with the methods.
         """
-
-
         # Capture the messages put on the bus.
         bus = self.player.get_bus()
         bus.add_signal_watch()
         bus.connect("message", self.message_handler)
 
         # Connect the decodebin signal
-        if not self.uridecodebin is None:
-            self.uridecodebin.connect("pad_added",
-                                   self.decodebin_pad_added)
+        if self.uridecodebin:
+            self.uridecodebin.connect("pad_added", self.decodebin_pad_added)
 
     def decodebin_pad_added(self, decodebin, pad):
         """
