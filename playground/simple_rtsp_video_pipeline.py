@@ -45,6 +45,8 @@ class VideoPlayer:
         # self.uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
         self.uri = "rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov"
         # self.uri = "rtsp://127.0.0.1:8554/test"
+        self.uri = "rtsp://192.168.1.32:5540/ch0"
+        # self.uri = "http://192.168.1.32:8080/playlist.m3u"
 
         self.constructPipeline()
         self.is_playing = False
