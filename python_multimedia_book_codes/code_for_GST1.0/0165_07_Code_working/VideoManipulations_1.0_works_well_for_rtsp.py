@@ -42,8 +42,8 @@ class VideoPlayer:
         self.inFileLocation = "/home/kemal/Developer/vdwll/media/brbad.mp4"
         # "/../../../media/pixar.mp4"
 
-        # self.uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
-        self.uri = "rtsp://10.0.0.143/media/video1"
+        self.uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
+        # self.uri = "rtsp://10.0.0.143/media/video1"
 
 
         self.constructPipeline()
