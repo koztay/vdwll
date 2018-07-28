@@ -77,7 +77,7 @@ class VideoPlayer:
 
         self.construct_pipeline()
         self.is_playing = False
-        self.connectSignals()
+        self.connect_signals()
 
     def construct_pipeline(self):
         """
@@ -140,23 +140,28 @@ class VideoPlayer:
         else:
             videocap = Gst.Caps.from_string("video/x-raw-yuv")
 
+        # Create Capsfilter
         self.capsfilter = Gst.ElementFactory.make("capsfilter")
         self.capsfilter.set_property("caps", videocap)
 
+        # Create Videoscale Element
         self.videoscale = Gst.ElementFactory.make("videoscale")
         self.videoscale.set_property("method", 1)
 
         # Converts the video from one colorspace to another
         self.colorspace = Gst.ElementFactory.make("videoconvert")
 
+        # Create Video queue
         self.queue1 = Gst.ElementFactory.make("queue")
 
+        # Videobox Element for Crop
         self.videobox = Gst.ElementFactory.make("videobox")
         self.videobox.set_property("bottom", self.crop_bottom)
         self.videobox.set_property("top", self.crop_top)
         self.videobox.set_property("left", self.crop_left)
         self.videobox.set_property("right", self.crop_right)
 
+        # Add elements to the pipeline
         self.player.add(self.queue1)
         self.player.add(self.autoconvert)
         self.player.add(self.videoscale)
@@ -165,12 +170,7 @@ class VideoPlayer:
         self.player.add(self.colorspace)
         self.player.add(self.videosink)
 
-        # self.queue1.link(self.autoconvert)
-        # self.autoconvert.link(self.videosink)
-        # self.videobox.link(self.capsfilter)
-        # self.capsfilter.link(self.colorspace)
-        # self.audioconvert.link(self.videosink)
-
+        # Link elements
         self.queue1.link(self.autoconvert)
         self.autoconvert.link(self.videoscale)
         self.videoscale.link(self.capsfilter)
@@ -178,7 +178,7 @@ class VideoPlayer:
         self.videobox.link(self.colorspace)
         self.colorspace.link(self.videosink)
 
-    def connectSignals(self):
+    def connect_signals(self):
         """
         Connects signals with the methods.
         """
@@ -228,12 +228,12 @@ class VideoPlayer:
         Capture the messages on the bus and
         set the appropriate flag.
         """
-        msgType = message.type
-        if msgType == Gst.MessageType.ERROR:
+        msg_type = message.type
+        if msg_type == Gst.MessageType.ERROR:
             self.player.set_state(Gst.State.NULL)
             self.is_playing = False
             print("\n Unable to play Video. Error: ", message.parse_error())
-        elif msgType == Gst.MessageType.EOS:
+        elif msg_type == Gst.MessageType.EOS:
             self.player.set_state(Gst.State.NULL)
             self.is_playing = False
 
