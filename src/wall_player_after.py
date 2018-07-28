@@ -19,16 +19,25 @@ etmiyor gibi çalışıyor sanki. DELL 'de henüz kontrol edemedim.
         # self.uri = "http://192.168.1.32:8080/playlist.m3u"
 
 """
-
+import datetime
+import gi
+import logging
+import sys
 import time
 import threading
-import gi
+
 
 gi.require_version('Gst', '1.0')
 gi.require_version('Gtk', '3.0')
 gi.require_version('GstVideo', '1.0')
 
 from gi.repository import Gst, GObject, Gtk
+
+
+class CustomData:
+    is_live = None
+    pipeline = None
+    # main_loop = None  # belki bunu application 'da set ederiz.
 
 
 class VideoPlayer:
@@ -49,6 +58,8 @@ class VideoPlayer:
         Gst.init(None)
         Gst.debug_set_active(True)
         Gst.debug_set_default_threshold(2)
+
+        self.data = CustomData()
 
         self.video_width = video_width
         self.video_height = video_height
@@ -83,6 +94,7 @@ class VideoPlayer:
         """
         Add and link elements in a GStreamer pipeline.
         """
+
         # Create the pipeline instance
         self.player = Gst.Pipeline()
 
@@ -209,6 +221,7 @@ class VideoPlayer:
                 compatible_pad = self.queue1.get_compatible_pad(pad, caps)
             elif name[:5] == 'audio':
                 compatible_pad = self.queue2.get_compatible_pad(pad, caps)
+                print("burada compatible pad yok mu ki :", compatible_pad)
 
             if compatible_pad:
                 pad.link(compatible_pad)
@@ -218,16 +231,26 @@ class VideoPlayer:
         Play the media file
         """
         self.is_playing = True
-        self.player.set_state(Gst.State.PLAYING)
+        ret = self.player.set_state(Gst.State.PLAYING)
         while self.is_playing:
             time.sleep(1)
         evt_loop.quit()
+
+        if ret == Gst.StateChangeReturn.FAILURE:
+            print('ERROR: Unable to set the pipeline to the playing state.')
+            sys.exit(-1)
+        elif ret == Gst.StateChangeReturn.NO_PREROLL:
+            print("Buffer oluşturmayacağız data live data...")
+            self.data.is_live = True
 
     def message_handler(self, bus, message):
         """
         Capture the messages on the bus and
         set the appropriate flag.
         """
+
+        gst_state = self.player.get_state(Gst.CLOCK_TIME_NONE)
+
         msg_type = message.type
         if msg_type == Gst.MessageType.ERROR:
             self.player.set_state(Gst.State.NULL)
@@ -237,16 +260,46 @@ class VideoPlayer:
             self.player.set_state(Gst.State.NULL)
             self.is_playing = False
 
+        if msg_type == Gst.MessageType.BUFFERING:
+            persent = 0
+            # If the stream is live, we do not care about buffering.
+            if self.data.is_live:
+                return
+
+            persent = message.parse_buffering()
+            print('Buffering {0}%'.format(persent))
+
+            if persent < 100:
+                self.player.set_state(Gst.State.PAUSED)
+            else:
+                self.player.set_state(Gst.State.PLAYING)
+            return
+
+        if msg_type == Gst.MessageType.CLOCK_LOST:
+
+            logging.debug("{} message : Gst.MessageType.CLOCK_LOST".format(datetime.datetime.now()))
+            if gst_state.state.value_name != "GST_STATE_PLAYING":
+                self.player.set_state(Gst.State.PAUSED)
+                logging.debug("{} message : set paused".format(datetime.datetime.now()))
+            else:
+                self.player.set_state(Gst.State.PLAYING)
+                logging.debug("{} message : set playing".format(datetime.datetime.now()))
+
+            return
+
 
 if __name__ == "__main__":
     # uri = "rtsp://78.188.204.20/media/video1"  # compatible pad bulamıyor macte
     # uri = "rtsp://192.168.1.32:5540/ch0" # cep tel linki
     uri = "rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov"
+    # uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
+    # yukarıdaki webm urisi Mac'te No decoder available for type 'audio/x-vorbis, ....
+    # uyarısı verip takılıyor. Ancak constuct_audio_pipeline 'ı (line 112) kapatınca çalışıyor.
     Gst.init(None)
     Gst.debug_set_colored(Gst.DebugColorMode.ON)
     Gst.debug_set_active(True)
     Gst.debug_set_default_threshold(2)
-    player = VideoPlayer(rtsp_uri=uri)
+    player = VideoPlayer(rtsp_uri=uri, video_width=800, video_height=600)
     thread = threading.Thread(target=player.play)
     thread.start()
     GObject.threads_init()
