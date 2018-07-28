@@ -31,11 +31,11 @@ class VideoPlayer:
         self.use_parse_launch = False
         self.decodebin = None
 
-        self.video_width = 20000
-        self.video_height = 11250
-        self.crop_left = 18080
+        self.video_width = 1920
+        self.video_height = 1080
+        self.crop_left = 20
         self.crop_right = 20
-        self.crop_bottom = 10170
+        self.crop_bottom = 20
         self.crop_top = 20
 
         # self.inFileLocation = "../../../media/webos.mp4"
@@ -44,7 +44,6 @@ class VideoPlayer:
 
         # self.uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
         self.uri = "rtsp://10.0.0.143/media/video1"
-
 
         self.constructPipeline()
         self.is_playing = False
@@ -58,22 +57,29 @@ class VideoPlayer:
         self.player = Gst.Pipeline()
 
         # Define pipeline elements
-        # self.filesrc = Gst.ElementFactory.make("filesrc")
-        # self.filesrc.set_property("location", self.inFileLocation)
+        self.filesrc = Gst.ElementFactory.make("rtspsrc")
+        self.filesrc.set_property("location", self.uri)
 
-        self.uridecodebin = Gst.ElementFactory.make("uridecodebin")
-        self.uridecodebin.set_property("uri", self.uri)
-        # self.decodebin = Gst.ElementFactory.make("decodebin")
+        # self.uridecodebin = Gst.ElementFactory.make("uridecodebin")
+        # self.uridecodebin.set_property("uri", self.uri)
+        self.uridecodebin = Gst.ElementFactory.make("decodebin")
 
         # Add elements to the pipeline
         self.player.add(self.uridecodebin)
         # self.player.add(self.decodebin)
-
+        # self.depay = Gst.ElementFactory.make("rtph264depay")
+        # self.player.add(self.depay)
         # Link elements in the pipeline.
-        # self.uridecodebin.link(self.decodebin)
+        self.filesrc.link(self.uridecodebin)
+        # self.depay.link(self.uridecodebin)
 
-        self.constructAudioPipeline()
-        self.constructVideoPipeline()
+        # self.constructAudioPipeline()
+        # self.constructVideoPipeline()
+        self.videosink = Gst.ElementFactory.make("autovideosink")
+        self.player.add(self.videosink)
+
+        self.uridecodebin.link(self.videosink)
+
 
     def constructAudioPipeline(self):
         """
@@ -159,21 +165,19 @@ class VideoPlayer:
         self.videobox.link(self.colorSpace)
         self.colorSpace.link(self.videosink)
 
+
     def connectSignals(self):
         """
         Connects signals with the methods.
         """
-
-
         # Capture the messages put on the bus.
         bus = self.player.get_bus()
         bus.add_signal_watch()
         bus.connect("message", self.message_handler)
 
         # Connect the decodebin signal
-        if not self.uridecodebin is None:
-            self.uridecodebin.connect("pad_added",
-                                   self.decodebin_pad_added)
+        if self.uridecodebin:
+            self.uridecodebin.connect("pad_added", self.decodebin_pad_added)
 
     def decodebin_pad_added(self, decodebin, pad):
         """
