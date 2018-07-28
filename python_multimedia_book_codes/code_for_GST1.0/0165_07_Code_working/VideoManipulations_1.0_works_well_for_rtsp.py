@@ -31,18 +31,20 @@ class VideoPlayer:
         self.use_parse_launch = False
         self.decodebin = None
 
-        self.video_width = 5000
-        self.video_height = 3000
-        self.crop_left = 2500
+        self.video_width = 20000
+        self.video_height = 11250
+        self.crop_left = 18080
         self.crop_right = 20
-        self.crop_bottom = 1500
+        self.crop_bottom = 10170
         self.crop_top = 20
 
         # self.inFileLocation = "../../../media/webos.mp4"
         self.inFileLocation = "/home/kemal/Developer/vdwll/media/brbad.mp4"
         # "/../../../media/pixar.mp4"
 
-        self.uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
+        # self.uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
+        self.uri = "rtsp://10.0.0.143/media/video1"
+
 
         self.constructPipeline()
         self.is_playing = False
