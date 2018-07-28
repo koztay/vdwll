@@ -73,8 +73,13 @@ class VideoPlayer:
         self.filesrc.link(self.uridecodebin)
         # self.depay.link(self.uridecodebin)
 
-        self.constructAudioPipeline()
-        self.constructVideoPipeline()
+        # self.constructAudioPipeline()
+        # self.constructVideoPipeline()
+        self.videosink = Gst.ElementFactory.make("autovideosink")
+        self.player.add(self.videosink)
+
+        self.uridecodebin.link(self.videosink)
+
 
     def constructAudioPipeline(self):
         """
