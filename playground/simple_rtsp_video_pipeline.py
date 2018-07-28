@@ -120,11 +120,11 @@ class VideoPlayer:
         else:
             videocap = Gst.Caps.from_string("video/x-raw-yuv")
 
-        self.capsFilter = Gst.ElementFactory.make("capsfilter")
-        self.capsFilter.set_property("caps", videocap)
+        self.capsfilter = Gst.ElementFactory.make("capsfilter")
+        self.capsfilter.set_property("caps", videocap)
 
         # Converts the video from one colorspace to another
-        self.colorSpace = Gst.ElementFactory.make("videoconvert")
+        self.colorspace = Gst.ElementFactory.make("videoconvert")
         """
 
         self.queue1 = Gst.ElementFactory.make("queue")
@@ -140,14 +140,14 @@ class VideoPlayer:
         self.player.add(self.queue1)
         # self.player.add(self.autoconvert)
         # self.player.add(self.videobox)
-        # self.player.add(self.capsFilter)
-        # self.player.add(self.colorSpace)
+        # self.player.add(self.capsfilter)
+        # self.player.add(self.colorspace)
         self.player.add(self.videosink)
 
         self.queue1.link(self.videosink)
         # self.autoconvert.link(self.videosink)
-        # self.videobox.link(self.capsFilter)
-        # self.capsFilter.link(self.colorSpace)
+        # self.videobox.link(self.capsfilter)
+        # self.capsfilter.link(self.colorspace)
         # self.audioconvert.link(self.videosink)
 
     def connectSignals(self):

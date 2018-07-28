@@ -134,7 +134,7 @@ class VideoPlayer:
         #       self.queue1,
         #       self.queue2,
         #       self.filter,
-        #       self.colorSpace,
+        #       self.colorspace,
         #       self.audiosink,
         #       self.videosink)
 
@@ -146,7 +146,7 @@ class VideoPlayer:
                         self.queue1,
                         self.queue2,
                         self.filter,
-                        # self.colorSpace,
+                        # self.colorspace,
                         self.audiosink,
                         self.videosink)
 
@@ -163,7 +163,7 @@ class VideoPlayer:
         """
         gst.element_link_many(self.filesrc, self.decodebin)
         gst.element_link_many(self.queue1, self.autoconvert,
-                              self.filter, self.colorSpace,
+                              self.filter, self.colorspace,
                               self.videosink)
         gst.element_link_many(self.queue2, self.audioconvert,
                               self.audiosink)

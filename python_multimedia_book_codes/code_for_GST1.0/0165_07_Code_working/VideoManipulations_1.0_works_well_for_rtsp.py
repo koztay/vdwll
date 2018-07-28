@@ -147,9 +147,9 @@ class VideoPlayer:
         self.queue1.link(self.autoconvert)
         self.autoconvert.link(self.videobox)
         self.videobox.link(self.videoscale)
-        self.videoscale.link(self.capsFilter)
-        self.capsFilter.link(self.colorSpace)
-        self.colorSpace.link(self.videosink)
+        self.videoscale.link(self.capsfilter)
+        self.capsfilter.link(self.colorspace)
+        self.colorspace.link(self.videosink)
         """
 
         self.queue1.link(self.autoconvert)

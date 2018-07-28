@@ -58,7 +58,7 @@ class Main:
         self.capsFilter.set_property("caps", videocap)
 
         # # Converts the video from one colorspace to another
-        # self.colorSpace = Gst.ElementFactory.make("videoconvert")
+        # self.colorspace = Gst.ElementFactory.make("videoconvert")
         #
         # self.videobox = Gst.ElementFactory.make("videobox")
         # self.videobox.set_property("bottom", self.crop_bottom)
@@ -68,15 +68,15 @@ class Main:
 
         # self.player.add(self.autoconvert)
         # self.player.add(self.videobox)
-        # self.player.add(self.capsFilter)
-        # self.player.add(self.colorSpace)
+        # self.player.add(self.capsfilter)
+        # self.player.add(self.colorspace)
         # self.player.add(self.videosink)
 
         # self.queue1.link(self.autoconvert)
         # self.autoconvert.link(self.videobox)
-        # self.videobox.link(self.capsFilter)
-        # self.capsFilter.link(self.colorSpace)
-        # self.colorSpace.link(self.videosink)
+        # self.videobox.link(self.capsfilter)
+        # self.capsfilter.link(self.colorspace)
+        # self.colorspace.link(self.videosink)
 
         self.sink = Gst.ElementFactory.make('autovideosink', 'sink')
 
@@ -84,7 +84,7 @@ class Main:
                 and self.source
                 and self.convert
                 and self.capsFilter
-                # and self.colorSpace
+                # and self.colorspace
                 # and self.videobox
                 and self.sink):
             print('Not all elements could be created.')
@@ -92,21 +92,21 @@ class Main:
         [self.pipeline.add(k) for k in [self.source,
                                         self.convert,
                                         self.capsFilter,
-                                        # self.colorSpace,
+                                        # self.colorspace,
                                         # self.videobox,
                                         self.sink]]
 
         if not self.convert.link(self.capsFilter):
-            print('capsFilter element could not be linked.')
+            print('capsfilter element could not be linked.')
             self.pipeline.unref()
         if not self.capsFilter.link(self.sink):
-            print('capsFilter element could not be linked.')
+            print('capsfilter element could not be linked.')
             self.pipeline.unref()
 
-        # if not self.capsFilter.link(self.colorSpace):
-        #     print('colorSpace element could not be linked.')
+        # if not self.capsfilter.link(self.colorspace):
+        #     print('colorspace element could not be linked.')
         #     self.pipeline.unref()
-        # if not self.colorSpace.link(self.videobox):
+        # if not self.colorspace.link(self.videobox):
         #     print('videobox element could not be linked.')
         #     self.pipeline.unref()
         # if not self.videobox.link(self.sink):
