@@ -106,7 +106,7 @@ class AudioCutter:
 
         # Set properties of filesrc element
         # Note: the gnlfilesource signal will be connected
-        # in self.connectSignals()
+        # in self.connect_signals()
         self.filesrc.set_property("uri",
                                   "file:///" + self.inFileLocation)
         self.filesrc.set_property("media-start",

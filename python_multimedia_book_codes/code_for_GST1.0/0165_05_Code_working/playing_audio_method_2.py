@@ -96,7 +96,7 @@ class AudioPlayer:
             self.filesrc.set_property("location",
                                       "/Users/kemal/WorkSpace/Videowall Development/media/si_se_the_truth.mp3")
 
-            # Note: the decodebin signal is connected in self.connectSignals()
+            # Note: the decodebin signal is connected in self.connect_signals()
             self.decodebin = Gst.ElementFactory.make("decodebin", "decodebin")
 
             self.audioconvert = Gst.ElementFactory.make("audioconvert",

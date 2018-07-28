@@ -151,7 +151,7 @@ class ImageCapture:
 
         # Set properties of filesrc element
         # Note: the gnlfilesource signal will be connected
-        # in self.connectSignals()
+        # in self.connect_signals()
         self.gnlfilesrc.set_property("uri",
                                   "file:///" + self.inFileLocation)
 

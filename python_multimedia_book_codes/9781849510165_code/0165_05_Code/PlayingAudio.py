@@ -94,7 +94,7 @@ class AudioPlayer:
 
             self.filesrc.set_property("location", "C:/AudioFiles/my_music.mp3")
 
-            # Note: the decodebin signal is connected in self.connectSignals()
+            # Note: the decodebin signal is connected in self.connect_signals()
             self.decodebin = gst.element_factory_make("decodebin","decodebin")
 
             self.audioconvert = gst.element_factory_make("audioconvert",
