@@ -4,7 +4,7 @@
 
 """
 Bu dosya UBUNTU DELL 'de çalışıyor. "rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov"
-linkini sorunsuz oynatıyor. Kamera linkini nasıl test ederim???
+linkini sorunsuz oynatıyor. Kamera linkini nasıl test ederim??? Bu MAc 'te de çalıştı.
 """
 
 
