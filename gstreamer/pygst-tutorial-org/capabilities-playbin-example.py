@@ -25,6 +25,7 @@ class GTK_Main:
         vbox.add(self.movie_window)
         window.show_all()
         self.player = Gst.ElementFactory.make("playbin", "player")
+
         self.bin = Gst.Bin.new("my-bin")
         videoscale = Gst.ElementFactory.make("videoscale")
         videoscale.set_property("method", 1)
@@ -41,7 +42,7 @@ class GTK_Main:
         #textoverlay.set_property("halign", "right")
         # TypeError: object of type `GstTextOverlay' does not have property `valign'
         #textoverlay.set_property("valign", "top")
-        conv = Gst.ElementFactory.make ("videoconvert", "conv")
+        conv = Gst.ElementFactory.make("videoconvert", "conv")
         videosink = Gst.ElementFactory.make("autovideosink")
         
         self.bin.add(videoscale) 
@@ -89,7 +90,7 @@ class GTK_Main:
         if message.get_structure().get_name() == 'prepare-window-handle':
             imagesink = message.src
             imagesink.set_property("force-aspect-ratio", True)
-            imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
+            # imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
 
 
 GObject.threads_init()

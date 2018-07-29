@@ -4,9 +4,10 @@ import sys
 import gi
 gi.require_version('Gst', '1.0')
 gi.require_version('Gtk', '3.0')
-gi.require_version('GdkX11', '3.0')
 gi.require_version('GstVideo', '1.0')
-from gi.repository import Gst, Gtk, GLib, GdkX11, GstVideo
+from gi.repository import Gst, Gtk, GLib, GstVideo
+# gi.require_version('GdkX11', '3.0')
+
 
 # http://docs.gstreamer.com/display/GstSDK/Basic+tutorial+5%3A+GUI+toolkit+integration
 
@@ -29,7 +30,81 @@ class Player(object):
 
         # set up URI
         self.playbin.set_property(
-            "uri", "file:///home/kemal/Videos/jason_statham.mp4")
+            "uri", "file:///Users/kemal/WorkSpace/Videowall Development/media/pixar.mp4")
+
+        # aşağıdaki kod ile bin içerisine time overlay ekledik.
+        bin = Gst.Bin.new("my-bin")
+        timeoverlay = Gst.ElementFactory.make("timeoverlay")
+        timeoverlay.set_property("text", "GNUTV")
+        timeoverlay.set_property("font-desc", "normal 24")
+        bin.add(timeoverlay)
+
+        timeoverlay_pad = timeoverlay.get_static_pad("video_sink")
+        timeoverlay_ghostpad = Gst.GhostPad.new("sink_1", timeoverlay_pad)
+        bin.add_pad(timeoverlay_ghostpad)
+
+        videoscale = Gst.ElementFactory.make("videoscale")
+        videoscale.set_property("method", 1)
+        bin.add(videoscale)
+        videoscale_pad = videoscale.get_static_pad("sink")
+        videoscale_ghostpad = Gst.GhostPad.new("sink_2", videoscale_pad)
+        bin.add_pad(videoscale_ghostpad)
+
+        caps = Gst.Caps.from_string("video/x-raw, width=720")
+        filter = Gst.ElementFactory.make("capsfilter", "filter")
+        filter.set_property("caps", caps)
+        bin.add(filter)
+        filter_pad = filter.get_static_pad("sink")
+        filter_ghostpad = Gst.GhostPad.new("sink_3", filter_pad)
+        bin.add_pad(filter_ghostpad)
+
+        conv = Gst.ElementFactory.make("videoconvert", "conv")
+        bin.add(conv)
+        conv_pad = conv.get_static_pad("sink")
+        conv_ghostpad = Gst.GhostPad.new("sink_4", conv_pad)
+        bin.add_pad(conv_ghostpad)
+
+        videosink = Gst.ElementFactory.make("autovideosink")
+        bin.add(videosink)
+        timeoverlay.link(videoscale)
+        videoscale.link(filter)
+        filter.link(conv)
+        conv.link(videosink)
+
+        self.playbin.set_property("video-sink", bin)
+        #
+        # self.bin = Gst.Bin.new("my-bin")
+        # videoscale = Gst.ElementFactory.make("videoscale")
+        # videoscale.set_property("method", 1)
+        # pad = videoscale.get_static_pad("sink")
+        # ghostpad = Gst.GhostPad.new("sink", pad)
+        # self.bin.add_pad(ghostpad)
+        # caps = Gst.Caps.from_string("video/x-raw, width=720")
+        # filter = Gst.ElementFactory.make("capsfilter", "filter")
+        # filter.set_property("caps", caps)
+        # textoverlay = Gst.ElementFactory.make('textoverlay')
+        # textoverlay.set_property("text", "GNUTV")
+        # textoverlay.set_property("font-desc", "normal 14")
+        # # TypeError: object of type `GstTextOverlay' does not have property `halign'
+        # # textoverlay.set_property("halign", "right")
+        # # TypeError: object of type `GstTextOverlay' does not have property `valign'
+        # # textoverlay.set_property("valign", "top")
+        # conv = Gst.ElementFactory.make("videoconvert", "conv")
+        # videosink = Gst.ElementFactory.make("autovideosink")
+        #
+        # self.bin.add(videoscale)
+        # self.bin.add(filter)
+        # self.bin.add(textoverlay)
+        # self.bin.add(conv)
+        # self.bin.add(videosink)
+        #
+        # videoscale.link(filter)
+        # filter.link(textoverlay)
+        # textoverlay.link(conv)
+        # conv.link(videosink)
+
+        # self.playbin.set_property("video-sink", self.bin)
+
 
         # connect to interesting signals in playbin
         self.playbin.connect("video-tags-changed", self.on_tags_changed)
