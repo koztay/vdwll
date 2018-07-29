@@ -194,7 +194,6 @@ class VideoPlayer:
         self.uridecodebin = None
 
         self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
-        self.data.pipeline.set_property("video-sink", self.videosink)
 
         # Initialize audio pipeline elements
         self.audioconvert = None
@@ -304,6 +303,10 @@ class VideoPlayer:
         """
         Add and link elements in a GStreamer pipeline.
         """
+
+        # Create the pipeline instance
+        self.player = Gst.Pipeline()
+
         # Create uridecodebin instance
         self.uridecodebin = Gst.ElementFactory.make("uridecodebin")
         self.uridecodebin.set_property("uri",
@@ -395,6 +398,8 @@ class VideoPlayer:
         self.capsfilter.link(self.videobox)
         self.videobox.link(self.colorspace)
         self.colorspace.link(self.videosink)
+
+        self.data.pipeline.set_property("video-sink", self.videosink)
 
     def connect_signals(self):
         """
