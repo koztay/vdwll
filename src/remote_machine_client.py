@@ -72,6 +72,18 @@ def add_source(args):
     -x=100 -y=100 -w=1000 -ht=400 -f="add_source" \
     -s=192.168.1.35
 
+    python remote_machine_client.py -n"local video" \
+    -u="https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm" \
+    -x=100 -y=100 -w=800 -ht=400 -f="add_source" \
+    -s=192.168.1.35
+
+    python remote_machine_client.py -n"local video" \
+    -u="rtsp://78.188.204.20/media/video1" \
+    -x=100 -y=100 -w=800 -ht=400 -f="add_source" \
+    -s=192.168.1.35
+
+    rtsp://78.188.204.20/media/video1
+
     :param args:
     :return:
     """
