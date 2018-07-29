@@ -193,6 +193,9 @@ class VideoPlayer:
         self.player = None
         self.uridecodebin = None
 
+        self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
+        self.data.pipeline.set_property("video-sink", self.videosink)
+
         # Initialize audio pipeline elements
         self.audioconvert = None
         self.queue2 = None
@@ -210,6 +213,92 @@ class VideoPlayer:
         self.construct_pipeline()
         self.is_playing = False
         self.connect_signals()
+
+        bus = self.data.pipeline.get_bus()
+
+        ret = self.data.pipeline.set_state(Gst.State.PLAYING)
+        if ret == Gst.StateChangeReturn.FAILURE:
+            print('ERROR: Unable to set the pipeline to the playing state.')
+            sys.exit(-1)
+        elif ret == Gst.StateChangeReturn.NO_PREROLL:
+            print("Buffer oluşturmayacağız data live data...")
+            self.data.is_live = True
+
+        bus.add_signal_watch()
+        bus.enable_sync_message_emission()
+        bus.connect('message', self.cb_message, self.data)
+        bus.connect("sync-message::element", self.on_sync_message_playbin)
+
+    def cb_message(self, bus, msg, data):
+
+        gst_state = self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE)
+
+        # logging.debug("{} state : {}".format(datetime.datetime.now(), gst_state.state.value_name))
+
+        # if gst_state.state.value_name == "GST_STATE_PLAYING":
+        #     print("I am playing")
+
+        t = msg.type
+
+        if t == Gst.MessageType.ERROR:
+            err, debug = msg.parse_error()
+            try:
+                logging.error('{}\n{}'.format(*err))
+            except:
+                print('{}'.format(err))
+            self.data.pipeline.set_state(Gst.State.READY)
+            # self.data.main_loop.quit()
+            return
+
+        if t == Gst.MessageType.EOS:
+            # end-of-stream
+            self.data.pipeline.set_state(Gst.State.READY)
+            # self.data.main_loop.quit()
+            return
+
+        if t == Gst.MessageType.BUFFERING:
+            persent = 0
+
+            # If the stream is live, we do not care about buffering.
+            if self.data.is_live:
+                return
+
+            persent = msg.parse_buffering()
+            print('Buffering {0}%'.format(persent))
+
+            if persent < 100:
+                self.data.pipeline.set_state(Gst.State.PAUSED)
+            else:
+                self.data.pipeline.set_state(Gst.State.PLAYING)
+            return
+
+        if t == Gst.MessageType.CLOCK_LOST:
+
+            logging.debug("{} message : Gst.MessageType.CLOCK_LOST".format(datetime.datetime.now()))
+            if gst_state.state.value_name != "GST_STATE_PLAYING":
+                self.data.pipeline.set_state(Gst.State.PAUSED)
+                logging.debug("{} message : set paused".format(datetime.datetime.now()))
+            else:
+                self.data.pipeline.set_state(Gst.State.PLAYING)
+                logging.debug("{} message : set playing".format(datetime.datetime.now()))
+
+            return
+
+        # while gst_state.state.value_name != "GST_STATE_PLAYING":
+        #     # print("I am not playing, trying to set playing")
+        #     self.data.pipeline.set_state(Gst.State.PLAYING)  # bu yine olmadı
+
+    def on_sync_message_playbin(self, bus, message):
+        struct = message.get_structure()
+        if not struct:
+            return
+        message_name = struct.get_name()
+        if message_name == "prepare-window-handle":
+            # Assign the viewport
+            self.imagesink = message.src
+            print("self.imagesink neymiş", self.imagesink)
+            self.imagesink.set_property("force-aspect-ratio", False)
+            self.imagesink.set_window_handle(self.moviewindow.get_property('window').get_xid())
 
     def construct_pipeline(self):
         """
@@ -307,8 +396,6 @@ class VideoPlayer:
         self.videobox.link(self.colorspace)
         self.colorspace.link(self.videosink)
 
-        self.player.set_state(Gst.State.PLAYING)
-
     def connect_signals(self):
         """
         Connects signals with the methods.
@@ -316,7 +403,7 @@ class VideoPlayer:
         # Capture the messages put on the bus.
         bus = self.player.get_bus()
         bus.add_signal_watch()
-        bus.connect("message", self.message_handler)
+        # bus.connect("message", self.message_handler)
 
         # Connect the decodebin signal
         if self.uridecodebin:
@@ -362,61 +449,61 @@ class VideoPlayer:
     #         print("Buffer oluşturmayacağız data live data...")
     #         self.data.is_live = True
 
-    def message_handler(self, bus, message):
-        """
-        Capture the messages on the bus and
-        set the appropriate flag.
-        """
+    # def message_handler(self, bus, message):
+    #     """
+    #     Capture the messages on the bus and
+    #     set the appropriate flag.
+    #     """
+    #
+    #     gst_state = self.player.get_state(Gst.CLOCK_TIME_NONE)
+    #
+    #     msg_type = message.type
+    #     if msg_type == Gst.MessageType.ERROR:
+    #         self.player.set_state(Gst.State.NULL)
+    #         self.is_playing = False
+    #         print("\n Unable to play Video. Error: ", message.parse_error())
+    #     elif msg_type == Gst.MessageType.EOS:
+    #         self.player.set_state(Gst.State.NULL)
+    #         self.is_playing = False
+    #
+    #     if msg_type == Gst.MessageType.BUFFERING:
+    #         persent = 0
+    #         # If the stream is live, we do not care about buffering.
+    #         if self.data.is_live:
+    #             return
+    #
+    #         persent = message.parse_buffering()
+    #         print('Buffering {0}%'.format(persent))
+    #
+    #         if persent < 100:
+    #             self.player.set_state(Gst.State.PAUSED)
+    #         else:
+    #             self.player.set_state(Gst.State.PLAYING)
+    #         return
+    #
+    #     if msg_type == Gst.MessageType.CLOCK_LOST:
+    #
+    #         logging.debug("{} message : Gst.MessageType.CLOCK_LOST".format(datetime.datetime.now()))
+    #         if gst_state.state.value_name != "GST_STATE_PLAYING":
+    #             self.player.set_state(Gst.State.PAUSED)
+    #             logging.debug("{} message : set paused".format(datetime.datetime.now()))
+    #         else:
+    #             self.player.set_state(Gst.State.PLAYING)
+    #             logging.debug("{} message : set playing".format(datetime.datetime.now()))
+    #
+    #         return
 
-        gst_state = self.player.get_state(Gst.CLOCK_TIME_NONE)
-
-        msg_type = message.type
-        if msg_type == Gst.MessageType.ERROR:
-            self.player.set_state(Gst.State.NULL)
-            self.is_playing = False
-            print("\n Unable to play Video. Error: ", message.parse_error())
-        elif msg_type == Gst.MessageType.EOS:
-            self.player.set_state(Gst.State.NULL)
-            self.is_playing = False
-
-        if msg_type == Gst.MessageType.BUFFERING:
-            persent = 0
-            # If the stream is live, we do not care about buffering.
-            if self.data.is_live:
-                return
-
-            persent = message.parse_buffering()
-            print('Buffering {0}%'.format(persent))
-
-            if persent < 100:
-                self.player.set_state(Gst.State.PAUSED)
-            else:
-                self.player.set_state(Gst.State.PLAYING)
-            return
-
-        if msg_type == Gst.MessageType.CLOCK_LOST:
-
-            logging.debug("{} message : Gst.MessageType.CLOCK_LOST".format(datetime.datetime.now()))
-            if gst_state.state.value_name != "GST_STATE_PLAYING":
-                self.player.set_state(Gst.State.PAUSED)
-                logging.debug("{} message : set paused".format(datetime.datetime.now()))
-            else:
-                self.player.set_state(Gst.State.PLAYING)
-                logging.debug("{} message : set playing".format(datetime.datetime.now()))
-
-            return
-
-    def on_sync_message(self, bus, message):
-        struct = message.get_structure()
-        if not struct:
-            return
-        message_name = struct.get_name()
-        if message_name == "prepare-window-handle":
-            # Assign the viewport
-            self.imagesink = message.src
-            print("self.imagesink neymiş", self.imagesink)
-            self.imagesink.set_property("force-aspect-ratio", False)
-            self.imagesink.set_window_handle(self.moviewindow.get_property('window').get_xid())
+    # def on_sync_message(self, bus, message):
+    #     struct = message.get_structure()
+    #     if not struct:
+    #         return
+    #     message_name = struct.get_name()
+    #     if message_name == "prepare-window-handle":
+    #         # Assign the viewport
+    #         self.imagesink = message.src
+    #         print("self.imagesink neymiş", self.imagesink)
+    #         self.imagesink.set_property("force-aspect-ratio", False)
+    #         self.imagesink.set_window_handle(self.moviewindow.get_property('window').get_xid())
 
 
 class MainWindow(Gtk.ApplicationWindow):
