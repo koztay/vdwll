@@ -215,14 +215,6 @@ class VideoPlayer:
 
         bus = self.data.pipeline.get_bus()
 
-        ret = self.data.pipeline.set_state(Gst.State.PLAYING)
-        if ret == Gst.StateChangeReturn.FAILURE:
-            print('ERROR: Unable to set the pipeline to the playing state.')
-            sys.exit(-1)
-        elif ret == Gst.StateChangeReturn.NO_PREROLL:
-            print("Buffer oluşturmayacağız data live data...")
-            self.data.is_live = True
-
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
@@ -259,8 +251,8 @@ class VideoPlayer:
             persent = 0
 
             # If the stream is live, we do not care about buffering.
-            if self.data.is_live:
-                return
+            # if self.data.is_live:
+            #     return
 
             persent = msg.parse_buffering()
             print('Buffering {0}%'.format(persent))
@@ -318,7 +310,7 @@ class VideoPlayer:
         # Link elements in the pipeline.
         self.player.link(self.uridecodebin)
 
-        self.construct_audio_pipeline()
+        # self.construct_audio_pipeline()
         self.construct_video_pipeline()
 
     def construct_audio_pipeline(self):
@@ -400,6 +392,7 @@ class VideoPlayer:
         self.colorspace.link(self.videosink)
 
         self.data.pipeline.set_property("video-sink", self.videosink)
+
 
     def connect_signals(self):
         """
@@ -662,7 +655,7 @@ class RemoteCommander(object):
 def main():
     Gst.init(None)
     Gst.debug_set_active(True)
-    Gst.debug_set_default_threshold(2)
+    Gst.debug_set_default_threshold(5)
     gui = Application()
 
     # create a pyro daemon with object
