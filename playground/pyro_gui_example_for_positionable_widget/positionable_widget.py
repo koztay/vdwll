@@ -109,7 +109,7 @@ class MainWindow(Gtk.ApplicationWindow):
         videowidget = Gtk.DrawingArea()
         container.put(videowidget, 500, 400)
         player = Gst.parse_launch(
-            "rtspsrc location=rtsp://10.0.0.143/media/video1 latency=10 ! decodebin ! autovideosink")
+            "rtspsrc location=rtsp://78.188.204.20/media/video1 latency=10 ! decodebin ! autovideosink")
         bus = player.get_bus()
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
@@ -233,11 +233,12 @@ class MessagePrinter(object):
 # sys.exit(exitStatus)
 
 def main():
+    Gst.init(None)
     gui = Application()
 
     # create a pyro daemon with object
 
-    daemon = Pyro4.Daemon(host="10.0.0.15")
+    daemon = Pyro4.Daemon(host="192.168.1.27")
     obj = MessagePrinter(gui)
     ns = Pyro4.locateNS()
     uri = daemon.register(obj)
