@@ -60,7 +60,7 @@ class Player(object):
         # videoscale_ghostpad = Gst.GhostPad.new("sink_2", videoscale_pad)
         # bin.add_pad(videoscale_ghostpad)
 
-        caps = Gst.Caps.from_string("video/x-raw, width=720")
+        caps = Gst.Caps.from_string("video/x-raw, width=2800, height=450")
         filter = Gst.ElementFactory.make("capsfilter", "filter")
         filter.set_property("caps", caps)
         bin.add(filter)
