@@ -5,7 +5,7 @@ import sys
 import time
 import select
 import Pyro4
-import pyautogui
+# import pyautogui
 
 gi.require_version('Gst', '1.0')
 gi.require_version('GstVideo', '1.0')
@@ -468,7 +468,7 @@ class Application(Gtk.Application):
 
         # run function to add image
         self.mainWindow.show_all()
-        pyautogui.moveTo(5000, 5000)  # madem ki gizleyemiyoruz o zaman sağ alt köşeye atarız...
+        # pyautogui.moveTo(5000, 5000)  # madem ki gizleyemiyoruz o zaman sağ alt köşeye atarız...
         #  this takes 2 args: (how often to update in millisec, the method to run)
         # GObject.timeout_add(5000, self.resize_widget)
         # GObject.timeout_add(10000, self.resize_widget)
