@@ -34,41 +34,61 @@ class Player(object):
 
         # aşağıdaki kod ile bin içerisine time overlay ekledik.
         bin = Gst.Bin.new("my-bin")
-        timeoverlay = Gst.ElementFactory.make("timeoverlay")
-        timeoverlay.set_property("text", "GNUTV")
-        timeoverlay.set_property("font-desc", "normal 24")
-        bin.add(timeoverlay)
 
-        timeoverlay_pad = timeoverlay.get_static_pad("video_sink")
-        timeoverlay_ghostpad = Gst.GhostPad.new("sink_1", timeoverlay_pad)
+
+        # timeoverlay = Gst.ElementFactory.make("timeoverlay")
+        # timeoverlay.set_property("text", "GNUTV")
+        # timeoverlay.set_property("font-desc", "normal 24")
+        # bin.add(timeoverlay)
+        #
+
+        #
+        # timeoverlay_pad = timeoverlay.get_static_pad("video_sink")
+        # timeoverlay_ghostpad = Gst.GhostPad.new("sink_1", timeoverlay_pad)
+        # bin.add_pad(timeoverlay_ghostpad)
+
+        queue = Gst.ElementFactory.make("queue")
+        bin.add(queue)
+        timeoverlay_pad = queue.get_static_pad("sink")
+        timeoverlay_ghostpad = Gst.GhostPad.new("sink", timeoverlay_pad)
         bin.add_pad(timeoverlay_ghostpad)
 
         videoscale = Gst.ElementFactory.make("videoscale")
         videoscale.set_property("method", 1)
         bin.add(videoscale)
-        videoscale_pad = videoscale.get_static_pad("sink")
-        videoscale_ghostpad = Gst.GhostPad.new("sink_2", videoscale_pad)
-        bin.add_pad(videoscale_ghostpad)
+        # videoscale_pad = videoscale.get_static_pad("sink")
+        # videoscale_ghostpad = Gst.GhostPad.new("sink_2", videoscale_pad)
+        # bin.add_pad(videoscale_ghostpad)
 
         caps = Gst.Caps.from_string("video/x-raw, width=720")
         filter = Gst.ElementFactory.make("capsfilter", "filter")
         filter.set_property("caps", caps)
         bin.add(filter)
-        filter_pad = filter.get_static_pad("sink")
-        filter_ghostpad = Gst.GhostPad.new("sink_3", filter_pad)
-        bin.add_pad(filter_ghostpad)
+
+        videobox = Gst.ElementFactory.make("videobox")
+        videobox.set_property("bottom", 100)
+        videobox.set_property("top", 100)
+        videobox.set_property("left", 100)
+        videobox.set_property("right", 300)
+        bin.add(videobox)
+
+        # filter_pad = filter.get_static_pad("sink")
+        # filter_ghostpad = Gst.GhostPad.new("sink_3", filter_pad)
+        # bin.add_pad(filter_ghostpad)
 
         conv = Gst.ElementFactory.make("videoconvert", "conv")
         bin.add(conv)
-        conv_pad = conv.get_static_pad("sink")
-        conv_ghostpad = Gst.GhostPad.new("sink_4", conv_pad)
-        bin.add_pad(conv_ghostpad)
+        # conv_pad = conv.get_static_pad("sink")
+        # conv_ghostpad = Gst.GhostPad.new("sink_4", conv_pad)
+        # bin.add_pad(conv_ghostpad)
 
         videosink = Gst.ElementFactory.make("autovideosink")
         bin.add(videosink)
-        timeoverlay.link(videoscale)
+
+        queue.link(videoscale)
         videoscale.link(filter)
-        filter.link(conv)
+        filter.link(videobox)
+        videobox.link(conv)
         conv.link(videosink)
 
         self.playbin.set_property("video-sink", bin)
