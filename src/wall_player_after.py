@@ -291,15 +291,16 @@ class VideoPlayer:
 if __name__ == "__main__":
     # uri = "rtsp://78.188.204.20/media/video1"  # compatible pad bulamıyor macte
     # uri = "rtsp://192.168.1.32:5540/ch0" # cep tel linki
-    uri = "rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov"
-    # uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
+    # uri = "rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov"
+    uri = "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm"
     # yukarıdaki webm urisi Mac'te No decoder available for type 'audio/x-vorbis, ....
     # uyarısı verip takılıyor. Ancak constuct_audio_pipeline 'ı (line 112) kapatınca çalışıyor.
+    # Linux 'ta problemsiz decode etti audio 'yu...
     Gst.init(None)
     Gst.debug_set_colored(Gst.DebugColorMode.ON)
     Gst.debug_set_active(True)
     Gst.debug_set_default_threshold(2)
-    player = VideoPlayer(rtsp_uri=uri, video_width=800, video_height=600)
+    player = VideoPlayer(rtsp_uri=uri, video_width=800, video_height=400)
     thread = threading.Thread(target=player.play)
     thread.start()
     GObject.threads_init()
