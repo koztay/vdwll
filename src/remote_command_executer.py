@@ -51,6 +51,13 @@ class RemoteCommander(object):
                 fixed_widget.move(child, xpos, ypos)
 
     def resize(self, width, height, name):
+        """
+        bu sadece widget'ı resize etmek için, maksimum ekran çözünürlüğü değer alabilir.
+        :param width:
+        :param height:
+        :param name:
+        :return:
+        """
         fixed_widget = self.gui.mainWindow.get_child()
         children = fixed_widget.get_children()
         print(children)
