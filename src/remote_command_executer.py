@@ -4,7 +4,7 @@ import time
 
 gi.require_version('Gtk', '3.0')
 gi.require_version('Gst', '1.0')
-from gi.repository import Gtk, Gdk, Gst
+from gi.repository import Gtk, Gdk, Gst, GObject
 from playbin_player import VideoPlayer as playbin_player
 
 
@@ -124,7 +124,14 @@ class RemoteCommander(object):
                         height
                     ))
 
-                child.player.videobox.set_property("bottom", crop_bottom)
-                child.player.videobox.set_property("top", crop_top)
-                child.player.videobox.set_property("left", crop_left)
-                child.player.videobox.set_property("right", crop_right)
+                GObject.timeout.add(100, child.player.videobox.set_property("bottom", crop_bottom))
+                GObject.timeout.add(200, child.player.videobox.set_property("top", crop_top))
+                GObject.timeout.add(300, child.player.videobox.set_property("left", crop_left))
+                GObject.timeout.add(400, child.player.videobox.set_property("right", crop_right))
+
+                # child.player.videobox.set_property("bottom", crop_bottom)
+                # child.player.videobox.set_property("top", crop_top)
+                # child.player.videobox.set_property("left", crop_left)
+                # child.player.videobox.set_property("right", crop_right)
+
+
