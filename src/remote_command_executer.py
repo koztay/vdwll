@@ -84,9 +84,9 @@ class RemoteCommander(object):
                          name,
                          video_width=800,
                          video_height=600,
-                         crop_left=0,
+                         crop_left=300,
                          crop_right=0,
-                         crop_bootm=0,
+                         crop_bottom=0,
                          crop_top=0):
         fixed_widget = self.gui.mainWindow.get_child()
         children = fixed_widget.get_children()
@@ -101,3 +101,7 @@ class RemoteCommander(object):
                 ))
                 child.player.timeoverlay.set_property("text", "Bu değişmeli ...")
                 child.player.timeoverlay.set_property("font-desc", "normal 24")
+                child.player.videobox.set_property("bottom", crop_bottom)
+                child.player.videobox.set_property("top", crop_top)
+                child.player.videobox.set_property("left", crop_left)
+                child.player.videobox.set_property("right", crop_right)
