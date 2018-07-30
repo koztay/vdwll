@@ -89,8 +89,8 @@ class RemoteCommander(object):
 
     def change_mod_queue(self,
                          name,
-                         width=800,
-                         height=600,
+                         width=None,
+                         height=None,
                          crop_left=0,
                          crop_right=0,
                          crop_bottom=0,
@@ -103,12 +103,28 @@ class RemoteCommander(object):
             if child.get_name() == name:
                 print("bakalım player var mı?", child.player)
 
-                child.player.filter.set_state(Gst.State.NULL)
+                if width and height:
+                    child.player.filter.set_state(Gst.State.NULL)
 
-                child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
-                    width, height
-                ))
-                child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
+                    child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
+                        width, height
+                    ))
+                    child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
+                elif width:
+                    child.player.filter.set_state(Gst.State.NULL)
+
+                    child.player.caps = Gst.Caps.from_string("video/x-raw, width={}".format(
+                        width
+                    ))
+                    child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
+                elif height:
+                    child.player.filter.set_state(Gst.State.NULL)
+
+                    child.player.caps = Gst.Caps.from_string("video/x-raw, height={}".format(
+                        height
+                    ))
+                    child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
+
                 child.player.filter.set_property("caps", child.player.caps)
                 child.player.videobox.set_property("bottom", crop_bottom)
                 child.player.videobox.set_property("top", crop_top)
