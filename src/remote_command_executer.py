@@ -152,6 +152,8 @@ class RemoteCommander(object):
                 # child.player.bin.set_state(Gst.State.NULL) yukarıdaki kod bunu da NULL yaptı zaten
                 status_removed = child.player.bin.remove(child.player.queue)  # burada çıkarttım
                 print("status_removed", status_removed)
+
+
                 # burada yenisini ekledim
                 child.player.construct_mod_queue(
                     video_width=width,
@@ -162,3 +164,23 @@ class RemoteCommander(object):
                     crop_top=crop_top)
                 # burada da başlattım
                 child.player.data.pipeline.set_state(Gst.State.PLAYING)
+
+                """
+                https://github.com/sdroege/gst-snippets/blob/217ae015aaddfe3f7aa66ffc936ce93401fca04e/dynamic-filter.c
+                aşağıdaki kodda pipeline 'ı durdurmamış... Acaba otomatik mi duruyor? Dene...
+                gst_bin_remove (GST_BIN (pipeline), filter);
+                gst_bin_remove (GST_BIN (pipeline), conv2);
+            
+                gst_element_set_state (filter, GST_STATE_NULL);
+                gst_element_set_state (conv2, GST_STATE_NULL);
+            
+                gst_object_unref (filter);
+                gst_object_unref (conv2);
+                filter = NULL;
+                conv2 = NULL;
+                """
+
+                """
+                Burada da videosink için add remove kodu var C olarak :
+                https://github.com/sdroege/gst-snippets/blob/217ae015aaddfe3f7aa66ffc936ce93401fca04e/dynamic-tee-vsink.c
+                """
