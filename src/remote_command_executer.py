@@ -85,7 +85,7 @@ class RemoteCommander(object):
         # videowidget.player.videobox.set_property("top", crop_top)
         # videowidget.player.videobox.set_property("left", crop_left)
         # videowidget.player.videobox.set_property("right", crop_right)
-        videowidget.put(videowidget, xpos, ypos)
+        container.put(videowidget, xpos, ypos)
 
     def change_mod_queue(self,
                          name,
