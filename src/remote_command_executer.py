@@ -3,8 +3,8 @@ import Pyro4
 import time
 
 gi.require_version('Gtk', '3.0')
-
-from gi.repository import Gtk, Gdk
+gi.require_version('Gtk', '1.0')
+from gi.repository import Gtk, Gdk, Gst
 from playbin_player import VideoPlayer as playbin_player
 
 
@@ -95,4 +95,7 @@ class RemoteCommander(object):
             print("name :", child.get_name())
             if child.get_name() == name:
                 print("bakalım player var mı?", child.player)
-                child.player.construct_mod_queue()
+
+                child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
+                    video_width, video_height
+                ))
