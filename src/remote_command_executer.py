@@ -99,3 +99,5 @@ class RemoteCommander(object):
                 child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
                     video_width, video_height
                 ))
+                child.player.timeoverlay.set_property("text", "Bu değişmeli ...")
+                child.player.timeoverlay.set_property("font-desc", "normal 24")
