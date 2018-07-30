@@ -36,10 +36,10 @@ class Player(object):
         bin = Gst.Bin.new("my-bin")
 
 
-        # timeoverlay = Gst.ElementFactory.make("timeoverlay")
-        # timeoverlay.set_property("text", "GNUTV")
-        # timeoverlay.set_property("font-desc", "normal 24")
-        # bin.add(timeoverlay)
+        timeoverlay = Gst.ElementFactory.make("timeoverlay")
+        timeoverlay.set_property("text", "GNUTV")
+        timeoverlay.set_property("font-desc", "normal 24")
+        bin.add(timeoverlay)
         #
 
         #
@@ -89,7 +89,9 @@ class Player(object):
         videoscale.link(filter)
         filter.link(videobox)
         videobox.link(conv)
-        conv.link(videosink)
+        conv.link(timeoverlay)
+        timeoverlay.link(videosink)
+
 
         self.playbin.set_property("video-sink", bin)
         #
