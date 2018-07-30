@@ -1,3 +1,8 @@
+"""
+This file provides functionality of remotely controlling the content on the wall
+by command line.
+"""
+
 import argparse
 
 
