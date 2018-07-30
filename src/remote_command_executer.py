@@ -124,10 +124,10 @@ class RemoteCommander(object):
                         height
                     ))
 
-                GObject.timeout.add(100, child.player.videobox.set_property("bottom", crop_bottom))
-                GObject.timeout.add(200, child.player.videobox.set_property("top", crop_top))
-                GObject.timeout.add(300, child.player.videobox.set_property("left", crop_left))
-                GObject.timeout.add(400, child.player.videobox.set_property("right", crop_right))
+                GObject.timeout_add(100, child.player.videobox.set_property("bottom", crop_bottom))
+                GObject.timeout_add(200, child.player.videobox.set_property("top", crop_top))
+                GObject.timeout_add(300, child.player.videobox.set_property("left", crop_left))
+                GObject.timeout_add(400, child.player.videobox.set_property("right", crop_right))
 
                 # child.player.videobox.set_property("bottom", crop_bottom)
                 # child.player.videobox.set_property("top", crop_top)
