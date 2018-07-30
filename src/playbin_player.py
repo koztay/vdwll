@@ -21,7 +21,9 @@ class VideoPlayer:
     Simple Video player that just 'plays' a valid input Video file.
     """
 
-    def __init__(self, uri, moviewindow):
+    def __init__(self,
+                 uri,
+                 moviewindow):
 
         Gst.init(None)
         Gst.debug_set_active(True)
@@ -35,57 +37,7 @@ class VideoPlayer:
         self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
         self.data.pipeline.set_property("uri", self.uri)
 
-        ####################################################################
-        # aşağıdaki kod ile bin içerisine time overlay ekledik.
-        bin = Gst.Bin.new("my-bin")
-
-
-        queue = Gst.ElementFactory.make("queue")
-        bin.add(queue)
-        timeoverlay_pad = queue.get_static_pad("sink")
-        timeoverlay_ghostpad = Gst.GhostPad.new("sink", timeoverlay_pad)
-        bin.add_pad(timeoverlay_ghostpad)
-
-        videoscale = Gst.ElementFactory.make("videoscale")
-        videoscale.set_property("method", 1)
-        bin.add(videoscale)
-        # videoscale_pad = videoscale.get_static_pad("sink")
-        # videoscale_ghostpad = Gst.GhostPad.new("sink_2", videoscale_pad)
-        # bin.add_pad(videoscale_ghostpad)
-
-        caps = Gst.Caps.from_string("video/x-raw, width=3840, height=2160")
-        filter = Gst.ElementFactory.make("capsfilter", "filter")
-        filter.set_property("caps", caps)
-        bin.add(filter)
-
-        videobox = Gst.ElementFactory.make("videobox")
-        videobox.set_property("bottom", 1080)
-        videobox.set_property("top", 0)
-        videobox.set_property("left", 100)
-        videobox.set_property("right", 1920)
-        bin.add(videobox)
-
-        conv = Gst.ElementFactory.make("videoconvert", "conv")
-        bin.add(conv)
-
-        timeoverlay = Gst.ElementFactory.make("timeoverlay")
-        timeoverlay.set_property("text", "GNUTV")
-        timeoverlay.set_property("font-desc", "normal 24")
-        bin.add(timeoverlay)
-
-        videosink = Gst.ElementFactory.make("autovideosink")
-        bin.add(videosink)
-
-        queue.link(videoscale)
-        videoscale.link(filter)
-        filter.link(videobox)
-        videobox.link(conv)
-        conv.link(timeoverlay)
-        timeoverlay.link(videosink)
-
-        self.data.pipeline.set_property("video-sink", bin)
-        ####################################################################
-
+        self.construct_mod_queue()
 
         # rtspsrc kullanırsan aşağıdaki gibi :
         # self.data.pipeline = Gst.parse_launch(
@@ -108,6 +60,55 @@ class VideoPlayer:
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
         self.data.pipeline.connect('video-changed', self.on_handoff)
+
+    def construct_mod_queue(self,
+                            video_width=1920,
+                            video_height=1080,
+                            crop_left=0,
+                            crop_right=0,
+                            crop_bottom=0,
+                            crop_top=0
+                            ):
+
+        ####################################################################
+        # aşağıdaki kod ile bin içerisine time overlay ekledik.
+        bin = Gst.Bin.new("my-bin")
+        queue = Gst.ElementFactory.make("queue")
+        bin.add(queue)
+        timeoverlay_pad = queue.get_static_pad("sink")
+        timeoverlay_ghostpad = Gst.GhostPad.new("sink", timeoverlay_pad)
+        bin.add_pad(timeoverlay_ghostpad)
+        videoscale = Gst.ElementFactory.make("videoscale")
+        videoscale.set_property("method", 1)
+        bin.add(videoscale)
+        caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
+            video_width, video_height
+        ))
+        filter = Gst.ElementFactory.make("capsfilter", "filter")
+        filter.set_property("caps", caps)
+        bin.add(filter)
+        videobox = Gst.ElementFactory.make("videobox")
+        videobox.set_property("bottom", crop_bottom)
+        videobox.set_property("top", crop_top)
+        videobox.set_property("left", crop_left)
+        videobox.set_property("right", crop_right)
+        bin.add(videobox)
+        conv = Gst.ElementFactory.make("videoconvert", "conv")
+        bin.add(conv)
+        timeoverlay = Gst.ElementFactory.make("timeoverlay")
+        timeoverlay.set_property("text", "GNUTV")
+        timeoverlay.set_property("font-desc", "normal 24")
+        bin.add(timeoverlay)
+        videosink = Gst.ElementFactory.make("autovideosink")
+        bin.add(videosink)
+        queue.link(videoscale)
+        videoscale.link(filter)
+        filter.link(videobox)
+        videobox.link(conv)
+        conv.link(timeoverlay)
+        timeoverlay.link(videosink)
+        self.data.pipeline.set_property("video-sink", bin)
+        ####################################################################
 
     def cb_message(self, bus, msg, data):
 
