@@ -91,7 +91,7 @@ class RemoteCommander(object):
                          name,
                          width=800,
                          height=600,
-                         crop_left=300,
+                         crop_left=0,
                          crop_right=0,
                          crop_bottom=0,
                          crop_top=0):
@@ -102,6 +102,8 @@ class RemoteCommander(object):
             print("name :", child.get_name())
             if child.get_name() == name:
                 print("bakalım player var mı?", child.player)
+
+                child.player.filter.set_state(Gst.State.NULL)
 
                 child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
                     width, height
