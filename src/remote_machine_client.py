@@ -96,6 +96,17 @@ def add_source(args):
     screen.add_source(name=name, uri=uri, xpos=xpos, ypos=ypos, width=width, heigth=height)
 
 
+def change_mod_queue(args):
+    """
+    sample usage:
+    python remote_machine_client.py -n"local video" -f="change_mod_queue" -s=10.0.0.27
+    :param args:
+    :return:
+    """
+    name = args["name"]
+    screen.change_mod_queue(name=name)
+
+
 locals()[function_name](args)
 
 print("done!")

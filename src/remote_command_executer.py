@@ -95,3 +95,4 @@ class RemoteCommander(object):
             print("name :", child.get_name())
             if child.get_name() == name:
                 print("bakalım player var mı?", child.player)
+                child.player.construct_mod_queue()
