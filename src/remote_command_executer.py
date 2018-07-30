@@ -103,29 +103,27 @@ class RemoteCommander(object):
             if child.get_name() == name:
                 print("bakalım player var mı?", child.player)
 
+                child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
+                    width, height
+                ))
+                child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
+
                 if width and height:
                     # child.player.filter.set_state(Gst.State.NULL)
-
                     child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
                         width, height
                     ))
                     child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
                 elif width:
-                    child.player.filter.set_state(Gst.State.NULL)
-
                     child.player.caps = Gst.Caps.from_string("video/x-raw, width={}".format(
                         width
                     ))
                     child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
                 elif height:
-                    child.player.filter.set_state(Gst.State.NULL)
-
                     child.player.caps = Gst.Caps.from_string("video/x-raw, height={}".format(
                         height
                     ))
-                    child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
 
-                child.player.filter.set_property("caps", child.player.caps)
                 child.player.videobox.set_property("bottom", crop_bottom)
                 child.player.videobox.set_property("top", crop_top)
                 child.player.videobox.set_property("left", crop_left)
