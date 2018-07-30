@@ -139,6 +139,7 @@ class RemoteCommander(object):
                 #                                           width, height, crop_left, crop_top, crop_right,
                 #                                           crop_bottom))
 
+                child.player.data.pipeline.set_state(Gst.State.PAUSED)
                 child.player.bin.set_state(Gst.State.NULL)
                 child.player.bin.remove(child.player.queue)
                 child.player.construct_mod_queue(
@@ -148,3 +149,4 @@ class RemoteCommander(object):
                     crop_right=crop_right,
                     crop_bottom=crop_bottom,
                     crop_top=crop_top)
+                child.player.data.pipeline.set_state(Gst.State.PLAYING)
