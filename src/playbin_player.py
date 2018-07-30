@@ -59,7 +59,7 @@ class VideoPlayer:
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
-        self.data.pipeline.connect('video-changed', self.on_handoff)
+        # self.data.pipeline.connect('video-changed', self.on_handoff)
 
     def construct_mod_queue(self,
                             video_width=1920,
