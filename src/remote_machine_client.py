@@ -93,7 +93,7 @@ def add_source(args):
     ypos = args["ypos"]
     width = args["width"]
     height = args["height"]
-    screen.add_source(name=name, uri=uri, xpos=xpos, ypos=ypos, width=width, heigth=height)
+    screen.add_source(name=name, uri=uri, xpos=xpos, ypos=ypos, width=width, height=height)
 
 
 def change_mod_queue(args):
