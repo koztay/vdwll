@@ -115,6 +115,11 @@ def change_mod_queue(args):
     crop_top = args["crop_top"]
     crop_bottom = args["crop_bottom"]
 
+    print("crop_left", crop_left,
+          "crop_right", crop_right,
+          "crop_top", crop_top,
+          "crop_bottom", crop_bottom)
+
     screen.change_mod_queue(name=name,
                             width=width,
                             height=height,
