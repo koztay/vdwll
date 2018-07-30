@@ -106,7 +106,9 @@ class VideoPlayer:
 
         # Add timeoverlay for debugging (if no debud no timeoverlay)
         self.timeoverlay = Gst.ElementFactory.make("timeoverlay")
-        self.timeoverlay.set_property("text", "GNUTV")
+        self.timeoverlay.set_property("text",
+                                      "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
+                                          video_width, video_height, crop_left, crop_top, crop_right, crop_bottom))
         self.timeoverlay.set_property("font-desc", "normal 24")
         self.bin.add(self.timeoverlay)
 
