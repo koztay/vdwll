@@ -67,6 +67,7 @@ class RemoteCommander(object):
         for child in children:
             print("name :", child.get_name())
             if child.get_name() == name:
+                child.player.data.pipeline.set_state(Gst.State.NULL)
                 fixed_widget.remove(child)
 
     def add_source(self, uri, xpos, ypos, width, height, name):
@@ -78,9 +79,9 @@ class RemoteCommander(object):
         videowidget.set_size_request(width, height)
         videowidget.show()
         videowidget.player = playbin_player(uri=uri, moviewindow=videowidget, width=width, height=height)
-        videowidget.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
-            width, height
-        ))
+        # videowidget.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
+        #     width, height
+        # ))
         # videowidget.player.videobox.set_property("bottom", crop_bottom)
         # videowidget.player.videobox.set_property("top", crop_top)
         # videowidget.player.videobox.set_property("left", crop_left)
@@ -139,9 +140,11 @@ class RemoteCommander(object):
                 #                                           width, height, crop_left, crop_top, crop_right,
                 #                                           crop_bottom))
 
-                child.player.data.pipeline.set_state(Gst.State.NULL)
+                status_nulled = child.player.data.pipeline.set_state(Gst.State.NULL)
+                print("status_nulled", status_nulled)
                 # child.player.bin.set_state(Gst.State.NULL) yukarıdaki kod bunu da NULL yaptı zaten
-                child.player.bin.remove(child.player.queue)  # burada çıkarttım
+                status_removed = child.player.bin.remove(child.player.queue)  # burada çıkarttım
+                print("status_removed", status_removed)
                 # burada yenisini ekledim
                 child.player.construct_mod_queue(
                     video_width=width,
