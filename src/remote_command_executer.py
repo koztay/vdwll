@@ -82,8 +82,8 @@ class RemoteCommander(object):
 
     def change_mod_queue(self,
                          name,
-                         video_width=800,
-                         video_height=600,
+                         width=800,
+                         height=600,
                          crop_left=300,
                          crop_right=0,
                          crop_bottom=0,
@@ -97,10 +97,8 @@ class RemoteCommander(object):
                 print("bakalım player var mı?", child.player)
 
                 child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
-                    video_width, video_height
+                    width, height
                 ))
-                child.player.timeoverlay.set_property("text", "Bu değişmeli ...")
-                child.player.timeoverlay.set_property("font-desc", "normal 24")
                 child.player.videobox.set_property("bottom", crop_bottom)
                 child.player.videobox.set_property("top", crop_top)
                 child.player.videobox.set_property("left", crop_left)

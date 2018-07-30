@@ -104,7 +104,9 @@ def change_mod_queue(args):
     :return:
     """
     name = args["name"]
-    screen.change_mod_queue(name=name)
+    width = args["width"]
+    height = args["height"]
+    screen.change_mod_queue(name=name, width=width, height=height)
 
 
 locals()[function_name](args)
