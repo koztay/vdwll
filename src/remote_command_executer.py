@@ -107,7 +107,7 @@ class RemoteCommander(object):
                     width, height
                 ))
                 child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
-                child.player.filter.set_property("caps", self.caps)
+                child.player.filter.set_property("caps", child.player.caps)
                 child.player.videobox.set_property("bottom", crop_bottom)
                 child.player.videobox.set_property("top", crop_top)
                 child.player.videobox.set_property("left", crop_left)
