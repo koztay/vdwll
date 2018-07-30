@@ -124,14 +124,19 @@ class RemoteCommander(object):
                         height
                     ))
 
-                GObject.timeout_add(100, child.player.videobox.set_property("bottom", crop_bottom))
-                GObject.timeout_add(200, child.player.videobox.set_property("top", crop_top))
-                GObject.timeout_add(300, child.player.videobox.set_property("left", crop_left))
-                GObject.timeout_add(400, child.player.videobox.set_property("right", crop_right))
+                # GObject.timeout_add(100, child.player.videobox.set_property("bottom", crop_bottom))
+                # GObject.timeout_add(200, child.player.videobox.set_property("top", crop_top))
+                # GObject.timeout_add(300, child.player.videobox.set_property("left", crop_left))
+                # GObject.timeout_add(400, child.player.videobox.set_property("right", crop_right))
 
-                # child.player.videobox.set_property("bottom", crop_bottom)
-                # child.player.videobox.set_property("top", crop_top)
-                # child.player.videobox.set_property("left", crop_left)
-                # child.player.videobox.set_property("right", crop_right)
+                child.player.videobox.set_property("bottom", crop_bottom)
+                child.player.videobox.set_property("top", crop_top)
+                child.player.videobox.set_property("left", crop_left)
+                child.player.videobox.set_property("right", crop_right)
+
+                self.timeoverlay.set_property("text",
+                                              "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
+                                                  width, height, crop_left, crop_top, crop_right,
+                                                  crop_bottom))
 
 

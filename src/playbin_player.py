@@ -37,7 +37,7 @@ class VideoPlayer:
         self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
         self.data.pipeline.set_property("uri", self.uri)
 
-        self.construct_mod_queue()
+        # self.construct_mod_queue()
 
         # rtspsrc kullanırsan aşağıdaki gibi :
         # self.data.pipeline = Gst.parse_launch(
