@@ -108,33 +108,43 @@ class RemoteCommander(object):
                 # ))
                 # child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
 
-                if width and height:
-                    # child.player.filter.set_state(Gst.State.NULL)
-                    child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
-                        width, height
-                    ))
-                    child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
-                elif width:
-                    child.player.caps = Gst.Caps.from_string("video/x-raw, width={}".format(
-                        width
-                    ))
-                    child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
-                elif height:
-                    child.player.caps = Gst.Caps.from_string("video/x-raw, height={}".format(
-                        height
-                    ))
+                # if width and height:
+                #     # child.player.filter.set_state(Gst.State.NULL)
+                #     child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
+                #         width, height
+                #     ))
+                #     child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
+                # elif width:
+                #     child.player.caps = Gst.Caps.from_string("video/x-raw, width={}".format(
+                #         width
+                #     ))
+                #     child.player.filter = Gst.ElementFactory.make("capsfilter", "filter")
+                # elif height:
+                #     child.player.caps = Gst.Caps.from_string("video/x-raw, height={}".format(
+                #         height
+                #     ))
+                #
+                # # GObject.timeout_add(100, child.player.videobox.set_property("bottom", crop_bottom))
+                # # GObject.timeout_add(200, child.player.videobox.set_property("top", crop_top))
+                # # GObject.timeout_add(300, child.player.videobox.set_property("left", crop_left))
+                # # GObject.timeout_add(400, child.player.videobox.set_property("right", crop_right))
+                #
+                # child.player.videobox.set_property("bottom", crop_bottom)
+                # child.player.videobox.set_property("top", crop_top)
+                # child.player.videobox.set_property("left", crop_left)
+                # child.player.videobox.set_property("right", crop_right)
+                #
+                # child.player.timeoverlay.set_property("text",
+                #                                       "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
+                #                                           width, height, crop_left, crop_top, crop_right,
+                #                                           crop_bottom))
 
-                # GObject.timeout_add(100, child.player.videobox.set_property("bottom", crop_bottom))
-                # GObject.timeout_add(200, child.player.videobox.set_property("top", crop_top))
-                # GObject.timeout_add(300, child.player.videobox.set_property("left", crop_left))
-                # GObject.timeout_add(400, child.player.videobox.set_property("right", crop_right))
-
-                child.player.videobox.set_property("bottom", crop_bottom)
-                child.player.videobox.set_property("top", crop_top)
-                child.player.videobox.set_property("left", crop_left)
-                child.player.videobox.set_property("right", crop_right)
-
-                child.player.timeoverlay.set_property("text",
-                                                      "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
-                                                          width, height, crop_left, crop_top, crop_right,
-                                                          crop_bottom))
+                child.player.bin.set_state(Gst.State.NULL)
+                child.player.bin.remove(child.player.queue)
+                child.player.construct_mod_queue(
+                    video_width=width,
+                    video_height=height,
+                    crop_left=crop_left,
+                    crop_right=crop_right,
+                    crop_bottom=crop_bottom,
+                    crop_top=crop_top)
