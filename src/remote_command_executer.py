@@ -104,7 +104,7 @@ class RemoteCommander(object):
                 print("bakalım player var mı?", child.player)
 
                 if width and height:
-                    child.player.filter.set_state(Gst.State.NULL)
+                    # child.player.filter.set_state(Gst.State.NULL)
 
                     child.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
                         width, height
