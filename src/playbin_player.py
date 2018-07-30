@@ -7,6 +7,8 @@ gi.require_version('Gst', '1.0')
 gi.require_version('GstVideo', '1.0')
 from gi.repository import GObject, Gst, GstVideo
 
+import settings
+
 logging.basicConfig(filename='network_lost.log', level=logging.DEBUG)
 
 
@@ -106,16 +108,17 @@ class VideoPlayer:
         self.conv = Gst.ElementFactory.make("videoconvert", "conv")
         self.bin.add(self.conv)
 
-        # Add timeoverlay for debugging (if no debud no timeoverlay)
-        self.timeoverlay = Gst.ElementFactory.make("timeoverlay")
+        if settings.DEBUG:
+            # Add timeoverlay for debugging (if no debud no timeoverlay)
+            self.timeoverlay = Gst.ElementFactory.make("timeoverlay")
 
-        # self.timeoverlay.set_property("text", "First Initialized")
-        self.timeoverlay.set_property("text",
-                                      "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
-                                          video_width, video_height, crop_left, crop_top, crop_right,
-                                          crop_bottom))
-        self.timeoverlay.set_property("font-desc", "normal 24")
-        self.bin.add(self.timeoverlay)
+            # self.timeoverlay.set_property("text", "First Initialized")
+            self.timeoverlay.set_property("text",
+                                          "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
+                                              video_width, video_height, crop_left, crop_top, crop_right,
+                                              crop_bottom))
+            self.timeoverlay.set_property("font-desc", "normal 24")
+            self.bin.add(self.timeoverlay)
 
         # Add videosink element
         self.videosink = Gst.ElementFactory.make("autovideosink")
@@ -126,8 +129,11 @@ class VideoPlayer:
         self.videoscale.link(self.filter)
         self.filter.link(self.videobox)
         self.videobox.link(self.conv)
-        self.conv.link(self.timeoverlay)
-        self.timeoverlay.link(self.videosink)
+        if settings.DEBUG:
+            self.conv.link(self.timeoverlay)
+            self.timeoverlay.link(self.videosink)
+        else:
+            self.conv.link(self.videosink)
 
         # Set videosink for pipeline
         self.data.pipeline.set_property("video-sink", self.bin)
