@@ -69,16 +69,23 @@ class RemoteCommander(object):
             if child.get_name() == name:
                 fixed_widget.remove(child)
 
-    def add_source(self, uri, xpos, ypos, width, heigth, name):
+    def add_source(self, uri, xpos, ypos, width, height, name):
         # self.gui.add_source(uri, xpos, ypos, width, heigth, name)
         container = self.gui.mainWindow.get_child()
         videowidget = Gtk.DrawingArea(name=name)
         videowidget.set_halign(Gtk.Align.START)
         videowidget.set_valign(Gtk.Align.START)
-        videowidget.set_size_request(width, heigth)
+        videowidget.set_size_request(width, height)
         videowidget.show()
         videowidget.player = playbin_player(uri=uri, moviewindow=videowidget)
-        container.put(videowidget, xpos, ypos)
+        videowidget.player.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
+            width, height
+        ))
+        # videowidget.player.videobox.set_property("bottom", crop_bottom)
+        # videowidget.player.videobox.set_property("top", crop_top)
+        # videowidget.player.videobox.set_property("left", crop_left)
+        # videowidget.player.videobox.set_property("right", crop_right)
+        videowidget.put(videowidget, xpos, ypos)
 
     def change_mod_queue(self,
                          name,
