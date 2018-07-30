@@ -147,12 +147,12 @@ class RemoteCommander(object):
                 # child.player.bin.set_state(Gst.State.NULL) yukarıdaki kod bunu da NULL yaptı zaten
                 child.player.bin.remove(child.player.queue)  # burada çıkarttım
                 # burada yenisini ekledim
-                child.player.construct_mod_queue(
-                    video_width=width,
-                    video_height=height,
-                    crop_left=crop_left,
-                    crop_right=crop_right,
-                    crop_bottom=crop_bottom,
-                    crop_top=crop_top)
-                # burada da başlattım
-                child.player.data.pipeline.set_state(Gst.State.PLAYING)
+                # child.player.construct_mod_queue(
+                #     video_width=width,
+                #     video_height=height,
+                #     crop_left=crop_left,
+                #     crop_right=crop_right,
+                #     crop_bottom=crop_bottom,
+                #     crop_top=crop_top)
+                # # burada da başlattım
+                # child.player.data.pipeline.set_state(Gst.State.PLAYING)
