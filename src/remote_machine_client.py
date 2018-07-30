@@ -13,6 +13,10 @@ ap.add_argument("-w", "--width", type=int, help="new width of the widget")
 ap.add_argument("-ht", "--height", type=int, help="new height of the widget")
 ap.add_argument("-u", "--uri", type=str, help="uri of the source")
 ap.add_argument("-s", "--screen", type=str, required=True, help="IP address of the screen")
+ap.add_argument("-cl", "--crop_left", type=int, help="Crop left as pixel")
+ap.add_argument("-cr", "--crop_right", type=int, help="Crop right as pixel")
+ap.add_argument("-ct", "--crop_top", type=int, help="Crop top as pixel")
+ap.add_argument("-cb", "--crop_bottom", type=int, help="Crop bottom as pixel")
 
 
 args = vars(ap.parse_args())
@@ -106,7 +110,19 @@ def change_mod_queue(args):
     name = args["name"]
     width = args["width"]
     height = args["height"]
-    screen.change_mod_queue(name=name, width=width, height=height)
+    crop_left = args["crop_left"]
+    crop_right = args["crop_right"]
+    crop_top = args["crop_top"]
+    crop_bottom = args["crop_bottom"]
+
+    screen.change_mod_queue(name=name,
+                            width=width,
+                            height=height,
+                            crop_left=crop_left,
+                            crop_right=crop_right,
+                            crop_top=crop_top,
+                            crop_bottom=crop_bottom
+                            )
 
 
 locals()[function_name](args)
