@@ -23,7 +23,9 @@ class VideoPlayer:
 
     def __init__(self,
                  uri,
-                 moviewindow):
+                 moviewindow,
+                 width,
+                 height):
 
         Gst.init(None)
         Gst.debug_set_active(True)
@@ -37,7 +39,7 @@ class VideoPlayer:
         self.data.pipeline = Gst.ElementFactory.make("playbin", "playbin")
         self.data.pipeline.set_property("uri", self.uri)
 
-        # self.construct_mod_queue()
+        self.construct_mod_queue(video_width=width, video_height=height)
 
         # rtspsrc kullanırsan aşağıdaki gibi :
         # self.data.pipeline = Gst.parse_launch(
@@ -106,9 +108,12 @@ class VideoPlayer:
 
         # Add timeoverlay for debugging (if no debud no timeoverlay)
         self.timeoverlay = Gst.ElementFactory.make("timeoverlay")
+
+        # self.timeoverlay.set_property("text", "First Initialized")
         self.timeoverlay.set_property("text",
                                       "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
-                                          video_width, video_height, crop_left, crop_top, crop_right, crop_bottom))
+                                          video_width, video_height, crop_left, crop_top, crop_right,
+                                          crop_bottom))
         self.timeoverlay.set_property("font-desc", "normal 24")
         self.bin.add(self.timeoverlay)
 

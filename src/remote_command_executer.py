@@ -134,9 +134,7 @@ class RemoteCommander(object):
                 child.player.videobox.set_property("left", crop_left)
                 child.player.videobox.set_property("right", crop_right)
 
-                self.timeoverlay.set_property("text",
-                                              "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
-                                                  width, height, crop_left, crop_top, crop_right,
-                                                  crop_bottom))
-
-
+                child.player.timeoverlay.set_property("text",
+                                                      "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
+                                                          width, height, crop_left, crop_top, crop_right,
+                                                          crop_bottom))
