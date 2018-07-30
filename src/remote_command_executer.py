@@ -79,3 +79,19 @@ class RemoteCommander(object):
         videowidget.show()
         videowidget.player = playbin_player(uri=uri, moviewindow=videowidget)
         container.put(videowidget, xpos, ypos)
+
+    def change_mod_queue(self,
+                         name,
+                         video_width=800,
+                         video_height=600,
+                         crop_left=0,
+                         crop_right=0,
+                         crop_bootm=0,
+                         crop_top=0):
+        fixed_widget = self.gui.mainWindow.get_child()
+        children = fixed_widget.get_children()
+        print(children)
+        for child in children:
+            print("name :", child.get_name())
+            if child.get_name() == name:
+                print("bakalım player var mı?", child.player)
