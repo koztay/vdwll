@@ -83,6 +83,10 @@ class VideoPlayer:
         queue_ghostpad = Gst.GhostPad.new("sink", queue_pad)
         self.bin.add_pad(queue_ghostpad)
 
+        # Connect the decodebin signal
+        if self.queue:
+            self.queue.connect("pad_added", self.ghost_pad_added)
+
         # Resize etmeye gerek yok ancak gelen görüntünün çözünürlüğünü öğrenmke lazım.
         # # Add Videoscale Filter for Resizing
         # self.videoscale = Gst.ElementFactory.make("videoscale")
@@ -211,8 +215,8 @@ class VideoPlayer:
             self.imagesink.set_property("force-aspect-ratio", False)
             self.imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
 
-    def on_handoff(self, bus, message):
-        print("Handoff oldu ya la!!")
+    def ghost_pad_added(self):
+        print("ghostpad added çalıştı burada caps okuyabiliriz gibi...")
 
 
 if __name__ == "__main__":
