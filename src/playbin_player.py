@@ -34,6 +34,9 @@ class VideoPlayer:
         Gst.debug_set_active(True)
         Gst.debug_set_default_threshold(2)
 
+        self.width = 0  # source olarak gelen videonun pixel olarak genişliği
+        self.height = 0 # source olarak gelen videonun pixel olarak yüksekliği
+
         self.data = CustomData()
 
         self.uri = uri
@@ -48,7 +51,7 @@ class VideoPlayer:
         # self.data.pipeline = Gst.parse_launch(
         #     "rtspsrc location={} latency=500 timeout=18446744073709551 tcp-timeout=18446744073709551 ! decodebin ! autovideosink".format(self.uri))
 
-        self.streams_list = []
+        self.streams_list = []  # streamleri analiz etmek için kullanmış ama bizde bir anlamı yok.
 
         bus = self.data.pipeline.get_bus()
 
@@ -62,9 +65,15 @@ class VideoPlayer:
 
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
-        # bus.connect('message', self.cb_message, self.data)
+        bus.connect('message', self.cb_message, self.data)  # bunu yapınca
         bus.connect("sync-message::element", self.on_sync_message)
-        bus.connect("message::application", self.on_application_message)
+        # bus.connect("message::application", self.on_application_message)
+        # bus.connect("message::application", self.on_application_message)
+        # bus.connect("message::application", self.on_application_message)
+        # bus.connect("message::application", self.on_application_message)
+
+
+
         # connect to interesting signals in playbin
         self.data.pipeline.connect("video-tags-changed", self.on_tags_changed)
         self.data.pipeline.connect("audio-tags-changed", self.on_tags_changed)
@@ -87,20 +96,6 @@ class VideoPlayer:
         queue_pad = self.queue.get_static_pad("sink")
         queue_ghostpad = Gst.GhostPad.new("sink", queue_pad)
         self.bin.add_pad(queue_ghostpad)
-
-        # Resize etmeye gerek yok ancak gelen görüntünün çözünürlüğünü öğrenmke lazım.
-        # # Add Videoscale Filter for Resizing
-        # self.videoscale = Gst.ElementFactory.make("videoscale")
-        # self.videoscale.set_property("method", 1)
-        # self.bin.add(self.videoscale)
-        #
-        # # Add Caps Filter for Resizing the Video
-        # self.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
-        #     video_width, video_height
-        # ))
-        # self.filter = Gst.ElementFactory.make("capsfilter", "filter")
-        # self.filter.set_property("caps", self.caps)
-        # self.bin.add(self.filter)
 
         # Add Videobox for Cropping
         self.videobox = Gst.ElementFactory.make("videobox")
@@ -132,9 +127,6 @@ class VideoPlayer:
 
         # Link all elements
         self.queue.link(self.videobox)
-        # self.videoscale.link(self.filter)
-        # self.filter.link(self.videobox)
-        # self.videobox.link(self.videosink)
         if settings.DEBUG:
             self.videobox.link(self.timeoverlay)
             self.timeoverlay.link(self.videosink)
@@ -150,9 +142,6 @@ class VideoPlayer:
         gst_state = self.data.pipeline.get_state(Gst.CLOCK_TIME_NONE)
 
         # logging.debug("{} state : {}".format(datetime.datetime.now(), gst_state.state.value_name))
-
-        # if gst_state.state.value_name == "GST_STATE_PLAYING":
-        #     print("I am playing")
 
         t = msg.type
 
@@ -200,6 +189,9 @@ class VideoPlayer:
                 logging.debug("{} message : set playing".format(datetime.datetime.now()))
 
             return
+
+        if t == Gst.MessageType.APPLICATION:
+            print("application mesajını burada handle edebilir miyiz acaba?")
 
         # while gst_state.state.value_name != "GST_STATE_PLAYING":
         #     # print("I am not playing, trying to set playing")
