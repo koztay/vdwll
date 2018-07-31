@@ -84,8 +84,8 @@ class VideoPlayer:
         self.bin.add_pad(queue_ghostpad)
 
         # Connect the decodebin signal
-        if self.queue:
-            self.queue.connect("pad_added", self.ghost_pad_added)
+        if self.bin:
+            self.bin.connect("pad_added", self.ghost_pad_added)
 
         # Resize etmeye gerek yok ancak gelen görüntünün çözünürlüğünü öğrenmke lazım.
         # # Add Videoscale Filter for Resizing
