@@ -5,7 +5,7 @@ import sys
 
 gi.require_version('Gst', '1.0')
 gi.require_version('GstVideo', '1.0')
-from gi.repository import GObject, Gst, GstVideo, GstPbutils
+from gi.repository import GObject, Gst, GstVideo, GstPbutils, GLib
 
 import settings
 
@@ -49,6 +49,11 @@ class VideoPlayer:
         if not self.data.discoverer.discover_uri_async(uri):
             print('Failed to start discovering URI "{0}'.format(uri), file=sys.stderr)
             # sys.exit(-1)
+
+        self.data.main_loop = GLib.MainLoop()
+        self.data.main_loop.run()
+
+        self.data.discoverer.stop()
 
         self.uri = uri
         self.movie_window = moviewindow
