@@ -189,7 +189,10 @@ class VideoPlayer:
             return
 
         if t == Gst.MessageType.APPLICATION:
-            print("application mesajını burada handle edebilir miyiz acaba?")
+            if msg.get_structure().get_name() == "tags-changed":
+                # if the message is the "tags-changed", update the stream info
+                # and set the video resolution
+                self.analyze_streams()
 
         # while gst_state.state.value_name != "GST_STATE_PLAYING":
         #     # print("I am not playing, trying to set playing")
@@ -278,13 +281,13 @@ class VideoPlayer:
         print("stream analizi tamamlandı :", buffer)
         return buffer
 
-    # this function is called when an "application" message is posted on the bus
-    # here we retrieve the message posted by the on_tags_changed callback
-    def on_application_message(self, bus, msg):
-        if msg.get_structure().get_name() == "tags-changed":
-            # if the message is the "tags-changed", update the stream info in
-            # the GUI
-            self.analyze_streams()
+    # # this function is called when an "application" message is posted on the bus
+    # # here we retrieve the message posted by the on_tags_changed callback
+    # def on_application_message(self, bus, msg):
+    #     if msg.get_structure().get_name() == "tags-changed":
+    #         # if the message is the "tags-changed", update the stream info in
+    #         # the GUI
+    #         self.analyze_streams()
 
     def read_video_props(self, caps):
         print("caps gelmiş olması lazım artık :", caps)
