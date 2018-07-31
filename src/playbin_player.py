@@ -83,10 +83,6 @@ class VideoPlayer:
         queue_ghostpad = Gst.GhostPad.new("sink", queue_pad)
         self.bin.add_pad(queue_ghostpad)
 
-        # Connect the decodebin signal bu çalışmıyor
-        if self.bin:
-            self.bin.connect("pad_added", self.ghost_pad_added)
-
         # Resize etmeye gerek yok ancak gelen görüntünün çözünürlüğünü öğrenmke lazım.
         # # Add Videoscale Filter for Resizing
         # self.videoscale = Gst.ElementFactory.make("videoscale")
