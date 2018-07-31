@@ -147,7 +147,8 @@ class RemoteCommander(object):
                 #                                           width, height, crop_left, crop_top, crop_right,
                 #                                           crop_bottom))
 
-                status_nulled = child.player.data.pipeline.set_state(Gst.State.NULL)
+                # status_nulled = child.player.data.pipeline.set_state(Gst.State.NULL)
+                status_nulled = child.player.data.pipeline.set_state(Gst.State.PAUSED)
                 print("status_nulled", status_nulled)
                 # child.player.bin.set_state(Gst.State.NULL) yukarıdaki kod bunu da NULL yaptı zaten
                 status_removed = child.player.bin.remove(child.player.queue)  # burada çıkarttım

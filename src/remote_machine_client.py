@@ -87,11 +87,12 @@ def add_source(args):
     -s=192.168.1.35
 
     python remote_machine_client.py -n"local video" \
-    -u="rtsp://78.188.204.20/media/video1" \
+    -u="rtsp://10.0.0.143/media/video1" \
     -x=100 -y=100 -w=800 -ht=400 -f="add_source" \
     -s=10.0.0.27
 
     rtsp://78.188.204.20/media/video1
+    rtsp://10.0.0.143/media/video1
 
     :param args:
     :return:
@@ -108,7 +109,8 @@ def add_source(args):
 def change_mod_queue(args):
     """
     sample usage:
-    python remote_machine_client.py -n"local video" -f="change_mod_queue" -s=10.0.0.27
+    python remote_machine_client.py -n"local video" -f="change_mod_queue" -s=10.0.0.27 \
+    -w=1920 -ht=1080 -ct=0 -cr=300 -cl=300 -cb=0
     :param args:
     :return:
     """
