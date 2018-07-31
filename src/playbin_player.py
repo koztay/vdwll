@@ -64,6 +64,7 @@ class VideoPlayer:
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
         self.data.pipeline.connect('get_video_pad', self.get_video_pad)
+        self.data.pipeline.connect('get-video-pad', self.get_video_pad)
 
     def construct_mod_queue(self,
                             video_width=1920,
