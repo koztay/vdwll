@@ -105,9 +105,9 @@ class VideoPlayer:
         self.videobox.set_property("right", crop_right)
         self.bin.add(self.videobox)
 
-        # Add conversion for outputting
-        self.conv = Gst.ElementFactory.make("videoconvert", "conv")
-        self.bin.add(self.conv)
+        # # Add conversion for outputting
+        # self.conv = Gst.ElementFactory.make("videoconvert", "conv")
+        # self.bin.add(self.conv)
 
         if settings.DEBUG:
             # Add timeoverlay for debugging (if no debud no timeoverlay)
@@ -129,12 +129,12 @@ class VideoPlayer:
         self.queue.link(self.videobox)
         # self.videoscale.link(self.filter)
         # self.filter.link(self.videobox)
-        self.videobox.link(self.conv)
-        if settings.DEBUG:
-            self.conv.link(self.timeoverlay)
-            self.timeoverlay.link(self.videosink)
-        else:
-            self.conv.link(self.videosink)
+        self.videobox.link(self.videosink)
+        # if settings.DEBUG:
+        #     self.conv.link(self.timeoverlay)
+        #     self.timeoverlay.link(self.videosink)
+        # else:
+        #     self.conv.link(self.videosink)
 
         # Set videosink for pipeline
         self.data.pipeline.set_property("video-sink", self.bin)
