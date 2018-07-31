@@ -64,7 +64,7 @@ class VideoPlayer:
 
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
-        bus.connect('message', self.cb_message, self.data)
+        # bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
         bus.connect("message::application", self.on_application_message)
         # connect to interesting signals in playbin
