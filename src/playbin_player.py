@@ -301,6 +301,7 @@ class VideoPlayer:
             structure = caps.get_structure(i)
             name = structure.get_name()
             print("cpas_name :", name)
+            print(caps[i])
 
 
 if __name__ == "__main__":
