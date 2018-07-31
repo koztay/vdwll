@@ -237,6 +237,8 @@ class VideoPlayer:
 
         video_pad = self.data.pipeline.emit("get-video-pad", 0)
         print("video pad 'i aldı mı bu lavuk?", video_pad)
+        video_pad_caps = video_pad.get_current_caps()
+        self.read_video_props(video_pad_caps)
 
         for i in range(nr_video):
             tags = None
@@ -292,6 +294,16 @@ class VideoPlayer:
             # if the message is the "tags-changed", update the stream info in
             # the GUI
             self.analyze_streams()
+
+    def read_video_props(self, caps):
+        print("caps gelmiş olması lazım artık :", caps)
+        try:
+            self.width = caps["width"]
+            print("width :", self.width)
+        except:
+            print("No widht and height found")
+
+
 
 
 if __name__ == "__main__":
