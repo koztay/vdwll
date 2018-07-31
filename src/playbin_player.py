@@ -302,20 +302,16 @@ class VideoPlayer:
             structure = caps.get_structure(i)
             name = structure.get_name()
             width_available, width = structure.get_int("width")  # (True, value=1280) şeklinde bir Tuple döndürüyor.
-            print("tipini siktiğim : width 'i", type(width))
-            print("intmiş bu amına koduğum: ", width)
 
+            if width_available:
+                self.width = width
+            height_available, height = structure.get_int("height")  # (True, value=1280) şeklinde bir Tuple döndürüyor.
+            if height_available:
+                self.height = height
 
-
-            # if width_available:
-            #     self.width = width.split("=")[1]
-            # height_available, width = structure.get_int("height")  # (True, value=1280) şeklinde bir Tuple döndürüyor.
-            # if height_available:
-            #     self.height = width.split("=")[1]
-            #
-            # print("caps_name :", name)
-            # print("width :", self.width)
-            # print("heigth :", self.height)
+            print("caps_name :", name)
+            print("width :", self.width)
+            print("heigth :", self.height)
 
 
 if __name__ == "__main__":
