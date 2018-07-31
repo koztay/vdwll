@@ -303,6 +303,8 @@ class VideoPlayer:
             name = structure.get_name()
             width_available, width = structure.get_int("width")  # (True, value=1280) şeklinde bir Tuple döndürüyor.
             print("tipini siktiğim : width 'i", type(width))
+            print("intmiş bu amına koduğum: ", width)
+
 
 
             # if width_available:
