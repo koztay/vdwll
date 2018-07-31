@@ -5,7 +5,7 @@ import sys
 
 gi.require_version('Gst', '1.0')
 gi.require_version('GstVideo', '1.0')
-from gi.repository import GObject, Gst, GstVideo, GstPbutils, GLib
+from gi.repository import GObject, Gst, GstVideo
 
 import settings
 
@@ -15,7 +15,7 @@ logging.basicConfig(filename='network_lost.log', level=logging.DEBUG)
 class CustomData:
     is_live = None
     pipeline = None
-    discoverer = None
+    # discoverer = None
     # main_loop = None  # belki bunu application 'da set ederiz.
 
 
@@ -35,25 +35,6 @@ class VideoPlayer:
         Gst.debug_set_default_threshold(2)
 
         self.data = CustomData()
-
-        self.data.discoverer = GstPbutils.Discoverer.new(5 * Gst.SECOND)
-        if not self.data.discoverer:
-            print('Error creating discoverer instance: ', file=sys.stderr)
-            sys.exit(-1)
-
-        self.data.discoverer.connect('discovered', self.on_discovered_cb, self.data)
-        self.data.discoverer.connect('finished', self.on_finished_cb, self.data)
-
-        self.data.discoverer.start()
-
-        if not self.data.discoverer.discover_uri_async(uri):
-            print('Failed to start discovering URI "{0}'.format(uri), file=sys.stderr)
-            # sys.exit(-1)
-
-        self.data.main_loop = GLib.MainLoop()
-        self.data.main_loop.run()
-
-        self.data.discoverer.stop()
 
         self.uri = uri
         self.movie_window = moviewindow
@@ -320,117 +301,16 @@ class VideoPlayer:
         for i in range(caps.get_size()):
             structure = caps.get_structure(i)
             name = structure.get_name()
-            available, width = structure.get_int("width")  # (True, value=1280) şeklinde bir Tuple döndürüyor.
+            width_available, width = structure.get_int("width")  # (True, value=1280) şeklinde bir Tuple döndürüyor.
+            if width_available:
+                self.width = width.split("=")[1]
+            height_available, width = structure.get_int("height")  # (True, value=1280) şeklinde bir Tuple döndürüyor.
+            if height_available:
+                self.height = width.split("=")[1]
 
-            print("cpas_name :", name)
-            print("width :", width)
-
-
-    # discoverer callback methods
-
-    # Python version of GST_TIME_ARGS
-    def convert_ns(self, t):
-        s, ns = divmod(t, 1000000000)
-        m, s = divmod(s, 60)
-
-        if m < 60:
-            return "0:%02i:%02i.%i" % (m, s, ns)
-        else:
-            h, m = divmod(m, 60)
-            return "%i:%02i:%02i.%i" % (h, m, s, ns)
-
-    def print_tag_foreach(self, tags, depth):
-        # if isinstance(val, str):
-        #     str = val.dup_string();
-        # else:
-        #     str = Gst.value_serialize(val)
-
-        for x in range(0, tags.n_tags()):
-            print("Tags: {0} {1}".format(tags.nth_tag_name(x),
-                                           tags.peek_string_index(
-                                               tags.nth_tag_name(x), 0).value))
-
-        # for tkey in tags.keys():
-            # print("%s%s: %s" % ((2 * depth) * " ", tkey, tags[tkey]))
-
-    def print_stream_info(self, info, depth):
-        caps = info.get_caps()
-
-        if caps:
-            if caps.is_fixed():
-                desc = GstPbutils.pb_utils_get_codec_description(caps)
-            else:
-                desc = caps.to_string()
-
-        print('{0}: {1}'.format(2 * depth, info.get_stream_type_nick(), desc))
-
-        tags = info.get_tags()
-        if tags:
-            print('Tags: {0}'.format(2 * (depth + 1)))
-
-            # print_tag_foreach(tags, depth * 2)
-            # tags.foreach(self.print_tag_foreach, depth * 2)
-
-    def print_topology(self, info, depth):
-        if not info:
-            return
-
-        self.print_stream_info(info, depth);
-
-        next = info.get_next()
-
-        if next:
-            self.print_topology(next, depth + 1)
-        elif isinstance(info, GstPbutils.DiscovererContainerInfo):
-            streams = info.get_streams()
-            for tmp in streams:
-                self.print_topology(tmp, depth + 1)
-
-    # This function is called every time the discoverer has information regarding
-    # one of the URIs we provided.
-
-    def on_discovered_cb(self, discoverer, info, err, data):
-        uri = info.get_uri()
-        result = info.get_result()
-
-        if result == GstPbutils.DiscovererResult.URI_INVALID:
-            print('Invalid URI "{0}"\n'.format(uri))
-        elif result == GstPbutils.DiscovererResult.ERROR:
-            print('Discoverer error: {0}\n'.format(err.message))
-        elif result == GstPbutils.DiscovererResult.TIMEOUT:
-            print('Timeout\n')
-        elif result == GstPbutils.DiscovererResult.BUSY:
-            print('Busy\n')
-        elif result == GstPbutils.DiscovererResult.MISSING_PLUGINS:
-            print("Missing plugins: {0}\n".format(info.get_misc().to_string()))
-        elif result == GstPbutils.DiscovererResult.OK:
-            print("Discovered '{0}'\n".format(uri))
-            # If we got no error, show the retrieved information
-            print("\nDuration: %s" % self.convert_ns(info.get_duration()))
-
-            tags = info.get_tags()
-            if tags:
-                print("Tags:")
-                self.print_tag_foreach(tags, 1)
-
-            print("Seekable: %s" % ("yes" if info.get_seekable() else "no"))
-            print("")
-
-            sinfo = info.get_stream_info()
-            if sinfo:
-                print("Stream information:")
-                self.print_topology(sinfo, 1)
-                print("")
-
-    def on_finished_cb(self, discoverer, data):
-        print("Finished discovering\n")
-        self.data.main_loop.quit()
-
-
-
-
-
-
+            print("caps_name :", name)
+            print("width :", self.width)
+            print("heigth :", self.height)
 
 
 if __name__ == "__main__":
