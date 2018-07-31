@@ -137,42 +137,42 @@ class RemoteCommander(object):
                 # # GObject.timeout_add(300, child.player.videobox.set_property("left", crop_left))
                 # # GObject.timeout_add(400, child.player.videobox.set_property("right", crop_right))
                 #
-                # child.player.videobox.set_property("bottom", crop_bottom)
-                # child.player.videobox.set_property("top", crop_top)
-                # child.player.videobox.set_property("left", crop_left)
-                # child.player.videobox.set_property("right", crop_right)
+                child.player.videobox.set_property("bottom", crop_bottom)
+                child.player.videobox.set_property("top", crop_top)
+                child.player.videobox.set_property("left", crop_left)
+                child.player.videobox.set_property("right", crop_right)
                 #
                 # child.player.timeoverlay.set_property("text",
                 #                                       "w:{}, h:{}, left:{},top:{}, right:{}, bottom:{}".format(
                 #                                           width, height, crop_left, crop_top, crop_right,
                 #                                           crop_bottom))
 
-                start = time.time()
-                status_nulled = child.player.data.pipeline.set_state(Gst.State.NULL)
-                print("status_paused pipeline", status_nulled)
-
-                # child.player.bin.set_state(Gst.State.NULL) yukarıdaki kod bunu da NULL yaptı zaten
-                status_removed = child.player.bin.remove(child.player.queue)  # burada çıkarttım
-                print("status_removed mod queue", status_removed)
-
-                # burada yenisini ekledim
-                child.player.construct_mod_queue(
-                    video_width=width,
-                    video_height=height,
-                    crop_left=crop_left,
-                    crop_right=crop_right,
-                    crop_bottom=crop_bottom,
-                    crop_top=crop_top)
-
-                # # burada da başlattım
-                # status_playing = child.player.bin.set_state(Gst.State.PLAYING)
-                # print("status_playing mod queue", status_playing)
-
-                status_playing_pipe = child.player.data.pipeline.set_state(Gst.State.PLAYING)
-                print("status_playing mod queue", status_playing_pipe)
-                finish = time.time()
-                duration = finish - start
-                print("duration :", duration)  # bu yaklaşık 50 ms sürüyor. Ama playe başlaması uzun sürüyor.
+                # start = time.time()
+                # status_nulled = child.player.data.pipeline.set_state(Gst.State.NULL)
+                # print("status_paused pipeline", status_nulled)
+                #
+                # # child.player.bin.set_state(Gst.State.NULL) yukarıdaki kod bunu da NULL yaptı zaten
+                # status_removed = child.player.bin.remove(child.player.queue)  # burada çıkarttım
+                # print("status_removed mod queue", status_removed)
+                #
+                # # burada yenisini ekledim
+                # child.player.construct_mod_queue(
+                #     video_width=width,
+                #     video_height=height,
+                #     crop_left=crop_left,
+                #     crop_right=crop_right,
+                #     crop_bottom=crop_bottom,
+                #     crop_top=crop_top)
+                #
+                # # # burada da başlattım
+                # # status_playing = child.player.bin.set_state(Gst.State.PLAYING)
+                # # print("status_playing mod queue", status_playing)
+                #
+                # status_playing_pipe = child.player.data.pipeline.set_state(Gst.State.PLAYING)
+                # print("status_playing mod queue", status_playing_pipe)
+                # finish = time.time()
+                # duration = finish - start
+                # print("duration :", duration)  # bu yaklaşık 50 ms sürüyor. Ama playe başlaması uzun sürüyor.
                 # belki lokal networkdeki source 'lar için uzun sürmez bu...
 
                 """
