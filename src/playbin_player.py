@@ -63,7 +63,7 @@ class VideoPlayer:
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
-        # self.data.pipeline.connect('video-changed', self.on_handoff)
+        self.data.pipeline.connect('pad_added', self.ghost_pad_added)
 
     def construct_mod_queue(self,
                             video_width=1920,
@@ -83,7 +83,7 @@ class VideoPlayer:
         queue_ghostpad = Gst.GhostPad.new("sink", queue_pad)
         self.bin.add_pad(queue_ghostpad)
 
-        # Connect the decodebin signal
+        # Connect the decodebin signal bu çalışmıyor
         if self.bin:
             self.bin.connect("pad_added", self.ghost_pad_added)
 
