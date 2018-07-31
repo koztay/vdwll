@@ -153,7 +153,8 @@ class RemoteCommander(object):
                 # child.player.bin.set_state(Gst.State.NULL) yukarıdaki kod bunu da NULL yaptı zaten
                 status_removed = child.player.bin.remove(child.player.queue)  # burada çıkarttım
                 print("status_removed", status_removed)
-
+                status_nulled = child.player.bin.set_state(Gst.State.NULL)  # burada çıkarttım
+                print("status_nulled", status_nulled)
 
                 # burada yenisini ekledim
                 child.player.construct_mod_queue(
