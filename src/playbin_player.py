@@ -300,8 +300,9 @@ class VideoPlayer:
         for i in range(caps.get_size()):
             structure = caps.get_structure(i)
             name = structure.get_name()
+            width = structure.get_int("width")
             print("cpas_name :", name)
-            print(caps[i])
+            print("width :", width)
 
 
 if __name__ == "__main__":
