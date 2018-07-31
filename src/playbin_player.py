@@ -72,8 +72,6 @@ class VideoPlayer:
         # bus.connect("message::application", self.on_application_message)
         # bus.connect("message::application", self.on_application_message)
 
-
-
         # connect to interesting signals in playbin
         self.data.pipeline.connect("video-tags-changed", self.on_tags_changed)
         self.data.pipeline.connect("audio-tags-changed", self.on_tags_changed)
