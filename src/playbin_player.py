@@ -58,6 +58,9 @@ class VideoPlayer:
         elif ret == Gst.StateChangeReturn.NO_PREROLL:
             print("Buffer oluşturmayacağız data live data...")
             self.data.is_live = True
+        else:
+            video_pad = self.data.pipeline.emit("get-video-pad", 0)
+            print("video pad 'i aldı mı bu lavuk?", video_pad)
 
         bus.add_signal_watch()
         bus.enable_sync_message_emission()
@@ -185,6 +188,7 @@ class VideoPlayer:
                 self.data.pipeline.set_state(Gst.State.PAUSED)
             else:
                 self.data.pipeline.set_state(Gst.State.PLAYING)
+
             return
 
         if t == Gst.MessageType.CLOCK_LOST:
@@ -229,7 +233,6 @@ class VideoPlayer:
     # in the GUI
     def analyze_streams(self):
         buffer = []
-
         # read some properties
         nr_video = self.data.pipeline.get_property("n-video")
         nr_audio = self.data.pipeline.get_property("n-audio")
