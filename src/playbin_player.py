@@ -35,7 +35,7 @@ class VideoPlayer:
         Gst.debug_set_default_threshold(2)
 
         self.width = 0  # source olarak gelen videonun pixel olarak genişliği
-        self.height = 0 # source olarak gelen videonun pixel olarak yüksekliği
+        self.height = 0  # source olarak gelen videonun pixel olarak yüksekliği
 
         self.data = CustomData()
 
@@ -67,10 +67,6 @@ class VideoPlayer:
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)  # bunu yapınca
         bus.connect("sync-message::element", self.on_sync_message)
-        # bus.connect("message::application", self.on_application_message)
-        # bus.connect("message::application", self.on_application_message)
-        # bus.connect("message::application", self.on_application_message)
-        # bus.connect("message::application", self.on_application_message)
 
         # connect to interesting signals in playbin
         self.data.pipeline.connect("video-tags-changed", self.on_tags_changed)
@@ -86,8 +82,6 @@ class VideoPlayer:
                             crop_top=0
                             ):
 
-        ####################################################################
-        # aşağıdaki kod ile bin içerisine time overlay ekledik.
         self.bin = Gst.Bin.new("my-bin")
         self.queue = Gst.ElementFactory.make("queue")
         self.bin.add(self.queue)
@@ -133,7 +127,6 @@ class VideoPlayer:
 
         # Set videosink for pipeline
         self.data.pipeline.set_property("video-sink", self.bin)
-        ####################################################################
 
     def cb_message(self, bus, msg, data):
 
@@ -150,7 +143,6 @@ class VideoPlayer:
             except:
                 print('{}'.format(err))
             self.data.pipeline.set_state(Gst.State.READY)
-            # self.data.main_loop.quit()
             return
 
         if t == Gst.MessageType.EOS:
@@ -220,8 +212,7 @@ class VideoPlayer:
                 self.data.pipeline,
                 Gst.Structure.new_empty("tags-changed")))
 
-    # extract metadata from all the streams and write it to the text widget
-    # in the GUI
+    # extract metadata from all the streams and set them as resolution of source
     def analyze_streams(self):
         buffer = []
         # read some properties
@@ -280,14 +271,6 @@ class VideoPlayer:
                             str or "unknown"))
         print("stream analizi tamamlandı :", buffer)
         return buffer
-
-    # # this function is called when an "application" message is posted on the bus
-    # # here we retrieve the message posted by the on_tags_changed callback
-    # def on_application_message(self, bus, msg):
-    #     if msg.get_structure().get_name() == "tags-changed":
-    #         # if the message is the "tags-changed", update the stream info in
-    #         # the GUI
-    #         self.analyze_streams()
 
     def read_video_props(self, caps):
         print("caps gelmiş olması lazım artık :", caps)
