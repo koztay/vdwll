@@ -167,9 +167,12 @@ class RemoteCommander(object):
                     crop_bottom=crop_bottom,
                     crop_top=crop_top)
 
-                # burada da başlattım
-                status_playing = child.player.bin.set_state(Gst.State.PLAYING)
-                print("status_playing mod queue", status_playing)
+                # # burada da başlattım
+                # status_playing = child.player.bin.set_state(Gst.State.PLAYING)
+                # print("status_playing mod queue", status_playing)
+
+                status_playing_pipe = child.player.data.pipeline.set_state(Gst.State.PLAYING)
+                print("status_playing mod queue", status_playing_pipe)
 
 
                 """
