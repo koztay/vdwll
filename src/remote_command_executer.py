@@ -167,7 +167,8 @@ class RemoteCommander(object):
                     crop_bottom=crop_bottom,
                     crop_top=crop_top)
                 # burada da başlattım
-                child.player.data.pipeline.set_state(Gst.State.PLAYING)
+                child.player.bin.set_state(Gst.State.PLAYING)
+
 
                 """
                 https://github.com/sdroege/gst-snippets/blob/217ae015aaddfe3f7aa66ffc936ce93401fca04e/dynamic-filter.c
