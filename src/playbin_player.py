@@ -129,12 +129,12 @@ class VideoPlayer:
         self.queue.link(self.videobox)
         # self.videoscale.link(self.filter)
         # self.filter.link(self.videobox)
-        self.videobox.link(self.videosink)
-        # if settings.DEBUG:
-        #     self.conv.link(self.timeoverlay)
-        #     self.timeoverlay.link(self.videosink)
-        # else:
-        #     self.conv.link(self.videosink)
+        # self.videobox.link(self.videosink)
+        if settings.DEBUG:
+            self.videobox.link(self.timeoverlay)
+            self.timeoverlay.link(self.videosink)
+        else:
+            self.videobox.link(self.videosink)
 
         # Set videosink for pipeline
         self.data.pipeline.set_property("video-sink", self.bin)
