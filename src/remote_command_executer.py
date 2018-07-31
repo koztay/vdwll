@@ -147,14 +147,11 @@ class RemoteCommander(object):
                 #                                           width, height, crop_left, crop_top, crop_right,
                 #                                           crop_bottom))
 
-                # status_nulled = child.player.data.pipeline.set_state(Gst.State.NULL)
-                status_nulled_pipe = child.player.data.pipeline.set_state(Gst.State.PAUSED)
-                print("status_paused pipeline", status_nulled_pipe)
+                start = time.time()
+                status_nulled = child.player.data.pipeline.set_state(Gst.State.NULL)
+                print("status_paused pipeline", status_nulled)
+
                 # child.player.bin.set_state(Gst.State.NULL) yukarıdaki kod bunu da NULL yaptı zaten
-
-                status_nulled = child.player.bin.set_state(Gst.State.NULL)  # burada NULL yaptım
-                print("status_nulled mod queue", status_nulled)
-
                 status_removed = child.player.bin.remove(child.player.queue)  # burada çıkarttım
                 print("status_removed mod queue", status_removed)
 
@@ -173,7 +170,9 @@ class RemoteCommander(object):
 
                 status_playing_pipe = child.player.data.pipeline.set_state(Gst.State.PLAYING)
                 print("status_playing mod queue", status_playing_pipe)
-
+                finish = time.time()
+                duration = finish - start
+                print("duration :", duration)
 
                 """
                 https://github.com/sdroege/gst-snippets/blob/217ae015aaddfe3f7aa66ffc936ce93401fca04e/dynamic-filter.c
