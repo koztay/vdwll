@@ -83,18 +83,19 @@ class VideoPlayer:
         queue_ghostpad = Gst.GhostPad.new("sink", queue_pad)
         self.bin.add_pad(queue_ghostpad)
 
-        # Add Videoscale Filter for Resizing
-        self.videoscale = Gst.ElementFactory.make("videoscale")
-        self.videoscale.set_property("method", 1)
-        self.bin.add(self.videoscale)
-
-        # Add Caps Filter for Resizing the Video
-        self.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
-            video_width, video_height
-        ))
-        self.filter = Gst.ElementFactory.make("capsfilter", "filter")
-        self.filter.set_property("caps", self.caps)
-        self.bin.add(self.filter)
+        # Resize etmeye gerek yok ancak gelen görüntünün çözünürlüğünü öğrenmke lazım.
+        # # Add Videoscale Filter for Resizing
+        # self.videoscale = Gst.ElementFactory.make("videoscale")
+        # self.videoscale.set_property("method", 1)
+        # self.bin.add(self.videoscale)
+        #
+        # # Add Caps Filter for Resizing the Video
+        # self.caps = Gst.Caps.from_string("video/x-raw, width={}, height={}".format(
+        #     video_width, video_height
+        # ))
+        # self.filter = Gst.ElementFactory.make("capsfilter", "filter")
+        # self.filter.set_property("caps", self.caps)
+        # self.bin.add(self.filter)
 
         # Add Videobox for Cropping
         self.videobox = Gst.ElementFactory.make("videobox")
@@ -125,9 +126,9 @@ class VideoPlayer:
         self.bin.add(self.videosink)
 
         # Link all elements
-        self.queue.link(self.videoscale)
-        self.videoscale.link(self.filter)
-        self.filter.link(self.videobox)
+        self.queue.link(self.videobox)
+        # self.videoscale.link(self.filter)
+        # self.filter.link(self.videobox)
         self.videobox.link(self.conv)
         if settings.DEBUG:
             self.conv.link(self.timeoverlay)

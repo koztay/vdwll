@@ -172,7 +172,8 @@ class RemoteCommander(object):
                 print("status_playing mod queue", status_playing_pipe)
                 finish = time.time()
                 duration = finish - start
-                print("duration :", duration)
+                print("duration :", duration)  # bu yaklaşık 50 ms sürüyor. Ama playe başlaması uzun sürüyor.
+                # belki lokal networkdeki source 'lar için uzun sürmez bu...
 
                 """
                 https://github.com/sdroege/gst-snippets/blob/217ae015aaddfe3f7aa66ffc936ce93401fca04e/dynamic-filter.c
