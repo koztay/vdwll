@@ -63,8 +63,11 @@ class VideoPlayer:
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
-        self.data.pipeline.connect('get_video_pad', self.get_video_pad)
-        self.data.pipeline.connect('get-video-pad', self.get_video_pad)
+        bus.connect("message::application", self.on_application_message)
+        # connect to interesting signals in playbin
+        self.data.pipeline.connect("video-tags-changed", self.on_tags_changed)
+        self.data.pipeline.connect("audio-tags-changed", self.on_tags_changed)
+        self.data.pipeline.connect("text-tags-changed", self.on_tags_changed)
 
     def construct_mod_queue(self,
                             video_width=1920,
@@ -212,9 +215,79 @@ class VideoPlayer:
             self.imagesink.set_property("force-aspect-ratio", False)
             self.imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
 
-    def get_video_pad(self, playbin, pad):
-        print("pad var mı?", pad)
-        print("ghostpad added çalıştı burada caps okuyabiliriz gibi...")
+    # this function is called when new metadata is discovered in the stream
+    def on_tags_changed(self, playbin, stream):
+        # we are possibly in a GStreamer working thread, so we notify
+        # the main thread of this event through a message in the bus
+        self.data.pipeline.post_message(
+            Gst.Message.new_application(
+                self.data.pipeline,
+                Gst.Structure.new_empty("tags-changed")))
+
+    # extract metadata from all the streams and write it to the text widget
+    # in the GUI
+    def analyze_streams(self):
+        buffer = []
+
+        # read some properties
+        nr_video = self.data.pipeline.get_property("n-video")
+        nr_audio = self.data.pipeline.get_property("n-audio")
+        nr_text = self.data.pipeline.get_property("n-text")
+
+        for i in range(nr_video):
+            tags = None
+            # retrieve the stream's video tags
+            tags = self.data.pipeline.emit("get-video-tags", i)
+            if tags:
+                buffer.append("video stream {0}\n".format(i))
+                _, str = tags.get_string(Gst.TAG_VIDEO_CODEC)
+                buffer.append("  codec: {0}\n".format(str or "unknown"))
+
+        for i in range(nr_audio):
+            tags = None
+            # retrieve the stream's audio tags
+            tags = self.data.pipeline.emit("get-audio-tags", i)
+            if tags:
+                buffer.append("\naudio stream {0}\n".format(i))
+                ret, str = tags.get_string(Gst.TAG_AUDIO_CODEC)
+                if ret:
+                    buffer.append(
+                        "  codec: {0}\n".format(
+                            str or "unknown"))
+
+                ret, str = tags.get_string(Gst.TAG_LANGUAGE_CODE)
+                if ret:
+                    buffer.append(
+                        "  language: {0}\n".format(
+                            str or "unknown"))
+
+                ret, str = tags.get_uint(Gst.TAG_BITRATE)
+                if ret:
+                    buffer.append(
+                        "  bitrate: {0}\n".format(
+                            str or "unknown"))
+
+        for i in range(nr_text):
+            tags = None
+            # retrieve the stream's subtitle tags
+            tags = self.data.pipeline.emit("get-text-tags", i)
+            if tags:
+                buffer.append("\nsubtitle stream {0}\n".format(i))
+                ret, str = tags.get_string(Gst.TAG_LANGUAGE_CODE)
+                if ret:
+                    buffer.append(
+                        "  language: {0}\n".format(
+                            str or "unknown"))
+        print("stream analizi tamamlandı :", buffer)
+        return buffer
+
+    # this function is called when an "application" message is posted on the bus
+    # here we retrieve the message posted by the on_tags_changed callback
+    def on_application_message(self, bus, msg):
+        if msg.get_structure().get_name() == "tags-changed":
+            # if the message is the "tags-changed", update the stream info in
+            # the GUI
+            self.analyze_streams()
 
 
 if __name__ == "__main__":

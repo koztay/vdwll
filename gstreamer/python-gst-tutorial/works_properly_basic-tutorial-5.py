@@ -409,6 +409,7 @@ class Player(object):
             # the GUI
             self.analyze_streams()
 
+
 if __name__ == '__main__':
     p = Player()
     p.start()
