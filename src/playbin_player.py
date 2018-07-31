@@ -63,7 +63,7 @@ class VideoPlayer:
         bus.enable_sync_message_emission()
         bus.connect('message', self.cb_message, self.data)
         bus.connect("sync-message::element", self.on_sync_message)
-        self.data.pipeline.connect('pad_added', self.ghost_pad_added)
+        self.data.pipeline.connect('get_video_pad', self.get_video_pad)
 
     def construct_mod_queue(self,
                             video_width=1920,
@@ -215,7 +215,8 @@ class VideoPlayer:
             self.imagesink.set_property("force-aspect-ratio", False)
             self.imagesink.set_window_handle(self.movie_window.get_property('window').get_xid())
 
-    def ghost_pad_added(self):
+    def ghost_pad_added(self, playbin, pad):
+        print("pad var mı?", pad)
         print("ghostpad added çalıştı burada caps okuyabiliriz gibi...")
 
 
