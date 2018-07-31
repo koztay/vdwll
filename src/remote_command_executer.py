@@ -148,15 +148,15 @@ class RemoteCommander(object):
                 #                                           crop_bottom))
 
                 # status_nulled = child.player.data.pipeline.set_state(Gst.State.NULL)
-                status_nulled = child.player.data.pipeline.set_state(Gst.State.PAUSED)
-                print("status_nulled", status_nulled)
+                status_nulled_pipe = child.player.data.pipeline.set_state(Gst.State.PAUSED)
+                print("status_paused pipeline", status_nulled_pipe)
                 # child.player.bin.set_state(Gst.State.NULL) yukarıdaki kod bunu da NULL yaptı zaten
 
                 status_nulled = child.player.bin.set_state(Gst.State.NULL)  # burada NULL yaptım
-                print("status_nulled", status_nulled)
+                print("status_nulled mod queue", status_nulled)
 
                 status_removed = child.player.bin.remove(child.player.queue)  # burada çıkarttım
-                print("status_removed", status_removed)
+                print("status_removed mod queue", status_removed)
 
                 # burada yenisini ekledim
                 child.player.construct_mod_queue(
@@ -166,8 +166,10 @@ class RemoteCommander(object):
                     crop_right=crop_right,
                     crop_bottom=crop_bottom,
                     crop_top=crop_top)
+
                 # burada da başlattım
-                child.player.bin.set_state(Gst.State.PLAYING)
+                status_playing = child.player.bin.set_state(Gst.State.PLAYING)
+                print("status_playing mod queue", status_playing)
 
 
                 """
