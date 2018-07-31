@@ -219,6 +219,7 @@ class VideoPlayer:
     def on_tags_changed(self, playbin, stream):
         # we are possibly in a GStreamer working thread, so we notify
         # the main thread of this event through a message in the bus
+        logging.debug("{} state : {}".format(datetime.datetime.now(), "tags-changed-mesajı geldi"))
         self.data.pipeline.post_message(
             Gst.Message.new_application(
                 self.data.pipeline,
