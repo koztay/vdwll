@@ -297,13 +297,10 @@ class VideoPlayer:
 
     def read_video_props(self, caps):
         print("caps gelmiş olması lazım artık :", caps)
-        try:
-            self.width = caps["width"]
-            print("width :", self.width)
-        except:
-            print("No widht and height found")
-
-
+        for i in range(caps.get_size()):
+            structure = caps.get_structure(i)
+            name = structure.get_name()
+            print("cpas_name :", name)
 
 
 if __name__ == "__main__":
