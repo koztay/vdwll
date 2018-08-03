@@ -1,0 +1,5 @@
+[run]
+include = vw_controller_web_client/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
