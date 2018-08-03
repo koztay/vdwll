@@ -1,0 +1,29 @@
+{% extends "__base.html" %}
+{% load static %}
+
+{% block css %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'playground/css/interact_demo_1.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="container">
+
+    <div class="resize-container">
+      <div class="resize-drag">
+        Resize from any edge or corner
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+
+{% endblock content %}
+
+
+{% block javascript %}
+  {{ block.super }}
+  <script src="{% static 'playground/js/interact_demo_1.js' %}"></script>
+{% endblock %}
+

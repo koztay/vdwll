@@ -21,6 +21,12 @@ urlpatterns = [
     ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+
+    path(
+        "playground/",
+        include("playground.urls", namespace="playground"),
+    ),
+
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )

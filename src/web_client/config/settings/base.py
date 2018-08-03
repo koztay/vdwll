@@ -71,6 +71,9 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'vw_controller_web_client.users.apps.UsersAppConfig',
     # Your stuff: custom apps go here
+    'playground',
+
+
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -168,6 +171,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         'DIRS': [
+            str(ROOT_DIR.path('templates')),
             str(APPS_DIR.path('templates')),
         ],
         'OPTIONS': {
