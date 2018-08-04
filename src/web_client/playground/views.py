@@ -9,3 +9,11 @@ class Demo1View(TemplateView):
 
 class Demo2View(TemplateView):
     template_name = "playground/interact_demo_2.html"
+
+
+class Demo3View(TemplateView):
+    template_name = "playground/interact_demo_3.html"
+
+
+class Demo4View(TemplateView):
+    template_name = "playground/interact_demo_4.html"

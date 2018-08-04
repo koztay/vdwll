@@ -1,0 +1,28 @@
+{% extends "__base.html" %}
+{% load static %}
+
+{% block css %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'playground/css/interact_demo_4.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+
+
+    <div id="no-drop" class="draggable drag-drop"> #no-drop</div>
+
+    <div id="yes-drop" class="draggable drag-drop"> #yes-drop</div>
+
+    <div id="outer-dropzone" class="dropzone pagecontainers">
+      #outer-dropzone
+      <div id="inner-dropzone" class="dropzone pagecontainers">#inner-dropzone</div>
+    </div>
+
+{% endblock content %}
+
+{% block javascript %}
+
+  {{ block.super }}
+  <script src="{% static 'playground/js/interact_demo_4.js' %}"></script>
+{% endblock javascript %}

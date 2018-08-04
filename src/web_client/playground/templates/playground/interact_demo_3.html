@@ -1,0 +1,23 @@
+{% extends "__base.html" %}
+{% load static %}
+
+  {% block css %}
+    {{ block.super }}
+  <link rel="stylesheet" href="{% static 'playground/css/interact_demo_3.css' %}">
+  {% endblock css %}
+
+
+{% block content %}
+<div id="drag-1" class="draggable">
+  <p> You can drag one element </p>
+</div>
+<div id="drag-2" class="draggable">
+  <p> with each pointer </p>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+
+{{ block.super }}
+<script src="{% static 'playground/js/interact_demo_3.js' %}"></script>
+{% endblock javascript %}
