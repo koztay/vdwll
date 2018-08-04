@@ -1,6 +1,20 @@
-#outer-dropzone {
-  height: 450px;
+#outer-container{
+  display:block;
+  height: 600px;
+  max-height: 600px;
   width: 800px;
+  background-color: #aaa;
+  /*overflow: n;*/
+  position: absolute;
+}
+
+#outer-dropzone {
+  display:block;
+  height: 450px;
+  max-height: 450px;
+  width: 800px;
+  /*overflow: scroll;*/
+  /*position: absolute;*/
 }
 
 #inner-dropzone {

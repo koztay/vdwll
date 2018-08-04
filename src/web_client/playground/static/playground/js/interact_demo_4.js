@@ -1,82 +1,117 @@
-var element = document.getElementById('yes-drop'),
-    x = 0, y = 0;
-
 // target elements with the "draggable" class
-interact(element)
-  .draggable({
-    snap: {
-      targets: [
-        interact.createSnapGrid({ x: 30, y: 30 })
-      ],
-      range: Infinity,
-      relativePoints: [ { x: 0, y: 0 } ]
-    },
-    // enable inertial throwing
-    inertia: true,
-    // keep the element within the area of it's parent
-    restrict: {
-      restriction: element.parentNode,
-      endOnly: true,
-      elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-    },
-    // enable autoScroll
-    autoScroll: true,
 
-    // call this function on every dragmove event
-    onmove: dragMoveListener,
-    // call this function on every dragend event
-    onend: function (event) {
-      var textEl = event.target.querySelector('p');
+interact('.resize-drag')
+    .draggable({
+        onmove: window.dragMoveListener,
+        restrict: {
+            restriction: 'parent',
+            elementRect: {top: 0, left: 0, bottom: 1, right: 1}
+        },
+    })
+    .resizable({
+        // resize from all edges and corners
+        edges: {left: true, right: true, bottom: true, top: true},
 
-      textEl && (textEl.textContent =
-        'moved a distance of '
-        + (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                     Math.pow(event.pageY - event.y0, 2) | 0))
-            .toFixed(2) + 'px');
+        // keep the edges inside the parent
+        restrictEdges: {
+            outer: 'parent',
+            endOnly: true,
+        },
+
+        // minimum size
+        restrictSize: {
+            min: {width: 100, height: 50},
+        },
+
+        inertia: true,
+    })
+    .on('resizemove', function (event) {
+        var target = event.target,
+            x = (parseFloat(target.getAttribute('data-x')) || 0),
+            y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+        // update the element's style
+        target.style.width = event.rect.width + 'px';
+        target.style.height = event.rect.height + 'px';
+
+        // translate when resizing from top or left edges
+        x += event.deltaRect.left;
+        y += event.deltaRect.top;
+
+        target.style.webkitTransform = target.style.transform =
+            'translate(' + x + 'px,' + y + 'px)';
+
+        target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+        target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height);
+    })
+    .on('doubletap', function (event) {
+        console.log("double tap çalıştı");
+        if ($(event.target).parent('div#outer-dropzone').length) {
+        console.log("ben zone 'dayım");
+        document.getElementById("main-container").appendChild(event.target);
+        document.getElementById("outer-dropzone").removeChild(event.target);
     }
-  }).dropzone({
-  // only accept elements matching this CSS selector
-  accept: '#yes-drop',
-  // Require a 75% element overlap for a drop to be possible
-  overlap: 0.75,
+        event.preventDefault();
+  });
 
-  // listen for drop related events:
+/* The dragging code for '.draggable' from the demo above
+ * applies to this demo as well so it doesn't have to be repeated. */
 
-  ondropactivate: function (event) {
-    // add active dropzone feedback
-    event.target.classList.add('drop-active');
-  },
-  ondragenter: function (event) {
-    var draggableElement = event.relatedTarget,
-        dropzoneElement = event.target;
+// enable draggables to be dropped into this
+interact('.dropzone').dropzone({
+    // only accept elements matching this CSS selector
+    accept: '#yes-drop',
+    // Require a 75% element overlap for a drop to be possible
+    overlap: 0.75,
 
-    // feedback the possibility of a drop
-    dropzoneElement.classList.add('drop-target');
-    draggableElement.classList.add('can-drop');
-    draggableElement.textContent = 'Dragged in';
-  },
-  ondragleave: function (event) {
-    // remove the drop feedback style
-    event.target.classList.remove('drop-target');
-    event.relatedTarget.classList.remove('can-drop');
-    event.relatedTarget.textContent = 'Dragged out';
-  },
-  ondrop: function (event) {
-    var x = event.relatedTarget.getAttribute('data-x');
-    var y = event.relatedTarget.getAttribute('data-y');
-    event.relatedTarget.textContent = 'Dropped :' + " x :" + x + " y :" + y;
+    // listen for drop related events:
+    ondropactivate: function (event) {
+        // add active dropzone feedback
+        event.target.classList.add('drop-active');
+    },
+    ondragenter: function (event) {
+        var draggableElement = event.relatedTarget,
+            dropzoneElement = event.target;
+        // feedback the possibility of a drop
+        dropzoneElement.classList.add('drop-target');
+        draggableElement.classList.add('can-drop');
+        draggableElement.textContent = 'Dragged in';
+    },
+    ondragleave: function (event) {
+        // remove the drop feedback style
+        event.target.classList.remove('drop-target');
+        event.relatedTarget.classList.remove('can-drop');
+        event.relatedTarget.textContent = 'Dragged out';
 
-  },
-  ondropdeactivate: function (event) {
-    // remove active dropzone feedback
-    event.target.classList.remove('drop-active');
-    event.target.classList.remove('drop-target');
-  }
+    },
+    ondrop: function (event) {
+        var x = event.relatedTarget.getAttribute('data-x');
+        var y = event.relatedTarget.getAttribute('data-y');
+        event.relatedTarget.textContent = 'Dropped :' + " x :" + x + " y :" + y;
+        console.log("parent node:", event.relatedTarget.parentElement);
+        // $(event.relatedTarget).prop("id", "newId").appendTo("#outer-dropzone");
+        document.getElementById("outer-dropzone").appendChild(event.relatedTarget);
+        // event.relatedTarget.innerHTML = '<a href="#" ' +
+        //     'id="remove" ' +
+        //     'onclick="remove_element(event.relatedTarget)">Remove</a>';
+
+
+    },
+    ondropdeactivate: function (event) {
+        // remove active dropzone feedback
+        event.target.classList.remove('drop-active');
+        event.target.classList.remove('drop-target');
+    }
 });
 
+function remove_element(element) {
+    var elem = $(element);
+    document.getElementById("outer-dropzone").removeChild(elem);
+}
 
-  function dragMoveListener (event) {
-      console.log("dragMoveListener çalıştı");
+function dragMoveListener(event) {
+    console.log("dragMoveListener çalıştı");
     var target = event.target,
         // keep the dragged position in the data-x/data-y attributes
         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
@@ -84,14 +119,34 @@ interact(element)
 
     // translate the element
     target.style.webkitTransform =
-    target.style.transform =
-      'translate(' + x + 'px, ' + y + 'px)';
+        target.style.transform =
+            'translate(' + x + 'px, ' + y + 'px)';
 
     // update the posiion attributes
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
     target.textContent = 'dragged :' + " x :" + x + " y :" + y;
-  }
+
+    interact(target).draggable({
+        snap: {
+            targets: [
+                {x: 0, y: 0},                                       // anchor
+                interact.createSnapGrid({x: 25, y: 25}),            // grid
+                function (x, y) {
+                    return {x: x % 50, y: y % 50};
+                }  // path function
+            ],
+            relativePoints: [{x: 0.5, y: 0.5}]                  // instead of elementOrigin
+            // other snap settings...
+        }
+    });
+    // Aşağıdaki kod çalışmıyor...
+    if ($(target).parent('div#outer-dropzone').length) {
+        console.log("ben zone 'dayım");
+        // document.getElementById("main-container").appendChild(target);
+        // document.getElementById("outer-dropzone").removeChild(target);
+    }
+}
 
 //
 // function resizeMoveListener(event)
